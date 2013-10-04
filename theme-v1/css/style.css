@@ -351,6 +351,10 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 }
 .logo img {
 	display:block;
+	border:1px solid #aaa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
 }
 .preview {
 	margin-left:92px;

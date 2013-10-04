@@ -3,7 +3,7 @@
 /*
  * Squelette : squelettes-dist/formulaires/administration.html
  * Date :      Fri, 04 Oct 2013 08:12:19 GMT
- * Compile :   Fri, 04 Oct 2013 11:20:26 GMT
+ * Compile :   Fri, 04 Oct 2013 12:52:45 GMT
  * Boucles :   
  */ 
 //
