@@ -65,6 +65,14 @@ blockquote {
 .right {
 	float:right;
 }
+.spacer {
+	height: 35px;
+	margin:0px auto;
+	background: url(tsc_divider1_black.png) no-repeat scroll center transparent;
+	padding:6px;
+	margin-bottom:16px;
+	clear:both;
+}
 /*========== /Fonts & Format ==========*/
 
 

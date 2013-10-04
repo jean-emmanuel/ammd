@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/modeles/carousel.html
- * Date :      Fri, 04 Oct 2013 10:17:40 GMT
- * Compile :   Fri, 04 Oct 2013 11:20:25 GMT
+ * Date :      Fri, 04 Oct 2013 12:22:50 GMT
+ * Compile :   Fri, 04 Oct 2013 12:23:36 GMT
  * Boucles :   _carousel
  */ 
 
@@ -86,7 +86,7 @@ interdire_scripts(affdate(normaliser_date($Pile[$SP]['date']))) .
 
 //
 // Fonction principale du squelette theme-v1/modeles/carousel.html
-// Temps de compilation total: 22.002 ms
+// Temps de compilation total: 40.000 ms
 //
 
 function html_10e8b321693f563e495a61a333dc41f9($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

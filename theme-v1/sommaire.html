@@ -83,7 +83,7 @@
 
 	
 <div class="content[ (#MASQUER_CALENDRIER||=={on}|oui)full-width]" id="content">
-	
+	<B_contenu>
 	<BOUCLE_contenu(ARTICLES) {id_rubrique?}{id_article?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par date}{inverse}>
 	[(#TOTAL_BOUCLE|=={1}|oui)
 	[<span class="logo"><a href="[(#LOGO_ARTICLE|extraire_attribut{src})]" title="#TITRE" rel="simplebox">(#LOGO_ARTICLE|image_reduire{300})</a></span>]
@@ -102,6 +102,8 @@
 	</a>
 	]
 	</BOUCLE_contenu>
+	<div class="spacer"></div>
+	</B_contenu>
 	
 	<B_sousrubriques>
 	<BOUCLE_sousrubriques(RUBRIQUES) {id_parent?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par num titre, titre}>
