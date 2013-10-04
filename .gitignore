@@ -3,6 +3,7 @@
 #################
 
 local/
+tmp/
 
 *.pydevproject
 .project
