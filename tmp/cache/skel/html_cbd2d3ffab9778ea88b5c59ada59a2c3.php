@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Fri, 04 Oct 2013 10:43:19 GMT
- * Compile :   Fri, 04 Oct 2013 11:20:25 GMT
+ * Date :      Fri, 04 Oct 2013 12:07:57 GMT
+ * Compile :   Fri, 04 Oct 2013 12:08:00 GMT
  * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
@@ -1551,7 +1551,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 498.028 ms
+// Temps de compilation total: 479.027 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {
@@ -1654,7 +1654,12 @@ BOUCLE_rubriquehtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $
 
 <div class="footer">
 <div class="wrapper">
-<div class="license">Copyleft AMMD 2013 // <a href="http://www.artlibre.org">Licence Art Libre</a></div>
+<div class="footer-logo">' .
+filtrer('image_graver',filtrer('image_reduire',
+((!is_array($l = quete_logo('id_syndic', 'ON', "'0'",'', 0))) ? '':
+ ("<img class=\"spip_logos\" alt=\"\" src=\"$l[0]\"" . $l[2] .  ($l[1] ? " onmouseover=\"this.src='$l[1]'\" onmouseout=\"this.src='$l[0]'\"" : "") . ' />')),'0','30')) .
+'</div>
+Copyleft AMMD 2013 // <a href="http://www.artlibre.org">Licence Art Libre</a><br/>
 Retrouve l\'AMMD sur : <a href="https://twitter.com/AMMDCoorp">Twitter</a> / <a href="https://github.com/AMMD">GitHub</a>
 </div>
 </div>
