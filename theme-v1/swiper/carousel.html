@@ -1,0 +1,24 @@
+<B_carousel>
+<div class="swiper-container">
+<div class="swiper-wrapper">
+
+<BOUCLE_carousel(ARTICLES) {id_rubrique=17}{par date}{inverse}{0,5}>
+
+<div class="swiper-slide">
+[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{700,0})]
+<a href="?page=sommaire&amp;id_rubrique=#ID_RUBRIQUE&id_article=#ID_ARTICLE">
+<div class="swiper-caption"><h2>#TITRE</h2> [(#TEXTE|textebrut|couper{300,&nbsp;(...)})]</div>
+<div class="swiper-caption-date">[(#DATE|affdate)]</div>
+</a>
+</div>
+
+</BOUCLE_carousel>
+
+</div>
+<div class="pagination"></div>
+<a class="arrow-left" href="#" onclick="mySwiper.swipePrev();return false;"></a>
+<a class="arrow-right" href="#" onclick="mySwiper.swipeNext();return false;"></a>
+</div>
+
+</B_carousel>
+

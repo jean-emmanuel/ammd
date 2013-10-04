@@ -1,0 +1,6 @@
+
+titre: '<:transaction:traiter_paiement_paybox_titre:>'
+description: '<:transaction:traiter_paiement_paybox_description:>'
+options:
+  -
+    saisie: 'hidden'

@@ -1,0 +1,10 @@
+<BOUCLE_randomR(RUBRIQUES) {id_parent=2}{id_rubrique!=12}{par hasard}{0,1}{si #ENV{id_rubrique,1}|=={1}}{si #ENV{cal}|!={2}}{si #ENV{id_article}|=={""}}>
+<BOUCLE_randomA(ARTICLES){id_rubrique}{0,1}>
+<a href="#URL_RUBRIQUE" class="blocklink">
+<h2>#TITRE</h2>
+[<div class="logo">(#LOGO_ARTICLE|image_reduire{224,0}|image_recadre{224,0,'center top','dddddd'})</div>] <p>[(#TEXTE|textebrut|couper{200,&nbsp;(...)})]</p>
+<div class="clear"></div>
+</a>
+</BOUCLE_randomA>
+</BOUCLE_randomR>
+#CACHE{0}

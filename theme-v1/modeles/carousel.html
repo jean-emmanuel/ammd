@@ -1,0 +1,26 @@
+<B_carousel>
+<div class="blocklink" id="carousel">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+
+<BOUCLE_carousel(ARTICLES) {id_rubrique=17}{par date}{inverse}{0,5}>
+
+<div class="swiper-slide">
+[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{700,0})]
+<a href="#URL_ARTICLE">
+<span class="swiper-caption"><h2>#TITRE</h2> [(#TEXTE|textebrut|couper{200,&nbsp;(...)})]</span>
+<span class="swiper-caption-date">[(#DATE|affdate)]</span>
+</a>
+</div>
+
+</BOUCLE_carousel>
+
+</div>
+<div class="pagination"></div>
+</div>
+<a class="carousel-left" href="#" onclick="mySwiper.swipePrev();return false;"><div class="icon arrow-left"></div></a>
+<a class="carousel-right" href="#" onclick="mySwiper.swipeNext();return false;"><div class="icon arrow-right"></div></a>
+</div>
+<!--[if !IE]><!--><script>window.onload = function() {mySwiper = new Swiper('.swiper-container',{mode:'horizontal',loop: true,pagination: '.pagination',autoplay:6000,paginationClickable:true});}</script><!--<![endif]-->
+<!--[if IE]><script>$(document).ready(function(){mySwiper = new Swiper('.swiper-container',{mode:'horizontal',loop: true,pagination: '.pagination',autoplay:6000,paginationClickable:true});});</script><![endif]-->
+</B_carousel>
