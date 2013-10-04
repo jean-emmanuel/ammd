@@ -2,13 +2,7 @@
 <html lang="fr">
 <BOUCLE_rubrique_courante_article(ARTICLES){id_article?}>[(#ENV{id_article}|!={""}|oui)#SET{rubrique_courante,#ID_RUBRIQUE}]</BOUCLE_rubrique_courante_article>
 <head>
-	<title>
-	<BOUCLE_title(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
-	[(#ENV{cal}|=={2}|oui)Calendrier ][(#ID_RUBRIQUE|=={"1"}|oui)#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP]
-	<BOUCLE_titleA(ARTICLES){id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui)#TITRE]</BOUCLE_titleA>[(#ID_RUBRIQUE|!={"1"}|oui)#_title:TITRE]<//B_titleA>
-	[(#ID_RUBRIQUE|!={"1"}|oui) - #NOM_SITE_SPIP]
-	</BOUCLE_title>
-	</title>
+	<title><BOUCLE_title(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>[(#ENV{cal}|=={2}|oui)Calendrier ][(#ID_RUBRIQUE|=={"1"}|oui)#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP]<BOUCLE_titleA(ARTICLES){id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui)#TITRE]</BOUCLE_titleA>[(#ID_RUBRIQUE|!={"1"}|oui)#_title:TITRE]<//B_titleA>[(#ID_RUBRIQUE|!={"1"}|oui) - #NOM_SITE_SPIP]</BOUCLE_title></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
 	<meta name="author" content="Jean-Emmanuel Doucet">
@@ -29,8 +23,7 @@
 	<![endif]-->
 	<script src="#CHEMIN{swiper/idangerous.swiper-2.1.min.js}"></script>
 	<script src="#CHEMIN{simplebox/simplebox.js}"></script>
-
-<script src="#CHEMIN{mobile/selectnav.min.js}"></script>
+	<script src="#CHEMIN{mobile/selectnav.min.js}"></script>
 
 	</head>
 <body>
@@ -38,42 +31,37 @@
 
 <div class="header">
 	<div class="wrapper">
-		<a class="site_title" href="#URL_SITE_SPIP"><span class="title">AMMD</span><span class="subtitle">#SLOGAN_SITE_SPIP</span></a>
+		<a class="site_title" href="#URL_SITE_SPIP">
+			<span class="title">AMMD</span>
+			<span class="subtitle">#SLOGAN_SITE_SPIP</span>
+		</a>
 	</div>
 </div>
 
 
-
 <div class="nav">
 	<div class="wrapper">
-	<ul id="navigation">
-	<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
-	
-	<li class="menu-item">
-		<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item[ (#EXPOSE|oui)active][ (#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}|=={#ID_RUBRIQUE}|oui)active]"><span>#TITRE</span></a>
-	
-	<B_subnav>
-	<ul class="submenu">
-	<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}>
-		<li class="submenu-item">
-			<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="item[ (#EXPOSE|oui)active]">[(#COMPTEUR_BOUCLE|=={1}|oui)<span class="submenu-arrow"></span>]<span>#TITRE</span></a>
-		</li>
-	</BOUCLE_subnav>
-	</ul>
-	</B_subnav>
-	
-	</li>
+		<ul id="navigation">
+		<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
+		<li class="menu-item">
 		
-	</BOUCLE_nav>
-	</ul>
+			<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item[ (#EXPOSE|oui)active][ (#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}|=={#ID_RUBRIQUE}|oui)active]"><span>#TITRE</span></a>
+		
+			<B_subnav><ul class="submenu">
+				<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}><li class="submenu-item">
+					<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="item[ (#EXPOSE|oui)active]">[(#COMPTEUR_BOUCLE|=={1}|oui)<span class="submenu-arrow"></span>]<span>#TITRE</span></a>
+				</li></BOUCLE_subnav>
+			</ul></B_subnav>
+			
+		</li>	
+		</BOUCLE_nav>
+		</ul>
 	</div>
 </div>
 
 <div class="container">
 
-<div class="wrapper">
-
-<BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
+<div class="wrapper"><BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
 
 
 <div class="ariane">
@@ -204,17 +192,18 @@
 
 </div>
 
-</BOUCLE_rubrique>
 <div class="clear"></div>
-</div>
+</BOUCLE_rubrique></div>
+
+
 </div>
 
 <div class="footer">
-<div class="wrapper">
-<div class="footer-logo">[(#LOGO_SITE_SPIP|image_reduire{0,30})]</div>
-Copyleft AMMD 2013 // <a href="http://www.artlibre.org" class="spip_out">Licence Art Libre</a><br/>
-Retrouve l'AMMD sur : <a href="https://twitter.com/AMMDCoorp" class="spip_out">Twitter</a> / <a href="https://github.com/AMMD" class="spip_out">GitHub</a>
-</div>
+	<div class="wrapper">
+		<div class="footer-logo">[(#LOGO_SITE_SPIP|image_reduire{0,30})]</div>
+		Copyleft AMMD 2013 // <a href="http://www.artlibre.org" class="spip_out">Licence Art Libre</a><br/>
+		Retrouve l'AMMD sur : <a href="https://twitter.com/AMMDCoorp" class="spip_out">Twitter</a> / <a href="https://github.com/AMMD" class="spip_out">GitHub</a>
+	</div>
 </div>
 
 <script>selectnav('navigation',{nested:false}); </script>
