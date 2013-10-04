@@ -70,7 +70,7 @@ blockquote {
 	margin:0px auto;
 	background: url(tsc_divider1_black.png) no-repeat scroll center transparent;
 	padding:6px;
-	margin-bottom:16px;
+	margin-bottom:12px;
 	clear:both;
 }
 /*========== /Fonts & Format ==========*/
@@ -319,7 +319,7 @@ blockquote {
 .blocklink {
 	clear:both;
 	display:block;
-	margin-bottom:16px;
+	margin-bottom:12px;
 	background-color:#ddd;
 	padding:12px;
 	border:1px solid #bbb;
