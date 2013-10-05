@@ -335,9 +335,17 @@ blockquote {
 	margin-bottom:0px;
 }
 .blocklink:focus {
-	border-color:#333;
+	border-color:#444;
+	background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
+	background-image:-moz-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
+	background-image:-webkit-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
 }
-
+.blocklink.active {
+	border-color:#444;
+	background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
+	background-image:-moz-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
+	background-image:-webkit-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.10));
+}
 a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	font-weight:bold;
 	border-bottom:1px dotted;

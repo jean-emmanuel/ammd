@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Fri, 04 Oct 2013 14:34:47 GMT
- * Compile :   Fri, 04 Oct 2013 14:34:49 GMT
+ * Date :      Sat, 05 Oct 2013 14:00:22 GMT
+ * Compile :   Sat, 05 Oct 2013 14:00:27 GMT
  * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
@@ -1103,7 +1103,11 @@ quete_condition_statut('evenements.statut','!','publie',''),
 vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
 '?cal=1&amp;id_evenement=' .
 $Pile[$SP]['id_evenement'] .
-'" class="blocklink" title="' .
+'" class="blocklink' .
+(calcul_exposer($Pile[$SP]['id_evenement'], 'id_evenement', $Pile[0], '', 'id_evenement', '')  ?
+		(' ' . 'active') :
+		'') .
+'" title="' .
 interdire_scripts(affdate($Pile[$SP]['date_debut'])) .
 '">
 <span class="agenda-title">' .
@@ -1181,7 +1185,11 @@ quete_condition_statut('evenements.statut','!','publie',''),
 vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
 '?cal=1&amp;id_evenement=' .
 $Pile[$SP]['id_evenement'] .
-'" class="blocklink" title="' .
+'" class="blocklink' .
+(calcul_exposer($Pile[$SP]['id_evenement'], 'id_evenement', $Pile[0], '', 'id_evenement', '')  ?
+		(' ' . 'active') :
+		'') .
+'" title="' .
 interdire_scripts(affdate($Pile[$SP]['date_debut'])) .
 '">
 <span class="agenda-title">' .
@@ -1491,11 +1499,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 ' .
 (($t1 = BOUCLE_agendaGhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP))!=='' ?
 		((	'
-<div class="blocklink"' .
-		(($t3 = strval(interdire_scripts((((entites_html(sinon(table_valeur(@$Pile[0], (string)'id_rubrique', null), '1'),true) == '1')) ?' ' :''))))!=='' ?
-				(' ' . $t3 . 'id="home-calendar"') :
-				'') .
-		'>
+<div class="blocklink">
 <a href="' .
 		htmlspecialchars(sinon($GLOBALS['meta']['adresse_site'],'.')) .
 		'/?cal=2"><span class="icon calendar right"></span><h2>Calendrier</h2></a>
@@ -1543,7 +1547,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 452.400 ms
+// Temps de compilation total: 533.030 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

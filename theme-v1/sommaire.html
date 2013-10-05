@@ -148,10 +148,10 @@
 <INCLURE{fond=inc/random-artist,env} />
 
 <B_agendaG>
-<div class="blocklink"[ (#ENV{id_rubrique,1}|=={1}|oui)id="home-calendar"]>
+<div class="blocklink">
 <a href="#URL_SITE_SPIP/?cal=2"><span class="icon calendar right"></span><h2>Calendrier</h2></a>
 <BOUCLE_agendaG(EVENEMENTS){age_relatif_debut<=0}{par date}{si #TOUT_AGENDA|=={on}}{si #ENV{cal}|!={2}}>	
-<a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink" title="[(#DATE_DEBUT|affdate)]">
+<a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink[ (#EXPOSE{active})]" title="[(#DATE_DEBUT|affdate)]">
 <span class="agenda-title">#TITRE</span>
 <span class="agenda-date">[(#DATE_DEBUT|affdate{'d/m/Y'})][ // (#ADRESSE|textebrut)]</span> 
 </a>
@@ -163,7 +163,7 @@
 <div class="blocklink">
 <a href="#URL_SITE_SPIP/?cal=2"><span class="icon calendar right"></span><h2>Calendrier</h2></a>
 <BOUCLE_agenda(EVENEMENTS){age_relatif_debut<=0}{par date}{id_rubrique}{si #TOUT_AGENDA|!={on}}{si #ENV{cal}|!={2}}>	
-<a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink" title="[(#DATE_DEBUT|affdate)]">
+<a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink[ (#EXPOSE{active})]" title="[(#DATE_DEBUT|affdate)]">
 <span class="agenda-title">#TITRE</span>
 <span class="agenda-date">[(#DATE_DEBUT|affdate{'d/m/Y'})][ // (#ADRESSE|textebrut)]</span> 
 </a>
