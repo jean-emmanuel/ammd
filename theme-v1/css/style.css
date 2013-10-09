@@ -325,7 +325,7 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	margin-bottom:12px;
 	min-width:80px;
 }
-.logo img {
+.logo img, .spip_documents img {
 	display:block;
 	border:1px solid #aaa;
 	border-radius:3px;
@@ -470,7 +470,7 @@ input[type="submit"],input[type="reset"]{font-size:inherit}
 body {
 	font-size:12px;
 }
-.logo, .logo img {
+.logo, .spip_documents, img {
 	max-width:100%;
 	height:auto;
 }
