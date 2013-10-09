@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/inc/random-artist.html
- * Date :      Fri, 04 Oct 2013 08:49:23 GMT
- * Compile :   Fri, 04 Oct 2013 12:52:45 GMT
+ * Date :      Wed, 09 Oct 2013 08:23:14 GMT
+ * Compile :   Wed, 09 Oct 2013 08:23:18 GMT
  * Boucles :   _randomA, _randomR
  */ 
 
@@ -54,7 +54,7 @@ quete_condition_postdates('articles.date',''),
 <a href="' .
 vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
 '" class="blocklink">
-<h2>' .
+<h2><i class="icon-lightbulb right"></i>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</h2>
 ' .
@@ -149,7 +149,7 @@ BOUCLE_randomAhtml_21814b3bb1890c5aa3a7c3ea7bc8603c($Cache, $Pile, $doublons, $N
 
 //
 // Fonction principale du squelette theme-v1/inc/random-artist.html
-// Temps de compilation total: 40.002 ms
+// Temps de compilation total: 48.003 ms
 //
 
 function html_21814b3bb1890c5aa3a7c3ea7bc8603c($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Sat, 05 Oct 2013 14:00:22 GMT
- * Compile :   Sat, 05 Oct 2013 14:00:27 GMT
+ * Date :      Wed, 09 Oct 2013 09:08:07 GMT
+ * Compile :   Wed, 09 Oct 2013 09:08:13 GMT
  * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
@@ -271,7 +271,7 @@ quete_condition_statut('rubriques.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_subnav',50,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_subnav',53,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	
@@ -343,7 +343,7 @@ quete_condition_statut('rubriques.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_nav',45,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_nav',48,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -422,7 +422,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_article',68,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_article',71,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$Numrows['_ariane_article']['total'] = @intval($iter->count());
@@ -487,7 +487,7 @@ function BOUCLE_arianehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$d
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane',68,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane',71,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	
@@ -504,7 +504,7 @@ function BOUCLE_arianehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$d
 ((($Numrows['_ariane']['compteur_boucle'] == '1'))  ?
 		(' ' . (	'<a href="' .
 	htmlspecialchars(sinon($GLOBALS['meta']['adresse_site'],'.')) .
-	'/"><span class="icon home">Accueil</span></a>')) :
+	'/"><i class="icon-home"><span>Accueil</span></i></a>')) :
 		'') .
 ' &gt; <a href="' .
 vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
@@ -553,7 +553,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_evt',68,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_evt',71,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -628,7 +628,7 @@ quete_condition_postdates('articles.date',''), (!(is_array($Pile[$SP]['id_rubriq
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_contenu',74,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_contenu',77,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$Numrows['_contenu']['total'] = @intval($iter->count());
@@ -690,7 +690,7 @@ quete_condition_postdates('articles.date',''), (!(is_array($Pile[$SP]['id_rubriq
 			('<span class="logo">' . $t2 . '</span>') :
 			'') .
 	'
-		<span class="icon file right"></span>
+		<i class="icon-file right"></i>
 		<h2>' .
 	interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 	((($Pile[$SP]['id_rubrique'] == '17'))  ?
@@ -761,7 +761,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques',96,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques',99,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -784,7 +784,7 @@ interdire_scripts(((($a = $Pile[$SP]['alt_url']) OR (is_string($a) AND strlen($a
 	'</span>')) :
 		'') .
 '
-		<span class="icon folder right"></span>
+		<i class="icon-folder-close right"></i>
 		<h2>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</h2>
@@ -850,7 +850,7 @@ quete_condition_statut('evenements.statut','!','publie',''), (!(is_array(@$Pile[
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',109,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',112,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -864,21 +864,21 @@ interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, 
 '</h2>	
 	' .
 (($t1 = strval(interdire_scripts(propre($Pile[$SP]['descriptif'], $connect, $Pile[0]))))!=='' ?
-		('<div class="blocklink"><span class="icon info right"></span>' . $t1 . '</div>') :
+		('<div class="blocklink"><i class="icon-info-sign right"></i>' . $t1 . '</div>') :
 		'') .
 '
-	<div class="blocklink"><span class="icon date right"></span>' .
+	<div class="blocklink"><i class="icon-time right"></i>' .
 interdire_scripts(affdate($Pile[$SP]['date_debut'])) .
 (($t1 = strval(interdire_scripts((((affdate($Pile[$SP]['date_debut'],'Hi') != '0000')) ?' ' :''))))!=='' ?
 		($t1 . interdire_scripts(affdate($Pile[$SP]['date_debut'],' // H\\hi'))) :
 		'') .
 '</div>
-	<div class="blocklink"><span class="icon place right"></span>' .
+	<div class="blocklink"><i class="icon-map-marker right"></i>' .
 interdire_scripts(textebrut(expanser_liens(typo($Pile[$SP]['lieu'], "TYPO", $connect, $Pile[0])))) .
 ' // ' .
 interdire_scripts(textebrut(propre($Pile[$SP]['adresse'], $connect, $Pile[0]))) .
 '</div>
-	<div class="blocklink"><span class="icon price right"></span>' .
+	<div class="blocklink"><i class="icon-euro right"></i>' .
 interdire_scripts(textebrut(((($a = $Pile[$SP]['tarif']) OR (is_string($a) AND strlen($a))) ? $a : 'Gratuit'))) .
 '</div>
 	');
@@ -929,7 +929,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',118,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',121,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -946,7 +946,7 @@ $Pile[$SP]['id_evenement'] .
 '" title="' .
 interdire_scripts(affdate($Pile[$SP]['date_debut'])) .
 '">
-	<span class="icon file right"></span>
+	<i class="icon-file right"></i>
 	<span class="agenda-title">' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</span>
@@ -1008,7 +1008,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',131,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',134,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1025,7 +1025,7 @@ $Pile[$SP]['id_evenement'] .
 '" title="' .
 interdire_scripts(affdate($Pile[$SP]['date_debut'])) .
 '">
-	<span class="icon file right"></span>
+	<i class="icon-file right"></i>
 	<span class="agenda-title">' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</span>
@@ -1090,7 +1090,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',150,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',153,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1172,7 +1172,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',162,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',165,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1250,7 +1250,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',177,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',180,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1273,7 +1273,7 @@ vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_article'], 'article',
 	'</span>')) :
 		'') .
 '
-	<span class="icon file right"></span>
+	<i class="icon-file right"></i>
 	<h2>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</h2>
@@ -1336,7 +1336,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',175,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',178,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1352,7 +1352,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 		((	'
 <div class="blocklink"> <a href="' .
 		vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
-		'"><span class="icon folder right"></span><h2>' .
+		'"><i class="icon-folder-close right"></i><h2>' .
 		interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 		'</h2></a>
 ') . $t1 . '
@@ -1406,7 +1406,7 @@ quete_condition_statut('rubriques.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_rubrique',64,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_rubrique',67,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1425,7 +1425,7 @@ quete_condition_statut('rubriques.statut','!','publie',''),
 		$t1 :
 		((	'<a href="' .
 	htmlspecialchars(sinon($GLOBALS['meta']['adresse_site'],'.')) .
-	'/"><span class="icon home">Accueil</span></a>'))) .
+	'/"><i class="icon-home"><span>Accueil</span></i></a>'))) .
 BOUCLE_ariane_evthtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP) .
 (($t1 = strval(interdire_scripts((((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true) == '2')) ?' ' :''))))!=='' ?
 		($t1 . (	' &gt; <a href="' .
@@ -1493,7 +1493,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 ' .
 
-'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',148,$GLOBALS[\'spip_lang\'])), _request("connect"));
+'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',151,$GLOBALS[\'spip_lang\'])), _request("connect"));
 ?'.'>
 
 ' .
@@ -1502,7 +1502,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 <div class="blocklink">
 <a href="' .
 		htmlspecialchars(sinon($GLOBALS['meta']['adresse_site'],'.')) .
-		'/?cal=2"><span class="icon calendar right"></span><h2>Calendrier</h2></a>
+		'/?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
 ') . $t1 . '
 </div>
 ') :
@@ -1515,7 +1515,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 <div class="blocklink">
 <a href="' .
 		htmlspecialchars(sinon($GLOBALS['meta']['adresse_site'],'.')) .
-		'/?cal=2"><span class="icon calendar right"></span><h2>Calendrier</h2></a>
+		'/?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
 ') . $t1 . '
 </div>
 ') :
@@ -1547,7 +1547,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 533.030 ms
+// Temps de compilation total: 462.027 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {
@@ -1591,13 +1591,20 @@ interdire_scripts(find_in_path('swiper/idangerous.swiper.css')) .
 interdire_scripts(find_in_path('simplebox/simplebox.css')) .
 '" rel="stylesheet" media="screen">
 	<link href="' .
+interdire_scripts(find_in_path('css/font-awesome.min.css')) .
+'" rel="stylesheet" media="screen">
+	<!--[if IE 7]><link href="' .
+interdire_scripts(find_in_path('css/font-awesome-ie7.min.css')) .
+'" rel="stylesheet" media="screen"><![endif]-->
+	<link href="' .
 interdire_scripts(find_in_path('css/style.css')) .
 '" rel="stylesheet" media="screen">
 	
 	<!--[if IE]>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script> $(document).ready(function(){$(\'.blockquote > :last-child\').addClass(\'last-child\')});</script>
-	<![endif]-->
+	<![endif]-->	
+	
 	<script src="' .
 interdire_scripts(find_in_path('swiper/idangerous.swiper-2.1.min.js')) .
 '"></script>
@@ -1653,7 +1660,7 @@ filtrer('image_graver',filtrer('image_reduire',
  ("<img class=\"spip_logos\" alt=\"\" src=\"$l[0]\"" . $l[2] .  ($l[1] ? " onmouseover=\"this.src='$l[1]'\" onmouseout=\"this.src='$l[0]'\"" : "") . ' />')),'0','30')) .
 '</div>
 		Copyleft AMMD 2013 // <a href="http://www.artlibre.org" class="spip_out">Licence Art Libre</a><br/>
-		Retrouve l\'AMMD sur : <a href="https://twitter.com/AMMDCoorp" class="spip_out">Twitter</a> / <a href="https://github.com/AMMD" class="spip_out">GitHub</a>
+		Retrouve l\'AMMD sur : <a href="https://twitter.com/AMMDCoorp" class="spip_out">Twitter</a> / <a href="http://ammd.bandcamp.com/" class="spip_out">Bandcamp</a> / <a href="https://github.com/AMMD" class="spip_out">GitHub</a>
 	</div>
 </div>
 
