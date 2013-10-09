@@ -156,3 +156,9 @@ Pagination Styles
 	color:#eee;
 	z-index:9;
 }
+.swiper-caption:hover {
+	color:#9B4D4D;
+}
+.swiper-caption-date:hover {
+	color:#9B4D4D;
+}
