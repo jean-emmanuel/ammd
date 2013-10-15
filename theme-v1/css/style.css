@@ -1,3 +1,11 @@
+/* Custom Backgrounds */
+.soft-rains {
+	background-image:url(artistes/softrains.jpg);
+}
+
+/* /Custom Backgrounds */
+
+
 /*========== Generals ==========*/
 body, html {
 	margin:0;
@@ -384,10 +392,6 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	-webkit-box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
 	-o-box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
 }
-.soft-rains {
-	background-image:url(artistes/softrains.jpg);
-}
-
 /*========== /Content ==========*/
 
 /*========== Carousel ==========*/
