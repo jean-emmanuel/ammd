@@ -2,8 +2,8 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Tue, 15 Oct 2013 14:59:26 GMT
- * Compile :   Tue, 15 Oct 2013 14:59:29 GMT
+ * Date :      Tue, 15 Oct 2013 15:48:36 GMT
+ * Compile :   Tue, 15 Oct 2013 15:48:38 GMT
  * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_wrapper, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
@@ -909,7 +909,7 @@ quete_condition_statut('evenements.statut','!','publie',''), (!(is_array(@$Pile[
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',113,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',114,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -918,6 +918,7 @@ quete_condition_statut('evenements.statut','!','publie',''), (!(is_array(@$Pile[
 
 		$t0 .= (
 '
+	<div class="blocklink">
 	<h2>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</h2>	
@@ -940,6 +941,7 @@ interdire_scripts(textebrut(propre($Pile[$SP]['adresse'], $connect, $Pile[0]))) 
 	<div class="blocklink"><i class="icon-euro right"></i>' .
 interdire_scripts(textebrut(((($a = $Pile[$SP]['tarif']) OR (is_string($a) AND strlen($a))) ? $a : 'Gratuit'))) .
 '</div>
+	</div>
 	');
 	}
 	$iter->free();
@@ -988,7 +990,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',122,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',125,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1067,7 +1069,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',135,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',138,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1149,7 +1151,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',154,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',157,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1231,7 +1233,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',166,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',169,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1309,7 +1311,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',181,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',184,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1395,7 +1397,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',179,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',182,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1504,16 +1506,21 @@ BOUCLE_ariane_evthtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons,
 	' .
 (($t1 = BOUCLE_contenuhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP))!=='' ?
 		('
-	' . $t1 . '
-	<div class="spacer"></div>
-	') :
+	' . $t1 . (	'
+	' .
+		vide($Pile['vars'][(string)'contenu'] = '1'))) :
 		'') .
 '
 	
 	' .
 (($t1 = BOUCLE_sousrubriqueshtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP))!=='' ?
-		('
-	' . $t1 . '
+		((	'
+	' .
+		((table_valeur($Pile["vars"], (string)'contenu', null))  ?
+				(' ' . '<div class="spacer"></div>') :
+				'') .
+		'
+	') . $t1 . '
 	') :
 		'') .
 '
@@ -1552,7 +1559,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 ' .
 
-'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',152,$GLOBALS[\'spip_lang\'])), _request("connect"));
+'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',155,$GLOBALS[\'spip_lang\'])), _request("connect"));
 ?'.'>
 
 ' .
@@ -1606,7 +1613,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 546.031 ms
+// Temps de compilation total: 553.031 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

@@ -94,10 +94,11 @@
 	</a>
 	]
 	</BOUCLE_contenu>
-	<div class="spacer"></div>
+	#SET{contenu,1}
 	</B_contenu>
 	
 	<B_sousrubriques>
+	[(#GET{contenu}|oui)<div class="spacer"></div>]
 	<BOUCLE_sousrubriques(RUBRIQUES) {id_parent?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par num titre, titre}>
 	<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="blocklink">
 		[(#_rubrique:AFFICHER_LOGOS|=={on}|oui)<span class="logo">[(#LOGO_RUBRIQUE_RUBRIQUE|image_reduire{80})]</span>]
@@ -111,11 +112,13 @@
 	
 	
 	<BOUCLE_evenement(EVENEMENTS){id_evenement?}{si #ENV{cal}|=={1}}{si #ENV{id_evenement}}>
+	<div class="blocklink">
 	<h2>#TITRE</h2>	
 	[<div class="blocklink"><i class="icon-info-sign right"></i>(#DESCRIPTIF)</div>]
 	<div class="blocklink"><i class="icon-time right"></i>[(#DATE_DEBUT|affdate)][(#DATE_DEBUT|affdate{'Hi'}|!={0000}|oui)[(#DATE_DEBUT|affdate{' // H\hi'})]]</div>
 	<div class="blocklink"><i class="icon-map-marker right"></i>[(#LIEU|textebrut)] // [(#ADRESSE|textebrut)]</div>
 	<div class="blocklink"><i class="icon-euro right"></i>[(#TARIF|sinon{Gratuit}|textebrut)]</div>
+	</div>
 	</BOUCLE_evenement>
 	
 	

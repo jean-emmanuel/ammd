@@ -12,7 +12,7 @@ html {
 }
 iframe {
 	border:0;
-	margin-bottom:12px;
+	margin-bottom:8px;
 } 
 /*========== /Generals ==========*/
 
@@ -27,7 +27,7 @@ body {
 	color:#333;
 }
 p, h1, h2, h3 {
-	margin-bottom:12px;
+	margin-bottom:16px;
 	margin-top:0;
 	margin-left:0;
 	padding:0;
@@ -50,7 +50,7 @@ a:active:hover {
 }
 blockquote {
 	padding:12px 40px 1px;
-	margin:0 0 12px;
+	margin:0 0 16px;
 	background:url(blockquote.png) 4px 4px no-repeat;
 	background-color:#ddd;
 	border:1px solid #bbb;
@@ -65,10 +65,16 @@ blockquote {
 .right {
 	float:right;
 }
-.spacer {
-	height:24px;
+hr {
+	outline:0;
+	border:0;
+	margin:0;
+	padding:0;
+}
+.spacer, hr {
+	height:0px;
 	border-bottom:1px solid #aaa;
-	margin-bottom:30px;
+	margin-bottom:16px;
 	clear:both;
 }
 /*========== /Fonts & Format ==========*/
@@ -258,7 +264,7 @@ a:hover {
 .content {
 	width:700px;
 	padding-right:0px;
-	margin-top:16px;
+	margin-top:8px;
 	overflow:hidden;
 	*height:100%;
 	 float:left;
@@ -269,8 +275,8 @@ a:hover {
 	width:100%;
 }
 .aside {
-	width:250px;
-	margin-top:16px;
+	width:251px;
+	margin-top:8px;
 	float:right;
 	font-size:12px;
 }
@@ -291,7 +297,7 @@ a:hover {
 .blocklink {
 	clear:both;
 	display:block;
-	margin-bottom:12px;
+	margin-bottom:8px;
 	background-color:#ddd;
 	padding:12px;
 	border:1px solid #bbb;
@@ -322,8 +328,8 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 
 .logo, .spip_documents_left {
 	float:left;
-	margin-right:12px;
-	margin-bottom:12px;
+	margin-right:8px;
+	margin-bottom:8px;
 	min-width:80px;
 }
 .logo img, .spip_documents img {
@@ -387,6 +393,7 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 /*========== Carousel ==========*/
 #carousel {
 	padding:16px;
+	margin-bottom:16px;
 }
 .swiper-container {
     width:100%;
@@ -430,7 +437,7 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	font-size:12px;
 	padding:8px 8px 0px;
 	border:1px solid #bbb;
-	margin-bottom:16px;
+	margin-bottom:8px;
 }
 .agenda-date {
 
@@ -444,7 +451,7 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	background:#ddd;
 	padding:12px;
 	border:1px solid #bbb;
-	margin-bottom:12px;	
+	margin-bottom:8px;	
 	display:block;
 }
 /*========== /Agenda ==========*/
@@ -522,7 +529,7 @@ body {
 	border:0;
 	background-color:transparent;
 	color:#000;
-	padding:6px 15px;
+	padding:6px 8px;
 
 }
 .selectnav option {
@@ -547,7 +554,10 @@ body {
 }
 .header {
     width:auto;
-    padding:0px 20px;
+    padding:0px 8px;
+}
+.header span {
+	margin-left:0;
 }
 .nav {
     width:auto;
