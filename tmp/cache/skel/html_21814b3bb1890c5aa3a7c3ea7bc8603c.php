@@ -3,7 +3,7 @@
 /*
  * Squelette : theme-v1/inc/random-artist.html
  * Date :      Wed, 09 Oct 2013 08:23:14 GMT
- * Compile :   Wed, 09 Oct 2013 08:23:18 GMT
+ * Compile :   Tue, 15 Oct 2013 14:59:30 GMT
  * Boucles :   _randomA, _randomR
  */ 
 
@@ -149,7 +149,7 @@ BOUCLE_randomAhtml_21814b3bb1890c5aa3a7c3ea7bc8603c($Cache, $Pile, $doublons, $N
 
 //
 // Fonction principale du squelette theme-v1/inc/random-artist.html
-// Temps de compilation total: 48.003 ms
+// Temps de compilation total: 39.002 ms
 //
 
 function html_21814b3bb1890c5aa3a7c3ea7bc8603c($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

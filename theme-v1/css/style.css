@@ -102,15 +102,17 @@ i span {
 }
 .title {
 	font-size:70px;
-	line-height:75px;
+	line-height:70px;
 	font-weight:bold;
 	letter-spacing:-15px;
 	left:0;
 	bottom:0;
+		margin-left:8px;
 }
 .subtitle {
 	position:absolute;
-	bottom:0px;
+	margin-left:8px;
+	bottom:3px;
 	left:0;
 	letter-spacing:0.8px;
 	font-size:12px;
@@ -123,9 +125,9 @@ i span {
 /*========== Footer ==========*/
 .footer {
 	padding:8px 20px;
-	background:#aaa;
-	color:#555;
-	border-top:1px solid #ccc;
+	background:#333;
+	color:#888;
+	border-top:1px solid #666;
 	font-size:12px;
 }
 .footer-logo {
@@ -246,12 +248,11 @@ a:hover {
 }
 .container {
 	position:relative;
-	padding-top:12px;
-	padding-bottom:24px;
 	min-height:100%;
 	height:auto;
 	z-index:1;
-	border-bottom:1px solid #999;
+	border-bottom:1px solid #111;
+	padding-bottom:16px;
 	
 }
 .content {
@@ -344,6 +345,43 @@ a.spip_out, a.spip_mail, a.spip_in, a.spip_url {
 	width:100%;
 	height:1px;
 }
+.container {
+	background-position:center;
+	background-size:cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+}
+#filter {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url(filter.png);
+}
+.wrapper-content {
+	background:#eee;
+	background:rgba(241,241,241,0.9);
+	padding:8px;
+	width:959px;
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+	-moz-border-bottom-left-radius:4px;
+	-moz-border-bottom-right-radius:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-o-border-bottom-left-radius:4px;
+	-o-border-bottom-right-radius:4px;
+	
+	box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
+	-moz-box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
+	-webkit-box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
+	-o-box-shadow:0 0 4px 0 rgba(0,0,0,0.3);
+}
+.soft-rains {
+	background-image:url(artistes/softrains.jpg);
+}
+
 /*========== /Content ==========*/
 
 /*========== Carousel ==========*/
@@ -494,7 +532,8 @@ body {
 	display:none;
 }
 .wrapper {
-    width:100%;
+    width:auto;
+	border-radius:0;
 }
 .content {
     width:auto;
@@ -502,8 +541,9 @@ body {
    float:none;
 }
 .container {
-    width:auto;
-    padding:10px 20px;
+    width:100%;
+	padding:0;
+
 }
 .header {
     width:auto;

@@ -2,9 +2,9 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Wed, 09 Oct 2013 09:26:29 GMT
- * Compile :   Wed, 09 Oct 2013 09:26:32 GMT
- * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
+ * Date :      Tue, 15 Oct 2013 14:59:26 GMT
+ * Compile :   Tue, 15 Oct 2013 14:59:29 GMT
+ * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_wrapper, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
 function BOUCLE_rubrique_courante_articlehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
@@ -390,6 +390,65 @@ interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, 
 }
 
 
+function BOUCLE_ariane_wrapperhtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
+
+	static $command = array();
+	static $connect;
+	$command['connect'] = $connect = '';
+	if (!($id_rubrique = intval(@$Pile[0]['id_rubrique'])))
+		return '';
+	include_spip('inc/rubriques');
+	$hierarchie = calcul_hierarchie_in($id_rubrique,true);
+	if (!$hierarchie) return "";
+	
+	if (!isset($command['table'])) {
+		$command['table'] = 'rubriques';
+		$command['id'] = '_ariane_wrapper';
+		$command['from'] = array('rubriques' => 'spip_rubriques');
+		$command['type'] = array();
+		$command['groupby'] = array();
+		$command['select'] = array("rubriques.titre",
+		"rubriques.lang");
+		$command['join'] = array();
+		$command['limit'] = '';
+		$command['having'] = 
+			array();
+	}
+	$command['orderby'] = array("FIELD(rubriques.id_rubrique, $hierarchie)");
+	$command['where'] = 
+			array(
+			array('NOT', 
+			array('=', 'rubriques.id_rubrique', "1")), 
+			array('IN', 'rubriques.id_rubrique', "($hierarchie)"));
+	if (defined("_BOUCLE_PROFILER")) $timer = time()+microtime();
+	$t0 = "";
+	// REQUETE
+	$iter = IterFactory::create(
+		"SQL",
+		$command,
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_wrapper',65,$GLOBALS['spip_lang'])
+	);
+	if (!$iter->err()) {
+	lang_select($GLOBALS['spip_lang']);
+	$SP++;
+	// RESULTATS
+	while ($Pile[$SP]=$iter->fetch()) {
+
+		lang_select_public($Pile[$SP]['lang'], '', $Pile[$SP]['titre']);
+		$t0 .= (
+interdire_scripts(replace(strtolower(textebrut(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0]))),'\\s','-')) .
+' ');
+	}
+	lang_select();
+	$iter->free();
+	}
+	if (defined("_BOUCLE_PROFILER")
+	AND 1000*($timer = (time()+microtime())-$timer) > _BOUCLE_PROFILER)
+		spip_log(intval(1000*$timer)."ms BOUCLE_ariane_wrapper @ theme-v1/sommaire.html","profiler");
+	return $t0;
+}
+
+
 function BOUCLE_ariane_articlehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
 
 	static $command = array();
@@ -422,7 +481,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_article',71,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_article',72,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$Numrows['_ariane_article']['total'] = @intval($iter->count());
@@ -487,7 +546,7 @@ function BOUCLE_arianehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$d
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane',71,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane',72,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	
@@ -553,7 +612,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_evt',71,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ariane_evt',72,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -628,7 +687,7 @@ quete_condition_postdates('articles.date',''), (!(is_array($Pile[$SP]['id_rubriq
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_contenu',77,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_contenu',78,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$Numrows['_contenu']['total'] = @intval($iter->count());
@@ -761,7 +820,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques',99,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques',100,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -850,7 +909,7 @@ quete_condition_statut('evenements.statut','!','publie',''), (!(is_array(@$Pile[
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',112,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',113,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -929,7 +988,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',121,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',122,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1008,7 +1067,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',134,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',135,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1090,7 +1149,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',153,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',154,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1172,7 +1231,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',165,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',166,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1250,7 +1309,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',180,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',181,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1336,7 +1395,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',178,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',179,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1406,7 +1465,7 @@ quete_condition_statut('rubriques.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_rubrique',67,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_rubrique',68,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1493,7 +1552,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 ' .
 
-'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',151,$GLOBALS[\'spip_lang\'])), _request("connect"));
+'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',152,$GLOBALS[\'spip_lang\'])), _request("connect"));
 ?'.'>
 
 ' .
@@ -1547,7 +1606,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 489.027 ms
+// Temps de compilation total: 546.031 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {
@@ -1643,9 +1702,12 @@ BOUCLE_navhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numro
 	</div>
 </div>
 
-<div class="container">
+<div class="container ' .
+BOUCLE_ariane_wrapperhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP) .
+'">
+<div id="filter"></div>
 
-<div class="wrapper">' .
+<div class="wrapper wrapper-content">' .
 BOUCLE_rubriquehtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP) .
 '</div>
 

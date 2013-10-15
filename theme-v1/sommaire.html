@@ -62,9 +62,10 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container <BOUCLE_ariane_wrapper(HIERARCHIE){id_article}{id_rubrique!=1}>[(#TITRE|textebrut|strtolower|replace{\s,-})] </BOUCLE_ariane_wrapper>">
+<div id="filter"></div>
 
-<div class="wrapper"><BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
+<div class="wrapper wrapper-content"><BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
 
 
 <div class="ariane">
