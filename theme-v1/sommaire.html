@@ -79,9 +79,9 @@
 	<BOUCLE_contenu(ARTICLES) {id_rubrique?}{id_article?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par date}{inverse}>
 	[(#TOTAL_BOUCLE|=={1}|oui)
 	[<span class="logo"><a href="[(#LOGO_ARTICLE|extraire_attribut{src})]" title="#TITRE" rel="simplebox">(#LOGO_ARTICLE|image_reduire{300})</a></span>]
-	[(#MASQUER_TITRE|!={on}|oui)<h2>[(#TITRE*|extraire_multi{#ENV{lang}})]</h2>]
+	[(#ID_RUBRIQUE|=={1}|non)<h2>#TITRE</h2>]
 	[(#ID_RUBRIQUE|=={17}|oui)<h3>[(#DATE|affdate)]</h3>]
-	<div class="texte">[(#TEXTE*|extraire_multi{#ENV{lang}}|propre)] </div>
+	<div class="texte">#TEXTE</div>
 	]
 	
 	[(#TOTAL_BOUCLE|!={1}|oui)
@@ -143,17 +143,19 @@
 	</B_ls_evenements>
 	
 	<B_ls_evenements_p>
-
+	<div class="spacer"></div>
+	#ANCRE_PAGINATION
 	<h2>Dates passées</h2>
-	<BOUCLE_ls_evenements_p(EVENEMENTS) {age_relatif_debut>0}{si #ENV{cal}|=={2}}{par date}{inverse}>
-		
+	<BOUCLE_ls_evenements_p(EVENEMENTS) {age_relatif_debut>0}{si #ENV{cal}|=={2}}{par date}{inverse}{pagination 10}>
+	
 	<a class="blocklink " href="#URL_RUBRIQUE?cal=1&id_evenement=#ID_EVENEMENT" title="[(#DATE_DEBUT|affdate)]">
 	<i class="icon-file right"></i>
 	<span class="agenda-title">#TITRE</span>
 	<p class="agenda-date">[(#DATE_DEBUT|affdate{'d/m/Y'})][(#DATE_DEBUT|affdate{'Hi'}|!={"0000"}|oui)[(#DATE_DEBUT|affdate{' // H\hi'})]] // [(#ADRESSE|textebrut)]</p>
 	</a>
-
+	
 	</BOUCLE_ls_evenements_p>
+	[<div class="blocklink left">(#PAGINATION)</div>]
 	</B_ls_evenements_p>
 	
 </div>
