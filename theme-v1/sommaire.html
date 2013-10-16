@@ -23,7 +23,6 @@
 	<script src="#CHEMIN{scripts.js}"></script>
 	<script src="#CHEMIN{swiper/idangerous.swiper-2.1.min.js}"></script>
 	<script src="#CHEMIN{simplebox/simplebox.js}"></script>
-	<script src="#CHEMIN{mobile/selectnav.min.js}"></script>
 
 	</head>
 <body>
@@ -56,6 +55,13 @@
 		</li>	
 		</BOUCLE_nav>
 		</ul>
+		
+		<select id="mobile-navigation" class="selectnav"  onchange="window.location.href=this[this.selectedIndex].value">
+		<BOUCLE_mnav(RUBRIQUES) {racine} {par num titre, titre}>
+		<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"[ (#EXPOSE|oui)selected=""]>#TITRE</option>
+		</BOUCLE_mnav>
+		</select>
+		
 	</div>
 </div>
 
@@ -218,8 +224,6 @@
 		Retrouve l'AMMD sur : <a href="https://twitter.com/AMMDCoorp" class="spip_out">Twitter</a> / <a href="http://ammd.bandcamp.com/" class="spip_out">Bandcamp</a> / <a href="https://github.com/AMMD" class="spip_out">GitHub</a>
 	</div>
 </div>
-
-<script>selectnav('navigation',{nested:false}); </script>
 
 </body>
 </html>
