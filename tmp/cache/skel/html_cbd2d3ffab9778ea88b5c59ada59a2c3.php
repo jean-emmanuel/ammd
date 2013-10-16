@@ -2,9 +2,9 @@
 
 /*
  * Squelette : theme-v1/sommaire.html
- * Date :      Tue, 15 Oct 2013 16:15:33 GMT
- * Compile :   Tue, 15 Oct 2013 16:19:19 GMT
- * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_wrapper, _ariane_article, _ariane, _ariane_evt, _contenu, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
+ * Date :      Wed, 16 Oct 2013 09:16:54 GMT
+ * Compile :   Wed, 16 Oct 2013 09:16:56 GMT
+ * Boucles :   _rubrique_courante_article, _titleA, _title, _desc, _subnav, _nav, _ariane_wrapper, _ariane_article, _ariane, _ariane_evt, _contenu, _previsu_articles, _sousrubriques, _evenement, _ls_evenements, _ls_evenements_p, _agendaG, _agenda, _side_articles, _sousrubriques_side, _rubrique
  */ 
 
 function BOUCLE_rubrique_courante_articlehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
@@ -777,6 +777,77 @@ quete_condition_postdates('articles.date',''), (!(is_array($Pile[$SP]['id_rubriq
 }
 
 
+function BOUCLE_previsu_articleshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
+
+	static $command = array();
+	static $connect;
+	$command['connect'] = $connect = '';
+	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
+	$command['si'][] = interdire_scripts((($Pile[$SP]['previsu_articles']) ?' ' :''));
+
+	if (!isset($command['table'])) {
+		$command['table'] = 'articles';
+		$command['id'] = '_previsu_articles';
+		$command['from'] = array('articles' => 'spip_articles');
+		$command['type'] = array();
+		$command['groupby'] = array();
+		$command['select'] = array("0+articles.titre AS num",
+		"articles.titre",
+		"articles.id_article",
+		"articles.texte",
+		"articles.lang");
+		$command['orderby'] = array('num', 'articles.titre');
+		$command['join'] = array();
+		$command['limit'] = '';
+		$command['having'] = 
+			array();
+	}
+	$command['where'] = 
+			array(
+quete_condition_statut('articles.statut','publie,prop,prepa','publie',''), 
+quete_condition_postdates('articles.date',''), 
+			array('=', 'articles.id_rubrique', sql_quote($Pile[$SP]['id_rubrique'],'','bigint(21) DEFAULT \'0\' NOT NULL')));
+	if (defined("_BOUCLE_PROFILER")) $timer = time()+microtime();
+	$t0 = "";
+	// REQUETE
+	$iter = IterFactory::create(
+		"SQL",
+		$command,
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_previsu_articles',108,$GLOBALS['spip_lang'])
+	);
+	if (!$iter->err()) {
+	lang_select($GLOBALS['spip_lang']);
+	$SP++;
+	// RESULTATS
+	while ($Pile[$SP]=$iter->fetch()) {
+
+		lang_select_public($Pile[$SP]['lang'], '', $Pile[$SP]['titre']);
+		$t0 .= (
+'
+		<a href="' .
+vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_article'], 'article', '', '', true))) .
+'" class="blocklink">
+			<i class="icon-file right"></i>
+			<h2>' .
+interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
+'</h2>
+			' .
+interdire_scripts(couper(propre($Pile[$SP]['texte'], $connect, $Pile[0]),'300')) .
+'
+			<div class="clear"></div>
+		</a>
+		');
+	}
+	lang_select();
+	$iter->free();
+	}
+	if (defined("_BOUCLE_PROFILER")
+	AND 1000*($timer = (time()+microtime())-$timer) > _BOUCLE_PROFILER)
+		spip_log(intval(1000*$timer)."ms BOUCLE_previsu_articles @ theme-v1/sommaire.html","profiler");
+	return $t0;
+}
+
+
 function BOUCLE_sousrubriqueshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &$doublons, &$Numrows, $SP) {
 
 	static $command = array();
@@ -787,10 +858,7 @@ function BOUCLE_sousrubriqueshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pi
 		$in[]= $a;
 	else $in = array_merge($in, $a);
 	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
-	$command['si'][] = interdire_scripts((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true) != '1'));
-
-	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
-	$command['si'][] = interdire_scripts((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true) != '2'));
+	$command['si'][] = interdire_scripts(((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true)) ?'' :' '));
 
 	if (!isset($command['table'])) {
 		$command['table'] = 'rubriques';
@@ -798,10 +866,11 @@ function BOUCLE_sousrubriqueshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pi
 		$command['from'] = array('rubriques' => 'spip_rubriques');
 		$command['type'] = array();
 		$command['groupby'] = array();
-		$command['select'] = array("0+rubriques.titre AS num",
+		$command['select'] = array("rubriques.id_rubrique",
+		"rubriques.previsu_articles",
+		"0+rubriques.titre AS num",
 		"rubriques.titre",
 		"rubriques.alt_url",
-		"rubriques.id_rubrique",
 		"rubriques.texte",
 		"rubriques.lang");
 		$command['orderby'] = array('num', 'rubriques.titre');
@@ -813,7 +882,9 @@ function BOUCLE_sousrubriqueshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pi
 	$command['where'] = 
 			array(
 quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$SP]['id_parent'])?count($Pile[$SP]['id_parent']):strlen($Pile[$SP]['id_parent'])) ? '' : ((is_array($Pile[$SP]['id_parent'])) ? sql_in('rubriques.id_parent',sql_quote($in)) : 
-			array('=', 'rubriques.id_parent', sql_quote($Pile[$SP]['id_rubrique'],'','bigint(21) DEFAULT \'0\' NOT NULL')))));
+			array('=', 'rubriques.id_parent', sql_quote($Pile[$SP]['id_rubrique'],'','bigint(21) DEFAULT \'0\' NOT NULL')))), 
+			array('NOT', 
+			array('=', 'rubriques.side_articles', "'on'")));
 	if (defined("_BOUCLE_PROFILER")) $timer = time()+microtime();
 	$t0 = "";
 	// REQUETE
@@ -831,9 +902,11 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 		lang_select_public($Pile[$SP]['lang'], '', $Pile[$SP]['titre']);
 		$t0 .= (
 '
-	<a href="' .
-interdire_scripts(((($a = $Pile[$SP]['alt_url']) OR (is_string($a) AND strlen($a))) ? $a : vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))))) .
-'" class="blocklink">
+	' .
+interdire_scripts(($Pile[$SP]['previsu_articles'] ? '<div class="blocklink">':(	'<a href="' .
+	interdire_scripts(((($a = $Pile[$SP]['alt_url']) OR (is_string($a) AND strlen($a))) ? $a : vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))))) .
+	'" class="blocklink">'))) .
+'
 		' .
 (($t1 = strval(interdire_scripts(((($Pile[$SP-1]['afficher_logos'] == 'on')) ?' ' :''))))!=='' ?
 		($t1 . (	'<span class="logo">' .
@@ -843,7 +916,9 @@ interdire_scripts(((($a = $Pile[$SP]['alt_url']) OR (is_string($a) AND strlen($a
 	'</span>')) :
 		'') .
 '
-		<i class="icon-folder-close right"></i>
+		<i class="icon-folder-' .
+interdire_scripts(($Pile[$SP]['previsu_articles'] ? 'open':'close')) .
+' right"></i>
 		<h2>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
 '</h2>
@@ -851,9 +926,16 @@ interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, 
 (($t1 = strval(interdire_scripts(textebrut(couper(propre($Pile[$SP]['texte'], $connect, $Pile[0]),'150')))))!=='' ?
 		('<p>' . $t1 . '</p>') :
 		'') .
+(($t1 = strval(interdire_scripts((($Pile[$SP]['previsu_articles']) ?' ' :''))))!=='' ?
+		($t1 . '</a>') :
+		'') .
 '
-
-	</a>
+		' .
+BOUCLE_previsu_articleshtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP) .
+'
+	' .
+interdire_scripts(($Pile[$SP]['previsu_articles'] ? '</div>':'</a>')) .
+'
 	');
 	}
 	lang_select();
@@ -909,7 +991,7 @@ quete_condition_statut('evenements.statut','!','publie',''), (!(is_array(@$Pile[
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',114,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_evenement',121,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -990,7 +1072,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',125,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements',132,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1069,7 +1151,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',138,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_ls_evenements_p',145,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1151,7 +1233,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',157,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agendaG',165,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1233,7 +1315,7 @@ quete_condition_statut('evenements.statut','!','publie',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',169,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_agenda',177,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	$SP++;
@@ -1280,7 +1362,7 @@ function BOUCLE_side_articleshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pi
 	static $connect;
 	$command['connect'] = $connect = '';
 	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
-	$command['si'][] = interdire_scripts(($Pile[$SP]['side_articles'] == 'on'));
+	$command['si'][] = interdire_scripts((($Pile[$SP]['side_articles']) ?' ' :''));
 
 	if (!isset($command['table'])) {
 		$command['table'] = 'articles';
@@ -1291,7 +1373,6 @@ function BOUCLE_side_articleshtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pi
 		$command['select'] = array("0+articles.titre AS num",
 		"articles.titre",
 		"articles.id_article",
-		"articles.id_rubrique",
 		"articles.texte",
 		"articles.lang");
 		$command['orderby'] = array('num', 'articles.titre');
@@ -1311,7 +1392,7 @@ quete_condition_postdates('articles.date',''),
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',184,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_side_articles',192,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1325,15 +1406,6 @@ quete_condition_postdates('articles.date',''),
 <a href="' .
 vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_article'], 'article', '', '', true))) .
 '" class="blocklink">
-	' .
-(($t1 = strval(interdire_scripts(((($Pile[$SP-2]['afficher_logos'] == 'on')) ?' ' :''))))!=='' ?
-		($t1 . (	'<span class="logo">' .
-	filtrer('image_graver',filtrer('image_reduire',
-((!is_array($l = quete_logo('id_rubrique', 'ON', $Pile[$SP]['id_rubrique'],$Pile[$SP]['id_rubrique'], 0))) ? '':
- ("<img class=\"spip_logos\" alt=\"\" src=\"$l[0]\"" . $l[2] .  ($l[1] ? " onmouseover=\"this.src='$l[1]'\" onmouseout=\"this.src='$l[0]'\"" : "") . ' />')),'80')) .
-	'</span>')) :
-		'') .
-'
 	<i class="icon-file right"></i>
 	<h2>' .
 interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
@@ -1365,10 +1437,7 @@ function BOUCLE_sousrubriques_sidehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache,
 		$in[]= $a;
 	else $in = array_merge($in, $a);
 	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
-	$command['si'][] = interdire_scripts((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true) != '1'));
-
-	if (!isset($si_init)) { $command['si'] = array(); $si_init = true; }
-	$command['si'][] = interdire_scripts((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true) != '2'));
+	$command['si'][] = interdire_scripts(((entites_html(table_valeur(@$Pile[0], (string)'cal', null),true)) ?'' :' '));
 
 	if (!isset($command['table'])) {
 		$command['table'] = 'rubriques';
@@ -1397,7 +1466,7 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 	$iter = IterFactory::create(
 		"SQL",
 		$command,
-		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',182,$GLOBALS['spip_lang'])
+		array('theme-v1/sommaire.html','html_cbd2d3ffab9778ea88b5c59ada59a2c3','_sousrubriques_side',190,$GLOBALS['spip_lang'])
 	);
 	if (!$iter->err()) {
 	lang_select($GLOBALS['spip_lang']);
@@ -1411,11 +1480,9 @@ quete_condition_statut('rubriques.statut','!','publie',''), (!(is_array($Pile[$S
 ' .
 (($t1 = BOUCLE_side_articleshtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP))!=='' ?
 		((	'
-<div class="blocklink"> <a href="' .
-		vider_url(urlencode_1738(generer_url_entite($Pile[$SP]['id_rubrique'], 'rubrique', '', '', true))) .
-		'"><i class="icon-folder-close right"></i><h2>' .
+<div class="blocklink"><i class="icon-folder-open right"></i><h2>' .
 		interdire_scripts(typo(supprimer_numero($Pile[$SP]['titre']), "TYPO", $connect, $Pile[0])) .
-		'</h2></a>
+		'</h2>
 ') . $t1 . '
 </div>
 ') :
@@ -1448,7 +1515,6 @@ function BOUCLE_rubriquehtml_cbd2d3ffab9778ea88b5c59ada59a2c3(&$Cache, &$Pile, &
 		"rubriques.id_parent",
 		"rubriques.afficher_logos",
 		"rubriques.tout_agenda",
-		"rubriques.masquer_calendrier",
 		"rubriques.lang",
 		"rubriques.titre");
 		$command['orderby'] = array();
@@ -1498,11 +1564,7 @@ BOUCLE_ariane_evthtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons,
 
 
 	
-<div class="content' .
-(($t1 = strval(interdire_scripts(((($Pile[$SP]['masquer_calendrier'] == 'on')) ?' ' :''))))!=='' ?
-		(' ' . $t1 . 'full-width') :
-		'') .
-'" id="content">
+<div class="content">
 	' .
 (($t1 = BOUCLE_contenuhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, $Numrows, $SP))!=='' ?
 		('
@@ -1551,15 +1613,12 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 '
 	
 </div>
-<div class="aside ' .
-(($t1 = strval(interdire_scripts(((($Pile[$SP]['masquer_calendrier'] == 'on')) ?' ' :''))))!=='' ?
-		($t1 . 'hidden') :
-		'') .
-'">
+
+<div class="aside">
 
 ' .
 
-'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',155,$GLOBALS[\'spip_lang\'])), _request("connect"));
+'<'.'?php echo recuperer_fond( ' . argumenter_squelette('inc/random-artist') . ', array_merge('.var_export($Pile[0],1).',array(\'lang\' => ' . argumenter_squelette($GLOBALS["spip_lang"]) . ')), array("compil"=>array(\'theme-v1/sommaire.html\',\'html_cbd2d3ffab9778ea88b5c59ada59a2c3\',\'\',163,$GLOBALS[\'spip_lang\'])), _request("connect"));
 ?'.'>
 
 ' .
@@ -1613,7 +1672,7 @@ BOUCLE_evenementhtml_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons, 
 
 //
 // Fonction principale du squelette theme-v1/sommaire.html
-// Temps de compilation total: 535.031 ms
+// Temps de compilation total: 539.031 ms
 //
 
 function html_cbd2d3ffab9778ea88b5c59ada59a2c3($Cache, $Pile, $doublons=array(), $Numrows=array(), $SP=0) {

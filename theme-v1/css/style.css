@@ -277,19 +277,11 @@ a:hover {
 	*height:100%;
 	 float:left;
 }
-
-.content.full-width {
-	padding:0;
-	width:100%;
-}
 .aside {
 	width:251px;
 	margin-top:8px;
 	float:right;
 	font-size:12px;
-}
-.aside.hidden {
-	display:none;
 }
 /*========== /Container ==========*/
 

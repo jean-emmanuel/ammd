@@ -74,7 +74,7 @@
 
 
 	
-<div class="content[ (#MASQUER_CALENDRIER||=={on}|oui)full-width]" id="content">
+<div class="content">
 	<B_contenu>
 	<BOUCLE_contenu(ARTICLES) {id_rubrique?}{id_article?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par date}{inverse}>
 	[(#TOTAL_BOUCLE|=={1}|oui)
@@ -99,14 +99,21 @@
 	
 	<B_sousrubriques>
 	[(#GET{contenu}|oui)<div class="spacer"></div>]
-	<BOUCLE_sousrubriques(RUBRIQUES) {id_parent?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par num titre, titre}>
-	<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="blocklink">
+	<BOUCLE_sousrubriques(RUBRIQUES){id_parent?}{side_articles!=on}{si #ENV{cal}|non}{par num titre, titre}>
+	[(#PREVISU_ARTICLES|?{<div class="blocklink">,<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="blocklink">})]
 		[(#_rubrique:AFFICHER_LOGOS|=={on}|oui)<span class="logo">[(#LOGO_RUBRIQUE_RUBRIQUE|image_reduire{80})]</span>]
-		<i class="icon-folder-close right"></i>
+		<i class="icon-folder-[(#PREVISU_ARTICLES|?{open,close})] right"></i>
 		<h2>#TITRE</h2>
-		[<p>(#TEXTE|couper{150}|textebrut)</p>]
-
-	</a>
+		[<p>(#TEXTE|couper{150}|textebrut)</p>][(#PREVISU_ARTICLES|oui)</a>]
+		<BOUCLE_previsu_articles(ARTICLES) {id_rubrique} {si #PREVISU_ARTICLES|oui}{par num titre, titre}>
+		<a href="#URL_ARTICLE" class="blocklink">
+			<i class="icon-file right"></i>
+			<h2>#TITRE</h2>
+			[(#TEXTE|couper{300})]
+			<div class="clear"></div>
+		</a>
+		</BOUCLE_previsu_articles>
+	[(#PREVISU_ARTICLES|?{</div>,</a>})]
 	</BOUCLE_sousrubriques>
 	</B_sousrubriques>
 	
@@ -150,7 +157,8 @@
 	</B_ls_evenements_p>
 	
 </div>
-<div class="aside [(#MASQUER_CALENDRIER|=={on}|oui)hidden]">
+
+<div class="aside">
 
 <INCLURE{fond=inc/random-artist,env} />
 
@@ -180,12 +188,11 @@
 
 
 <B_sousrubriques_side>
-<BOUCLE_sousrubriques_side(RUBRIQUES) {id_parent?}{si #ENV{cal}|!={1}}{si #ENV{cal}|!={2}} {par num titre, titre}>
+<BOUCLE_sousrubriques_side(RUBRIQUES) {id_parent?}{si #ENV{cal}|non} {par num titre, titre}>
 <B_side_articles>
-<div class="blocklink"> <a href="#URL_RUBRIQUE"><i class="icon-folder-close right"></i><h2>#TITRE</h2></a>
-<BOUCLE_side_articles(ARTICLES) {id_rubrique} {si #SIDE_ARTICLES|=={on}}{par num titre, titre}>
+<div class="blocklink"><i class="icon-folder-open right"></i><h2>#TITRE</h2>
+<BOUCLE_side_articles(ARTICLES) {id_rubrique} {si #SIDE_ARTICLES|oui}{par num titre, titre}>
 <a href="#URL_ARTICLE" class="blocklink">
-	[(#_rubrique:AFFICHER_LOGOS|=={on}|oui)<span class="logo">[(#LOGO_RUBRIQUE_RUBRIQUE|image_reduire{80})]</span>]
 	<i class="icon-file right"></i>
 	<h2>#TITRE</h2>
 	#TEXTE
