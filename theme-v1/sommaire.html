@@ -64,7 +64,7 @@
 
 <div class="wrapper wrapper-content"><BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>
 
-<a class="minmax right" href="#"><i class="icon-eye-open"></i></a>
+<a class="minmax right" href="#"><i class="icon-collapse-top"></i></a>
 <div class="ariane">
 <BOUCLE_ariane(HIERARCHIE){id_article}{id_rubrique!=1}>[(#COMPTEUR_BOUCLE|=={1}|oui)<a href="#URL_SITE_SPIP/"><i class="icon-home"><span>Accueil</span></i></a>] &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><BOUCLE_ariane_article(ARTICLES) {id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui) &gt; <a href="#URL_ARTICLE">[(#TITRE|couper{80})]</a>]</BOUCLE_ariane_article></BOUCLE_ariane><a href="#URL_SITE_SPIP/"><i class="icon-home"><span>Accueil</span></i></a><//B_ariane><BOUCLE_ariane_evt(EVENEMENTS){id_evenement=#ENV{id_evenement}}> &gt; <a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT">#TITRE</a></BOUCLE_ariane_evt>[(#ENV{cal}|=={2}|oui) &gt; <a href="#URL_SITE_SPIP/?cal=2">Calendrier AMMD</a>]
 </div>
