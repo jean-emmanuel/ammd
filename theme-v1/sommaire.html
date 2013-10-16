@@ -31,7 +31,7 @@
 
 <div class="header">
 	<div class="wrapper">
-		<a class="site_title" href="#URL_SITE_SPIP">
+		<a class="site_title" href="./">
 			<span class="title">AMMD</span>
 			<span class="subtitle">#SLOGAN_SITE_SPIP</span>
 		</a>
@@ -66,7 +66,7 @@
 
 <a class="minmax right" href="#"><i class="icon-collapse-top"></i></a>
 <div class="ariane">
-<BOUCLE_ariane(HIERARCHIE){id_article}{id_rubrique!=1}>[(#COMPTEUR_BOUCLE|=={1}|oui)<a href="#URL_SITE_SPIP/"><i class="icon-home"><span>Accueil</span></i></a>] &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><BOUCLE_ariane_article(ARTICLES) {id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui) &gt; <a href="#URL_ARTICLE">[(#TITRE|couper{80})]</a>]</BOUCLE_ariane_article></BOUCLE_ariane><a href="#URL_SITE_SPIP/"><i class="icon-home"><span>Accueil</span></i></a><//B_ariane><BOUCLE_ariane_evt(EVENEMENTS){id_evenement=#ENV{id_evenement}}> &gt; <a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT">#TITRE</a></BOUCLE_ariane_evt>[(#ENV{cal}|=={2}|oui) &gt; <a href="#URL_SITE_SPIP/?cal=2">Calendrier AMMD</a>]
+<BOUCLE_ariane(HIERARCHIE){id_article}{id_rubrique!=1}>[(#COMPTEUR_BOUCLE|=={1}|oui)<a href="./"><i class="icon-home"><span>Accueil</span></i></a>] &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><BOUCLE_ariane_article(ARTICLES) {id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui) &gt; <a href="#URL_ARTICLE">[(#TITRE|couper{80})]</a>]</BOUCLE_ariane_article></BOUCLE_ariane><a href="./"><i class="icon-home"><span>Accueil</span></i></a><//B_ariane><BOUCLE_ariane_evt(EVENEMENTS){id_evenement=#ENV{id_evenement}}> &gt; <a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT">#TITRE</a></BOUCLE_ariane_evt>[(#ENV{cal}|=={2}|oui) &gt; <a href="./?cal=2">Calendrier AMMD</a>]
 </div>
 
 
@@ -163,7 +163,7 @@
 
 <B_agendaG>
 <div class="blocklink">
-<a href="#URL_SITE_SPIP/?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
+<a href="./?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
 <BOUCLE_agendaG(EVENEMENTS){age_relatif_debut<=0}{par date}{si #TOUT_AGENDA|=={on}}{si #ENV{cal}|!={2}}>	
 <a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink[ (#EXPOSE{active})]" title="[(#DATE_DEBUT|affdate)]">
 <span class="agenda-title">#TITRE</span>
@@ -175,7 +175,7 @@
 
 <B_agenda>
 <div class="blocklink">
-<a href="#URL_SITE_SPIP/?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
+<a href="./?cal=2"><h2><i class="icon-calendar right"></i>Calendrier</h2></a>
 <BOUCLE_agenda(EVENEMENTS){age_relatif_debut<=0}{par date}{id_rubrique}{si #TOUT_AGENDA|!={on}}{si #ENV{cal}|!={2}}>	
 <a href="#URL_RUBRIQUE?cal=1&amp;id_evenement=#ID_EVENEMENT" class="blocklink[ (#EXPOSE{active})]" title="[(#DATE_DEBUT|affdate)]">
 <span class="agenda-title">#TITRE</span>
