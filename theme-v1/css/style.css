@@ -211,9 +211,9 @@ a:hover {
 }
 .submenu li {
 	background:#333;
-	border-bottom:1px solid #555;
-	border-left:1px solid #555;
-	border-right:1px solid #555;
+	border-bottom:1px solid #4D4D4D;
+	border-left:1px solid #4D4D4D;
+	border-right:1px solid #4D4D4D;
 	position:relative;
 }
 .submenu-item {
@@ -231,10 +231,10 @@ a:hover {
 	background:#888;
 }
 .submenu-item > a.active, .submenu-item > a:hover , .submenu-item > a:focus {
-	background:#555;
+	background:#5D5D5D;
 }
 .submenu-item a:hover  .submenu-arrow, .submenu-item a:focus  .submenu-arrow, .submenu-item a.active  .submenu-arrow {
-	border-bottom:6px solid #555;
+	border-bottom:6px solid #5D5D5D;
 }
 .submenu-arrow {
 	position:absolute;
