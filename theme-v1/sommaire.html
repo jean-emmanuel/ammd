@@ -105,7 +105,7 @@
 	<BOUCLE_sousrubriques(RUBRIQUES){id_parent?}{side_articles!=on}{si #ENV{cal}|non}{par num titre, titre}>
 	[(#PREVISU_ARTICLES|?{<div class="blocklink">,<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="blocklink">})]
 		[(#_rubrique:AFFICHER_LOGOS|=={on}|oui)<span class="logo">[(#LOGO_RUBRIQUE_RUBRIQUE|image_reduire{80})]</span>]
-		<i class="icon-folder-[(#PREVISU_ARTICLES|?{open,close})] right"></i>
+		[(#PREVISU_ARTICLES|?{<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]">,''})]<i class="icon-folder-[(#PREVISU_ARTICLES|?{open,close})] right"></i>[(#PREVISU_ARTICLES|?{</a>,''})]
 		<h2>#TITRE</h2>
 		[<p>(#TEXTE|couper{150}|textebrut)</p>][(#PREVISU_ARTICLES|oui)</a>]
 		<BOUCLE_previsu_articles(ARTICLES) {id_rubrique} {si #PREVISU_ARTICLES|oui}{par num titre, titre}>
