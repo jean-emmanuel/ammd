@@ -42,13 +42,13 @@
 	<div class="wrapper">
 		<ul id="navigation">
 		<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
-		<li class="menu-item">
+		<li class="menu-item[ (#EXPOSE|oui)active][ (#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}|=={#ID_RUBRIQUE}|oui)active]">
 		
-			<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item[ (#EXPOSE|oui)active][ (#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}|=={#ID_RUBRIQUE}|oui)active]"><span>#TITRE</span></a>
+			<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item"><span>#TITRE</span></a>
 		
 			<B_subnav><ul class="submenu">
-				<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}><li class="submenu-item">
-					<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]" class="item[ (#EXPOSE|oui)active]">[(#COMPTEUR_BOUCLE|=={1}|oui)<span class="submenu-arrow"></span>]<span>#TITRE</span></a>
+				<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}><li class="submenu-item[ (#EXPOSE|oui)active]">
+					<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE{#ID_RUBRIQUE}})]">[(#COMPTEUR_BOUCLE|=={1}|oui)<span class="submenu-arrow"></span>]<span>#TITRE</span></a>
 				</li></BOUCLE_subnav>
 			</ul></B_subnav>
 			

@@ -177,7 +177,6 @@ a:hover {
 	font-variant:small-caps;
 	z-index:10;
 	position:relative;
-	
 	box-shadow: 0px 1px 2px 0px #000;
 	-webkit-box-shadow: 0px 1px 2px 0px #000;
 	-moz-box-shadow: 0px 1px 2px 0px #000;
@@ -220,40 +219,38 @@ a:hover {
 	background:-webkit-linear-gradient(90deg,#292929,#333,#292929);
 	background:-o-linear-gradient(90deg,#292929,#333,#292929);
 	border-top:6px solid #aaa;
-}
-.submenu li {
-
 	border-bottom:1px solid #4D4D4D;
+}
+.submenu-item{
+	border-top:1px solid #4D4D4D;
+	border-bottom:1px solid #282828;
 	border-left:1px solid #4D4D4D;
 	border-right:1px solid #4D4D4D;
 	position:relative;
-}
-.submenu-item {
 	display:block;
 	min-height:30px;
 }
-.relative {
-	position:relative;
-	z-index:100;
-}
+
+
 .menu-item:hover .submenu {
 	display:block;
 }
-.menu-item > a.active, .menu-item > a:hover, .menu-item > a:focus {
+.menu-item.active, .menu-item:hover, .menu-item :focus {
 	background:#888;
 	background:linear-gradient(#777,#888);
 	background:-moz-linear-gradient(#777,#888);
 	background:-webkit-linear-gradient(#777,#888);
 	background:-o-linear-gradient(#777,#888);
 }
-.submenu-item > a.active, .submenu-item > a:hover , .submenu-item > a:focus {
+.submenu-item.active, .submenu-item:hover , .submenu-item :focus {
+	border-bottom-color:#5D5D5D;
 	background:#5D5D5D;
 	background:linear-gradient(90deg,#555,#5D5D5D,#555);
 	background:-moz-linear-gradient(90deg,#555,#5D5D5D,#555);
 	background:-webkit-linear-gradient(90deg,#555,#5D5D5D,#555);
 	background:-o-linear-gradient(90deg,#555,#5D5D5D,#555);
 }
-.submenu-item a:hover  .submenu-arrow, .submenu-item a:focus  .submenu-arrow, .submenu-item a.active  .submenu-arrow {
+.submenu-item:hover  .submenu-arrow, .submenu-item:focus  .submenu-arrow, .submenu-item.active  .submenu-arrow {
 	border-bottom:6px solid #5D5D5D;
 }
 .submenu-arrow {
