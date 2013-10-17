@@ -235,14 +235,14 @@ a:hover {
 .menu-item:hover .submenu {
 	display:block;
 }
-.menu-item.active, .menu-item:hover, .menu-item:focus {
+.menu-item.active, .menu-item:hover, .menu-item.focus {
 	background:#888;
 	background:linear-gradient(#777,#888);
 	background:-moz-linear-gradient(#777,#888);
 	background:-webkit-linear-gradient(#777,#888);
 	background:-o-linear-gradient(#777,#888);
 }
-.submenu-item.active, .submenu-item:hover , .submenu-item:focus {
+.submenu-item.active, .submenu-item:hover , .submenu-item.focus{
 	border-bottom-color:#5D5D5D;
 	background:#5D5D5D;
 	background:linear-gradient(90deg,#555,#5D5D5D,#555);

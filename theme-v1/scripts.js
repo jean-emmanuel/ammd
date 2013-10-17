@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('.blockquote > :last-child').addClass('last-child')
+	$('.nav a').focus(function(){$(this).parent('li').addClass('focus')});
+	$('.nav a').blur(function(){$(this).parent('li').removeClass('focus')});
 	$('.minmax').click(function(){
 		
 		if (!$('.wrapper-content').hasClass('mini')) {
