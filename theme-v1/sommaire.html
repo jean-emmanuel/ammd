@@ -195,13 +195,13 @@
 <B_sousrubriques_side>
 <BOUCLE_sousrubriques_side(RUBRIQUES) {id_parent?}{si #ENV{cal}|non} {par num titre, titre}>
 <B_side_articles>
-<div class="blocklink"><i class="icon-folder-open right"></i><h2>#TITRE</h2>
+<div class="blocklink"><a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"><i class="icon-folder-open right"></i></a><h2>#TITRE</h2>
 <BOUCLE_side_articles(ARTICLES) {id_rubrique} {si #SIDE_ARTICLES|oui}{par num titre, titre}>
-<a href="#URL_ARTICLE" class="blocklink">
-	<i class="icon-file right"></i>
+<div class="blocklink">
+	<a href="#URL_ARTICLE"><i class="icon-file right"></i></a>
 	<h2>#TITRE</h2>
 	#TEXTE
-</a>
+</div>
 </BOUCLE_side_articles>
 </div>
 </B_side_articles>
