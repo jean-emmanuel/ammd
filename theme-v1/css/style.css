@@ -237,6 +237,10 @@ a:hover {
 }
 .menu-item > a.active, .menu-item > a:hover, .menu-item > a:focus {
 	background:#888;
+	background:linear-gradient(#777,#888);
+	background:-moz-linear-gradient(#777,#888);
+	background:-webkit-linear-gradient(#777,#888);
+	background:-o-linear-gradient(#777,#888);
 }
 .submenu-item > a.active, .submenu-item > a:hover , .submenu-item > a:focus {
 	background:#5D5D5D;
