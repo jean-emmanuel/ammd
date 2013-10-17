@@ -92,7 +92,7 @@
 		[<span class="logo">(#LOGO_ARTICLE_RUBRIQUE|image_reduire{80})</span>]
 		<i class="icon-file right"></i>
 		<h2>#TITRE[ (#ID_RUBRIQUE|=={17}|oui) <br/><span class="article-date">[(#DATE|affdate)]]</span></h2>
-		<p class="preview">[(#TEXTE|couper{150}|textebrut)]</p>
+		<p [(#LOGO_ARTICLE_RUBRIQUE|oui)class="preview"]>[(#TEXTE|couper{150}|textebrut)]</p>
 		<div class="clear"></div>
 	</a>
 	]
