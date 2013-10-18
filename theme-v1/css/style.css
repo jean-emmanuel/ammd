@@ -122,9 +122,10 @@ i span {
 	line-height:70px;
 	font-weight:bold;
 	letter-spacing:-15px;
+	position:absolute;
 	left:0;
-	bottom:0;
-		margin-left:8px;
+	bottom:10px;
+	margin-left:8px;
 }
 .subtitle {
 	position:absolute;
@@ -235,7 +236,15 @@ a:hover {
 .menu-item:hover .submenu {
 	display:block;
 }
-.menu-item.active, .menu-item:hover, .menu-item.focus {
+
+.menu-item:hover, .menu-item.focus {
+	background:#777;
+	background:linear-gradient(#666,#777);
+	background:-moz-linear-gradient(#666,#777);
+	background:-webkit-linear-gradient(#666,#777);
+	background:-o-linear-gradient(#666,#777);
+}
+.menu-item.active {
 	background:#888;
 	background:linear-gradient(#777,#888);
 	background:-moz-linear-gradient(#777,#888);
