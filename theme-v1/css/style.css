@@ -537,10 +537,6 @@ input[type="submit"],input[type="reset"]{font-size:inherit}
 .lte7 .formulaire_spip textarea{margin-left:10px}
 /*========== /Form ==========*/
 
-#navigation {
-	min-height:30px;
-	overflow:auto;
-}
 .selectnav {
 	display:none;
 	width:100%;
@@ -625,7 +621,7 @@ iframe {
 }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 600px) {
 .selectnav {
 	display:block;
 }
@@ -636,6 +632,7 @@ iframe {
     width:auto;
     padding:0px;
 }
+@media only screen and (max-width: 320px) {
 .swiper-slide img {
 	width:auto;
 	height:100%;
