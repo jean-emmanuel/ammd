@@ -554,17 +554,6 @@ input[type="submit"],input[type="reset"]{font-size:inherit}
 	padding:6px 8px;
 }
 
-.nav.mobile {
-    width:auto;
-    padding:0px;
-}
-.mobile #navigation {
-	display:none;
-}
-.mobile .selectnav  {
-	display:block;
-}
-
 @media only screen and (max-width: 985px) {
 body {
 	font-size:12px;
