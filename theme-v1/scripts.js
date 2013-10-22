@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$('.blockquote > :last-child').addClass('last-child')
 	$('.nav a').focus(function(){$(this).parent('li').addClass('focus')});
 	$('.nav a').blur(function(){$(this).parent('li').removeClass('focus')});
+	if ($('#navigation').height()>30) {$('.nav').addClass('mobile')}
 	$('.minmax').click(function(){
 		
 		if (!$('.wrapper-content').hasClass('mini')) {
@@ -14,4 +15,4 @@ $(document).ready(function(){
 		}
 		return false
 	});
-})	
+})
