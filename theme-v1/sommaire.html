@@ -2,13 +2,13 @@
 <html lang="fr">
 <BOUCLE_rubrique_courante_article(ARTICLES){id_article?}>[(#ENV{id_article}|!={""}|oui)#SET{rubrique_courante,#ID_RUBRIQUE}]</BOUCLE_rubrique_courante_article>
 <head>
-	<title><BOUCLE_title(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>[(#ENV{cal}|=={2}|oui)Calendrier ][(#ID_RUBRIQUE|=={"1"}|oui)#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP]<BOUCLE_titleA(ARTICLES){id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui)#TITRE]</BOUCLE_titleA>[(#ID_RUBRIQUE|!={"1"}|oui)#_title:TITRE]<//B_titleA>[(#ID_RUBRIQUE|!={"1"}|oui) - #NOM_SITE_SPIP]</BOUCLE_title></title>
+	<title><BOUCLE_title(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>[(#ENV{cal}|=={2}|oui)Calendrier ][(#ID_RUBRIQUE|=={"1"}|oui)#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP]<BOUCLE_titleA(ARTICLES){id_rubrique}{id_article=#ENV{id_article}}>[(#TOTAL_BOUCLE|=={1}|oui)#TITRE#SET{extrait,#TEXTE|textebrut|couper{250}}#SET{logo,#LOGO_ARTICLE|image_reduire{300}|extraire_attribut{src}|url_absolue}]</BOUCLE_titleA>[(#ID_RUBRIQUE|!={"1"}|oui)#_title:TITRE]<//B_titleA>[(#ID_RUBRIQUE|!={"1"}|oui) - #NOM_SITE_SPIP]</BOUCLE_title></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
 	<meta name="author" content="Jean-Emmanuel Doucet">
-	<meta name="description" content="<BOUCLE_desc(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>[(#TEXTE|textebrut)]</BOUCLE_desc>[(#DESCRIPTIF_SITE_SPIP|couper{250}|textebrut)]<//B_desc>" />
+	<meta name="description" content="<BOUCLE_desc(RUBRIQUES){id_rubrique=#GET{rubrique_courante}|sinon{#ENV{id_rubrique,1}}}>[(#TEXTE|textebrut)]</BOUCLE_desc>[(#GET{extrait}|?{#GET{extrait},#DESCRIPTIF_SITE_SPIP|couper{250}|textebrut})]<//B_desc>" />
 	<meta name="viewport" content="width=device-width" />
-	<meta property="og:image" content="[(#CHEMIN{css/logo.png}|url_absolue)]"/>
+	<meta property="og:image" content="[(#GET{logo}|?{#GET{logo},#CHEMIN{css/logo.png}|url_absolue})]"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link rel="alternate" type="application/rss+xml" title="Flux RSS (Actualités)" href="?page=backend" />
@@ -22,7 +22,7 @@
 	<script src="#CHEMIN{scripts.js}" type="text/javascript"></script>
 	<script src="#CHEMIN{swiper/idangerous.swiper-2.1.min.js}" type="text/javascript"></script>
 	<script src="#CHEMIN{simplebox/simplebox.js}" type="text/javascript"></script>
-	#FILTRE{compacte_head}
+	
 	</head>
 <body>
 
