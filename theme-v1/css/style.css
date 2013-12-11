@@ -551,6 +551,10 @@ input[type="submit"],input[type="reset"]{font-size:inherit}
 .lte7 .formulaire_spip textarea{margin-left:10px}
 /*========== /Form ==========*/
 
+#jwSBimage {
+	background-size:contain!important;
+}
+
 .selectnav {
 	display:none;
 	width:100%;
