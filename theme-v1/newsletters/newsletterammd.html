@@ -17,7 +17,7 @@
 	table#itemcontentlist tr td a:link, table#itemcontentlist tr td a:visited, table#itemcontentlist tr td a:active {color: #333;text-decoration: none;font-weight:bold;border-bottom:1px dotted;}
 	table#itemcontentlist tr td a:hover {color:#9B4D4D;}
 	img {border: none;}
-	#emailbody {max-width: 800px;text-align: left;}
+	#emailbody {max-width: 640px;text-align: left;}
 	@media only screen and (max-width: 640px) {
 		#emailbody {width: auto !important;margin:0 1em !important;}
 		img {max-width: 100% !important;}
@@ -25,19 +25,19 @@
 </style>
 <center>
 <div xmlns="http://www.w3.org/1999/xhtml" id="emailbody"
-     style="margin:0 2em;font-family:sans-serif;line-height:16px;font-size:14px;color:#333;">
+     style="margin:0 2em;font-family:sans-serif;line-height:16px;font-size:13px;color:#333;">
 	<table style="border:0;padding:0;margin:0;width:100%">
 		<tr>
 			<td style="vertical-align:middle" width="100%">
 				<h1 style="margin:0;">
 					<a
 						style="font-size:18px;font-family:sans-serif;font-weight:nold;text-decoration:none;font-variant:small-caps"
-						href="#URL_SITE_SPIP" title="(URL_SITE_SPIP)">
+						href="#URL_SITE_SPIP" title="#NOM_SITE_SPIP">
 						[(#LOGO_SITE_SPIP|image_reduire{100,200}
 										|inserer_attribut{id,feedimage}
 										|inserer_attribut{style,float:right;padding:0 0 10px 3px;border:0;})]
 						[(#CHAPO|textebrut|sinon{AMMD News})]</a>
-						<br/><span style="font-size:13px;font-weight:normal;">#SLOGAN_SITE_SPIP</span>
+						<br/><span style="font-size:14px;font-weight:normal;">#SLOGAN_SITE_SPIP</span>
 				</h1>
 			</td>
 		</tr>
@@ -48,7 +48,7 @@
 			<td style="margin-bottom:0;line-height:1.4em;">
 
 				<div
-					style="margin:0;font-family:sans-serif;line-height:140%;font-size:14px;color:#333;">
+					style="margin:0;font-family:sans-serif;line-height:140%;font-size:13px;color:#333;">
 					[(#LOGO_NEWSLETTER|image_reduire{100,200}
 					|inserer_attribut{alt,''}
 					|inserer_attribut{border,'0'}
@@ -61,7 +61,7 @@
 					]
 					[<br/>
 					<hr/>
-					<div class="notes">(#NOTES)</div>
+					<div class="notes">(#NOTES|replace{<p>,""}|replace{</p>,""})</div>
 					]
 				</div>
 			</td>
