@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>#TITRE</title>
+	<title>[AMMD News] [(#TITRE|textebrut)]</title>
 </head>
 <body>
 <style type="text/css">
@@ -25,18 +25,19 @@
 </style>
 <center>
 <div xmlns="http://www.w3.org/1999/xhtml" id="emailbody"
-     style="margin:0 2em;font-family:Georgia,Helvetica,Arial,Sans-Serif;line-height:16px;font-size:14px;color:#333;">
+     style="margin:0 2em;font-family:sans-serif;line-height:16px;font-size:14px;color:#333;">
 	<table style="border:0;padding:0;margin:0;width:100%">
 		<tr>
 			<td style="vertical-align:middle" width="100%">
 				<h1 style="margin:0;">
 					<a
-						style="font-size:22px;font-family:Verdana, Arial, Helvetica, sans-serif;font-weight:nold;text-decoration:none;font-variant:small-caps"
+						style="font-size:18px;font-family:sans-serif;font-weight:nold;text-decoration:none;font-variant:small-caps"
 						href="#URL_SITE_SPIP" title="(URL_SITE_SPIP)">
 						[(#LOGO_SITE_SPIP|image_reduire{100,200}
 										|inserer_attribut{id,feedimage}
 										|inserer_attribut{style,float:right;padding:0 0 10px 3px;border:0;})]
-						#TITRE</a>
+						[(#CHAPO|textebrut|sinon{AMMD News})]</a>
+						<br/><span style="font-size:13px;font-weight:normal;">#SLOGAN_SITE_SPIP</span>
 				</h1>
 			</td>
 		</tr>
@@ -47,7 +48,7 @@
 			<td style="margin-bottom:0;line-height:1.4em;">
 
 				<div
-					style="margin:0;font-family:Georgia,Helvetica,Arial,Sans-Serif;line-height:140%;font-size:14px;color:#333;">
+					style="margin:0;font-family:sans-serif;line-height:140%;font-size:14px;color:#333;">
 					[(#LOGO_NEWSLETTER|image_reduire{100,200}
 					|inserer_attribut{alt,''}
 					|inserer_attribut{border,'0'}
@@ -55,9 +56,6 @@
 					100%;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;'}
 					|inserer_attribut{class,logo})]
 
-					[
-					<div class='chapo'>(#CHAPO)</div>
-					]
 					[
 					<div class='texte'>(#TEXTE)</div>
 					]
@@ -72,20 +70,21 @@
 	<table style="border-top:1px solid #999;padding-top:4px;margin-top:1.5em;width:100%" id="footer">
 		<tr>
 			<td
-				style="text-align:left;font-family:Helvetica,Arial,Sans-Serif;font-size:11px;margin:0 6px 1.2em 0;color:#555;">
-				Veuillez ne pas répondre à ce mail, vous pouvez en revanche prendre contact directement avec un membre de l'<a href="#URL_RUBRIQUE{32}">équipe</a>.
-				Vous êtes inscrit pour recevoir des nouvelles par mail de l'<a href="#URL_SITE_SPIP">AMMD</a>
+				style="text-align:left;font-family:sans-serif;font-size:12px;margin:0 6px 1.2em 0;color:#555;">
+				Veuillez ne pas répondre à ce mail, contactez plutôt un membre de <a href="#URL_RUBRIQUE{32}">l'équipe</a>.
+				<br/>
+				Vous êtes inscrit pour recevoir des nouvelles par mail de l'<a href="#URL_SITE_SPIP">AMMD</a>.
 				<br/>
 				<span class="unsubscribe_link">Vous pouvez vous désinscrire à tout moment en <a href="@url_unsubscribe@">cliquant ici</a>.</span>
 			</td>
 			<td
-				style="font-family:Helvetica,Arial,Sans-Serif;font-size:11px;margin:0 6px 1.2em 0;color:#333;text-align:right;vertical-align:top">
+				style="font-family:sans-serif;font-size:11px;margin:0 6px 1.2em 0;color:#333;text-align:right;vertical-align:top">
 
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2"
-			    style="text-align:left;font-family:Helvetica,Arial,Sans-Serif;font-size:11px;margin:0 6px 1.2em 0;color:#333;">
+			    style="text-align:left;font-family:sans-serif;font-size:12px;margin:0 6px 1.2em 0;color:#333;">
 
 			</td>
 		</tr>
