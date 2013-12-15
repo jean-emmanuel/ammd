@@ -1,7 +1,7 @@
 <BOUCLE_rem(CONDITION){si #REM}>
 <!-- titre=Newsletter AMMD v2 -->
 </BOUCLE_rem>
-<BOUCLE_newsletter(NEWSLETTERS){id_newsletter}{statut?}>
+<BOUCLE_newsletter(ARTICLES){id_article=#ENV{id_newsletter}}{statut?}>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -45,7 +45,7 @@
 				color:#444 !important;
 				display:block;
 				font-family:Helvetica;
-				font-size:26px;
+				font-size:22px;
 				font-style:normal;
 				font-weight:bold;
 				line-height:100%;
@@ -191,6 +191,15 @@
 				max-width:560px;
 			}
 
+			.spip_note_ref {
+				font-size:11px;
+				top:-4px;
+				position: relative;
+			}
+			.spip_note {
+				vertical-align:middle;
+				text-decoration:none!important;
+			}
 			/* ========== Footer Styles ========== */
 
 			#templateFooter{
@@ -218,7 +227,7 @@
 
 		</style>
 		<noscript type="text/css">
-            @media only screen and (max-width: 480px){
+            @media only screen and (max-width: 640px){
 				/* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
 				body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
                 body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
@@ -268,10 +277,10 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
                                         <tr>
                                             <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
-                                                #CHAPO
+                                                Newsletter du  [(#DATE|affdate)]
                                             </td>
                                             <td valign="top" width="180" class="preheaderContent" style="text-align:right!important;padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
-                                                <a href="*|ARCHIVE|*" target="_blank">Voir la version en ligne</a>.
+                                                <a href="[(#URL_PAGE{newsletter}|parametre_url{id,#ID_NEWSLETTER}|url_absolue)]" target="_blank">Voir la version en ligne</a>.
                                             </td>
                                         </tr>
                                     </table>
@@ -284,7 +293,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                         <tr>
                                             <td valign="top" class="headerContent">
-                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" style="max-width:600px;" id="headerImage" /></a>
+                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" alt="#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP"style="max-width:600px;" id="headerImage" /></a>
                                             </td>
                                         </tr>
                                     </table>
@@ -298,14 +307,14 @@
                                         <tr>
                                             <td valign="top" class="bodyContent">
                                                 <h1>#TITRE</h1>
-                                                <h3>#CHAPO</h3>
-												[(#TEXTE|liens_sortants)]
+                                                [<h4>(#CHAPO|textebrut)</h4>]
+												[(#TEXTE|liens_ouvrants)]
                                             </td>
                                         </tr>
                                         [<tr style="border-top:1px solid #ccc;">
                                             <td valign="top" class="bodyContent">
                                                 <h3>Notes</h3>
-												(#NOTES|PtoBR)
+												(#NOTES|replace{<p>,""}|replace{</p>,""})
                                             </td>
                                         </tr>]
                                     </table>
@@ -318,12 +327,12 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
                                         <tr>
                                             <td valign="top" class="footerContent" style="padding-bottom:5px!important;">
-                                                <em>Copyleft AMMD 2013, contenu sous <a href="http://artlibre.org/" target="_blank">Licence Art Libre</a>.</em>
+                                                <em>Copyleft AMMD [(#ENV{date}|annee)] // <a href="http://artlibre.org/" target="_blank">Licence Art Libre</a>.</em>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td valign="top" class="footerContent" style="padding-top:0!important;">
-                                            	<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;<a href="#URL_RUBRIQUE{32}">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
+                                            	<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
                                             </td>
                                         </tr>
                                     </table>
