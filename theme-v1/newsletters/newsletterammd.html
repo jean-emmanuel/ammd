@@ -65,7 +65,7 @@
 				font-size:20px;
 				font-style:normal;
 				font-weight:bold;
-				line-height:110%;
+				line-height:100%;
 				letter-spacing:normal;
 				margin-top:0;
 				margin-right:0;
@@ -277,7 +277,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
                                         <tr>
                                             <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
-                                                Newsletter du  [(#DATE|affdate)]
+                                                Newsletter du [(#DATE|affdate)]
                                             </td>
                                             <td valign="top" width="180" class="preheaderContent" style="text-align:right!important;padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
                                                 <a href="[(#URL_PAGE{newsletter}|parametre_url{id,#ID_NEWSLETTER}|url_absolue)]" target="_blank">Voir la version en ligne</a>.
@@ -293,7 +293,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                         <tr>
                                             <td valign="top" class="headerContent">
-                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" alt="#NOM_SITE_SPIP - #SLOGAN_SITE_SPIP"style="max-width:600px;" id="headerImage" /></a>
+                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" alt="[(#NOM_SITE_SPIP)][ - (#SLOGAN_SITE_SPIP|textebrut)]"style="max-width:600px;text-indent:20px" id="headerImage" /></a>
                                             </td>
                                         </tr>
                                     </table>
