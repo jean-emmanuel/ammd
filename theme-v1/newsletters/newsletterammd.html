@@ -279,9 +279,9 @@
                                             <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
                                                 Newsletter du [(#DATE|affdate)]
                                             </td>
-                                            <td valign="top" width="180" class="preheaderContent" style="text-align:right!important;padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
+                                            [(#ENV{online}|non)<td valign="top" width="180" class="preheaderContent" style="text-align:right!important;padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
                                                 <a href="[(#URL_PAGE{newsletter}|parametre_url{id,#ID_NEWSLETTER}|url_absolue)]" target="_blank">Voir la version en ligne</a>.
-                                            </td>
+                                            </td>]
                                         </tr>
                                     </table>
                                     <!-- // END PREHEADER -->
@@ -332,7 +332,7 @@
                                         </tr>
                                         <tr>
                                             <td valign="top" class="footerContent" style="padding-top:0!important;">
-                                            	<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
+                                            	[(#ENV{online}|non)|=={newsletter}|non)<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;]<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
                                             </td>
                                         </tr>
                                     </table>
