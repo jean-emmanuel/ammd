@@ -88,6 +88,7 @@
 				margin-bottom:10px;
 				margin-left:0;
 				text-align:left;
+				font-variant:small-caps;
 			}
 
 
@@ -311,12 +312,25 @@
 												[(#TEXTE|liens_ouvrants)]
                                             </td>
                                         </tr>
-                                        [<tr style="border-top:1px solid #ccc;">
+                                        [<tr style="border-top:1px solid #ccc;border-bottom:1px solid #ccc;">
                                             <td valign="top" class="bodyContent">
                                                 <h3>Notes</h3>
 												(#NOTES|replace{<p>,""}|replace{</p>,""})
                                             </td>
                                         </tr>]
+                                        <B_agendaG>
+										<tr style="border-top:1px solid #fff;">
+											<td valign="top" class="bodyContent">
+												<h3>L'ammd en [(#DATE|nom_mois)]</h3>
+										<BOUCLE_agendaG(EVENEMENTS){mois_relatif_debut==0}{par date}{par date}>	
+												<div style="margin-bottom:10px;padding-left:10px;border-left:4px solid #ccc;">
+												<a href="[(#URL_RUBRIQUE|url_absolue)]?cal=1&amp;id_evenement=#ID_EVENEMENT" target="_blank">#TITRE</a>
+												<br/><em>[(#DATE_DEBUT|affdate)][ // (#ADRESSE|textebrut)]</em>
+												</div>	
+										</BOUCLE_agendaG>
+											</td>
+										</tr>
+										</B_agendaG>
                                     </table>
                                     <!-- // END BODY -->
                                 </td>
@@ -348,5 +362,6 @@
     </body>
 </html>
 </BOUCLE_newsletter>
+
 #FILTRE{newsletters_liens_absolus}
 #FILTRE{inline}
