@@ -1,7 +1,7 @@
 <BOUCLE_rem(CONDITION){si #REM}>
 <!-- titre=Newsletter AMMD v2 -->
 </BOUCLE_rem>
-<BOUCLE_newsletter(NEWSLETTERS){id_newsletter}{statut?}>
+<BOUCLE_newsletter(ARTICLES){id_article=#ENV{id_newsletter}}{statut?}>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -135,7 +135,25 @@
 				border-bottom:1px solid #CCCCCC;
 			}
 
+			.headerContent{
+				color:#505050;
+				font-family:Helvetica;
+				font-size:20px;
+				font-weight:bold;
+				line-height:100%;
+				padding-top:0;
+				padding-right:0;
+				padding-bottom:0;
+				padding-left:0;
+				text-align:left;
+				vertical-align:middle;
+			}
 
+			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+				color:#FFFFFF;
+				font-weight:normal;
+				text-decoration:none;
+			}
 
 			#headerImage{
 				height:auto;
@@ -221,8 +239,9 @@
 				/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
 
 				/* ======== Page Styles ======== */
-
-
+				#templateHeader {
+					height:80px;				
+				}
 				#templateContainer{
 					max-width:600px !important;
 					width:100% !important;
@@ -230,9 +249,7 @@
 
 
 				#headerImage{
-					height:auto !important;
-					max-width:600px !important;
-					width:100% !important;
+					display:none!important;
 				}
 
 
@@ -257,7 +274,7 @@
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN PREHEADER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
                                         <tr>
                                             <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
                                                 Newsletter du [(#DATE|affdate)]
@@ -273,10 +290,10 @@
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN HEADER // -->
-                                    <table background="#CHEMIN{newsletters/newsletterammd.png}" border="0" cellpadding="0" cellspacing="0" width="100%" height="80px" id="templateHeader">
+                                    <table background="#CHEMIN{newsletters/newsletterammd.png}" border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                         <tr>
                                             <td valign="top" class="headerContent">
-                                            	<a href="#URL_SITE_SPIP" style="display:block;outline:0;width:100%;height:100%"><span style="display:none">[(#NOM_SITE_SPIP)][ - (#SLOGAN_SITE_SPIP|textebrut)]</span></a>
+                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" alt="[(#NOM_SITE_SPIP)][ - (#SLOGAN_SITE_SPIP|textebrut)]"style="max-width:600px;text-indent:20px" id="headerImage" /></a>
                                             </td>
                                         </tr>
                                     </table>
