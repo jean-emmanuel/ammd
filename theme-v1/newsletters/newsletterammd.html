@@ -322,7 +322,7 @@
 										<tr style="border-top:1px solid #fff;">
 											<td valign="top" class="bodyContent">
 												<h3>L'ammd en [(#DATE|nom_mois)]</h3>
-										<BOUCLE_agendaG(EVENEMENTS){mois_relatif_debut==0}{par date}{par date}>	
+										<BOUCLE_agendaG(EVENEMENTS){mois_debut=#DATE|mois}{annee_debut=#DATE|annee}{par date}{par date}>	
 												<div style="margin-bottom:10px;padding-left:10px;border-left:4px solid #ccc;">
 												<a href="[(#URL_RUBRIQUE|url_absolue)]?cal=1&amp;id_evenement=#ID_EVENEMENT" target="_blank">#TITRE</a>
 												<br/><em>[(#DATE_DEBUT|affdate)][ // (#ADRESSE|textebrut)]</em>
@@ -346,7 +346,7 @@
                                         </tr>
                                         <tr>
                                             <td valign="top" class="footerContent" style="padding-top:0!important;">
-                                            	[(#ENV{online}|non)|=={newsletter}|non)<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;]<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
+                                            	[(#ENV{online}|non)<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;]<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
                                             </td>
                                         </tr>
                                     </table>
