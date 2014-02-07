@@ -3,7 +3,7 @@
 /***************************************************************************\
  *  SPIP, Systeme de publication pour l'internet                           *
  *                                                                         *
- *  Copyright (c) 2001-2012                                                *
+ *  Copyright (c) 2001-2014                                                *
  *  Arnaud Martin, Antoine Pitrou, Philippe Riviere, Emmanuel Saint-James  *
  *                                                                         *
  *  Ce programme est un logiciel libre distribue sous licence GNU/GPL.     *
@@ -52,16 +52,6 @@ function balise_COMPTEUR_ARTICLES_dist($p) {
 	return rindex_pile($p, 'compteur_articles', 'compteur_articles_filtres');
 }
 
-
-/**
- * Calculer l'initiale d'un nom
- *
- * @param <type> $nom
- * @return <type>
- */
-function initiale($nom){
-	return spip_substr(trim(strtoupper($nom)),0,1);
-}
 
 /**
  * Afficher l'initiale pour la navigation par lettres

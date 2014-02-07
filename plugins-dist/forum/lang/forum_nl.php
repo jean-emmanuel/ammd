@@ -11,7 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'aucun_message_forum' => 'Geen bericht in het forum',
 
 	// B
-	'bouton_radio_articles_futurs' => 'voor toekomstige artikels alleen (geen bewerking op de databank).',
+	'bouton_radio_articles_futurs' => 'alleen voor toekomstige artikels (geen bewerking op de databank).',
 	'bouton_radio_articles_tous' => 'voor alle artikels zonder uitzondering.',
 	'bouton_radio_articles_tous_sauf_forum_desactive' => 'voor alle artikels, behalve deze waarvan het forum is gedesactiveerd.',
 	'bouton_radio_enregistrement_obligatoire' => 'Registratie verplicht (om bijdragen te kunnen
@@ -51,9 +51,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'forum_ne_repondez_pas' => 'Niet reageren op deze mail, maar op het forum om het volgende adres :',
 	'forum_page_url' => '(Als je bericht naar een artikel op het web verwijst of naar een pagina die meer informatie bevat, kunt u hier de titel en de URL van deze webverwijzing invoeren.)',
 	'forum_permalink' => 'Permanente link naar het commentaar',
-	'forum_poste_par' => 'Bericht poste@parauteur@ als vervolg op je artikel « @titre@ » .', # MODIF
-	'forum_poste_par_court' => 'Message posté@parauteur@.', # NEW
-	'forum_poste_par_generique' => 'Message posté@parauteur@ (@objet@ « @titre@ »).', # NEW
+	'forum_poste_par' => 'bericht gepost @parauteur@ als vervolg van artikel « @titre@ » .',
+	'forum_poste_par_court' => 'Bericht gepost @parauteur@.',
+	'forum_poste_par_generique' => 'Bericht gepost @parauteur@ (@objet@ « @titre@ »).',
 	'forum_qui_etes_vous' => 'Wie ben je ?',
 	'forum_saisie_texte_info' => 'In dit formulier mag je de SPIP kortingen gebruiken <code>[->url] {{vet}} {cursief} <quote> <code></code> en de HTML codes <code><q> <del> <ins></code>. Om een paragraaf aan te maken, laat gewoon lege lijnen in.',
 	'forum_texte' => 'Tekst van je bericht',

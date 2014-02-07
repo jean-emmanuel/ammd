@@ -73,19 +73,23 @@ static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/urls_pipeline.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
 $inc=true;
 }
 $val = minipipe('forum_afficher_fiche_objet', $val);
 $val = minipipe('urls_afficher_fiche_objet', $val);
+$val = minipipe('mailshot_afficher_fiche_objet', $val);
 return $val;
 }
 // Pipeline afficher_complement_objet 
 function execute_pipeline_afficher_complement_objet(&$val){
 static $inc=null;
 if (!$inc){
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
+$val = minipipe('mailshot_afficher_complement_objet', $val);
 $val = minipipe('medias_afficher_complement_objet', $val);
 return $val;
 }
@@ -164,7 +168,6 @@ function execute_pipeline_affiche_milieu(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'compagnon/compagnon_pipelines.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/mots_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'msie_compat/msie_compat.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/organiseur_pipelines.php');
@@ -172,14 +175,13 @@ include_once_check(_ROOT_PLUGINS_DIST.'porte_plume/porte_plume_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/stats_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_pipeline.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
 $val = minipipe('f_queue_affiche_milieu', $val);
 $val = minipipe('compagnon_affiche_milieu', $val);
-$val = minipipe('medias_affiche_milieu', $val);
 $val = minipipe('mots_affiche_milieu', $val);
 $val = minipipe('msie_compat_affiche_milieu', $val);
 $val = minipipe('organiseur_affiche_milieu', $val);
@@ -187,9 +189,9 @@ $val = minipipe('porte_plume_affiche_milieu', $val);
 $val = minipipe('revisions_affiche_milieu', $val);
 $val = minipipe('sites_affiche_milieu', $val);
 $val = minipipe('stats_affiche_milieu', $val);
-$val = minipipe('agenda_affiche_milieu', $val);
 $val = minipipe('breves_affiche_milieu', $val);
 $val = minipipe('compresseur_affiche_milieu', $val);
+$val = minipipe('medias_affiche_milieu', $val);
 return $val;
 }
 // Pipeline affiche_pied 
@@ -249,7 +251,6 @@ function execute_pipeline_autoriser(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_autoriser.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_autoriser.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/mots_autoriser.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/organiseur_autoriser.php');
 include_once_check(_ROOT_PLUGINS_DIST.'petitions/petitions_autoriser.php');
@@ -259,16 +260,17 @@ include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_autoriser.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/stats_autoriser.php');
 include_once_check(_ROOT_PLUGINS_DIST.'svp/svp_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/urls_pipeline.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_autoriser.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_autorisations.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_autorisations.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/newsletters_autorisations.php');
+include_once_check(_ROOT_PLUGINS.'auto/partageur_3/partageur_autorisations.php');
 include_once_check(_ROOT_PLUGINS.'auto/champs_extras3/inc/cextras_autoriser.php');
 include_once_check(_ROOT_PLUGINS.'auto/champs_extras3_interface/inc/iextras_autoriser.php');
-include_once_check(_ROOT_PLUGINS.'auto/partageur_3/partageur_autorisations.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/formidable_autorisations.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_autoriser.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_autoriser.php');
 $inc=true;
 }
 $val = minipipe('forum_autoriser', $val);
-$val = minipipe('medias_autoriser', $val);
 $val = minipipe('mots_autoriser', $val);
 $val = minipipe('organiseur_autoriser', $val);
 $val = minipipe('petitions_autoriser', $val);
@@ -278,12 +280,14 @@ $val = minipipe('sites_autoriser', $val);
 $val = minipipe('stats_autoriser', $val);
 $val = minipipe('svp_autoriser', $val);
 $val = minipipe('urls_autoriser', $val);
-$val = minipipe('agenda_autoriser', $val);
+$val = minipipe('mailsubscribers_autoriser', $val);
+$val = minipipe('mailshot_autoriser', $val);
+$val = minipipe('newsletters_autoriser', $val);
+$val = minipipe('partageur_autoriser', $val);
 $val = minipipe('cextras_autoriser', $val);
 $val = minipipe('iextras_autoriser', $val);
-$val = minipipe('partageur_autoriser', $val);
-$val = minipipe('formidable_autoriser', $val);
 $val = minipipe('breves_autoriser', $val);
+$val = minipipe('medias_autoriser', $val);
 return $val;
 }
 // Pipeline base_admin_repair 
@@ -296,20 +300,20 @@ static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_RESTREINT.'/inc/pipelines_ecrire.php');
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_pipelines.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/stats_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_pipelines.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
 $val = minipipe('f_boite_infos', $val);
 $val = minipipe('forum_boite_infos', $val);
-$val = minipipe('medias_boite_infos', $val);
 $val = minipipe('revisions_boite_infos', $val);
 $val = minipipe('sites_boite_infos', $val);
 $val = minipipe('stats_boite_infos', $val);
 $val = minipipe('breves_boite_infos', $val);
+$val = minipipe('medias_boite_infos', $val);
 return $val;
 }
 // Pipeline ajouter_menus 
@@ -356,6 +360,7 @@ include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/stats_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_pipeline.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
 $val = minipipe('forum_configurer_liste_metas', $val);
@@ -368,6 +373,7 @@ $val = minipipe('sites_configurer_liste_metas', $val);
 $val = minipipe('stats_configurer_liste_metas', $val);
 $val = minipipe('breves_configurer_liste_metas', $val);
 $val = minipipe('compresseur_configurer_liste_metas', $val);
+$val = minipipe('medias_configurer_liste_metas', $val);
 return $val;
 }
 // Pipeline compter_contributions_auteur 
@@ -395,7 +401,6 @@ function execute_pipeline_declarer_tables_interfaces(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
 include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
@@ -403,15 +408,15 @@ include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
 include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
 include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/base/urls.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/base/agenda_evenements.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
 include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/base/formidable_tables.php');
-include_once_check(_ROOT_PLUGINS.'auto/transaction/base/transaction.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 $inc=true;
 }
 $val = minipipe('forum_declarer_tables_interfaces', $val);
-$val = minipipe('medias_declarer_tables_interfaces', $val);
 $val = minipipe('mots_declarer_tables_interfaces', $val);
 $val = minipipe('organiseur_declarer_tables_interfaces', $val);
 $val = minipipe('petitions_declarer_tables_interfaces', $val);
@@ -419,11 +424,12 @@ $val = minipipe('revisions_declarer_tables_interfaces', $val);
 $val = minipipe('sites_declarer_tables_interfaces', $val);
 $val = minipipe('svp_declarer_tables_interfaces', $val);
 $val = minipipe('urls_declarer_tables_interfaces', $val);
-$val = minipipe('agenda_declarer_tables_interfaces', $val);
+$val = minipipe('mailsubscribers_declarer_tables_interfaces', $val);
+$val = minipipe('mailshot_declarer_tables_interfaces', $val);
+$val = minipipe('newsletters_declarer_tables_interfaces', $val);
 $val = minipipe('partageur_declarer_tables_interfaces', $val);
-$val = minipipe('formidable_declarer_tables_interfaces', $val);
-$val = minipipe('transaction_declarer_tables_interfaces', $val);
 $val = minipipe('breves_declarer_tables_interfaces', $val);
+$val = minipipe('medias_declarer_tables_interfaces', $val);
 $val = minipipe('cextras_declarer_champs_interfaces_apres_les_autres', $val);
 return $val;
 }
@@ -432,31 +438,33 @@ function execute_pipeline_declarer_tables_objets_sql(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
 include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
 include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/base/agenda_evenements.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
 include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/base/formidable_tables.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 $inc=true;
 }
 $val = minipipe('forum_declarer_tables_objets_sql', $val);
-$val = minipipe('medias_declarer_tables_objets_sql', $val);
 $val = minipipe('mots_declarer_tables_objets_sql', $val);
 $val = minipipe('organiseur_declarer_tables_objets_sql', $val);
 $val = minipipe('petitions_declarer_tables_objets_sql', $val);
 $val = minipipe('revisions_declarer_tables_objets_sql', $val);
 $val = minipipe('sites_declarer_tables_objets_sql', $val);
 $val = minipipe('svp_declarer_tables_objets_sql', $val);
-$val = minipipe('agenda_declarer_tables_objets_sql', $val);
+$val = minipipe('mailsubscribers_declarer_tables_objets_sql', $val);
+$val = minipipe('mailshot_declarer_tables_objets_sql', $val);
+$val = minipipe('newsletters_declarer_tables_objets_sql', $val);
 $val = minipipe('partageur_declarer_tables_objets_sql', $val);
-$val = minipipe('formidable_declarer_tables_objets_sql', $val);
 $val = minipipe('breves_declarer_tables_objets_sql', $val);
+$val = minipipe('medias_declarer_tables_objets_sql', $val);
 $val = minipipe('cextras_declarer_champs_apres_les_autres', $val);
 return $val;
 }
@@ -465,37 +473,33 @@ function execute_pipeline_declarer_tables_principales(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/base/formidable_tables.php');
-include_once_check(_ROOT_PLUGINS.'auto/transaction/base/transaction.php');
 $inc=true;
 }
 $val = minipipe('medias_declarer_tables_principales', $val);
-$val = minipipe('formidable_declarer_tables_principales', $val);
-$val = minipipe('transaction_declarer_tables_principales', $val);
 return $val;
 }
 // Pipeline declarer_tables_auxiliaires 
 function execute_pipeline_declarer_tables_auxiliaires(&$val){
 static $inc=null;
 if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/base/stats.php');
 include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
 include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/base/urls.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/base/agenda_evenements.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/base/formidable_tables.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 $inc=true;
 }
-$val = minipipe('medias_declarer_tables_auxiliaires', $val);
 $val = minipipe('mots_declarer_tables_auxiliaires', $val);
 $val = minipipe('revisions_declarer_tables_auxiliaires', $val);
 $val = minipipe('stats_declarer_tables_auxiliaires', $val);
 $val = minipipe('svp_declarer_tables_auxiliaires', $val);
 $val = minipipe('urls_declarer_tables_auxiliaires', $val);
-$val = minipipe('agenda_declarer_tables_auxiliaires', $val);
-$val = minipipe('formidable_declarer_tables_auxiliaires', $val);
+$val = minipipe('mailshot_declarer_tables_auxiliaires', $val);
+$val = minipipe('newsletters_declarer_tables_auxiliaires', $val);
+$val = minipipe('medias_declarer_tables_auxiliaires', $val);
 return $val;
 }
 // Pipeline declarer_tables_objets_surnoms 
@@ -554,6 +558,7 @@ include_once_check(_ROOT_RESTREINT.'/inc/cvt_multietapes.php');
 include_once_check(_ROOT_RESTREINT.'/inc/cvt_configurer.php');
 include_once_check(_ROOT_RESTREINT.'/inc/cvt_autosave.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
 include_once_check(_ROOT_PLUGINS.'auto/saisies/saisies_pipelines.php');
 $inc=true;
 }
@@ -561,6 +566,7 @@ $val = minipipe('cvtmulti_formulaire_charger', $val);
 $val = minipipe('cvtconf_formulaire_charger', $val);
 $val = minipipe('cvtautosave_formulaire_charger', $val);
 $val = minipipe('revisions_formulaire_charger', $val);
+$val = minipipe('mailsubscribers_formulaire_charger', $val);
 $val = minipipe('saisies_formulaire_charger', $val);
 return $val;
 }
@@ -586,14 +592,24 @@ static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_RESTREINT.'/inc/cvt_configurer.php');
 include_once_check(_ROOT_RESTREINT.'/inc/cvt_autosave.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
 $inc=true;
 }
 $val = minipipe('cvtconf_formulaire_traiter', $val);
 $val = minipipe('cvtautosave_formulaire_traiter', $val);
+$val = minipipe('mailsubscribers_formulaire_traiter', $val);
+$val = minipipe('mailshot_formulaire_traiter', $val);
 return $val;
 }
 // Pipeline formulaire_fond 
 function execute_pipeline_formulaire_fond(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
+$inc=true;
+}
+$val = minipipe('mailsubscribers_formulaire_fond', $val);
 return $val;
 }
 // Pipeline formulaire_admin 
@@ -662,7 +678,6 @@ include_once_check(_ROOT_RESTREINT.'/inc/pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mediabox/mediabox_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'msie_compat/msie_compat.php');
 include_once_check(_ROOT_PLUGINS_DIST.'porte_plume/porte_plume_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/transaction/transaction_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_pipeline.php');
 $inc=true;
 }
@@ -670,7 +685,6 @@ $val = minipipe('f_jQuery', $val);
 $val = minipipe('mediabox_insert_head', $val);
 $val = minipipe('msie_compat_insert_head', $val);
 $val = minipipe('porte_plume_insert_head_public', $val);
-$val = minipipe('transaction_insert_head', $val);
 $val = minipipe('compresseur_insert_head', $val);
 return $val;
 }
@@ -681,13 +695,11 @@ if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'jquery_ui/jqueryui_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mediabox/mediabox_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'porte_plume/porte_plume_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
 $inc=true;
 }
 $val = minipipe('jqueryui_insert_head_css', $val);
 $val = minipipe('mediabox_insert_head_css', $val);
 $val = minipipe('porte_plume_insert_head_css', $val);
-$val = minipipe('agenda_insert_head_css', $val);
 return $val;
 }
 // Pipeline jquery_plugins 
@@ -746,14 +758,14 @@ return $val;
 function execute_pipeline_objet_compte_enfants(&$val){
 static $inc=null;
 if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_pipelines.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
-$val = minipipe('medias_objet_compte_enfants', $val);
 $val = minipipe('sites_objet_compte_enfants', $val);
 $val = minipipe('breves_objet_compte_enfants', $val);
+$val = minipipe('medias_objet_compte_enfants', $val);
 return $val;
 }
 // Pipeline optimiser_base_disparus 
@@ -761,25 +773,25 @@ function execute_pipeline_optimiser_base_disparus(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_pipelines.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/mots_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/organiseur_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'petitions/petitions_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/formidable_1_0/formidable_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/newsletters_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_pipelines.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
 $inc=true;
 }
 $val = minipipe('forum_optimiser_base_disparus', $val);
-$val = minipipe('medias_optimiser_base_disparus', $val);
 $val = minipipe('mots_optimiser_base_disparus', $val);
 $val = minipipe('organiseur_optimiser_base_disparus', $val);
 $val = minipipe('petitions_optimiser_base_disparus', $val);
 $val = minipipe('sites_optimiser_base_disparus', $val);
-$val = minipipe('agenda_optimiser_base_disparus', $val);
-$val = minipipe('formidable_optimiser_base_disparus', $val);
+$val = minipipe('mailsubscribers_optimiser_base_disparus', $val);
+$val = minipipe('newsletters_optimiser_base_disparus', $val);
 $val = minipipe('breves_optimiser_base_disparus', $val);
+$val = minipipe('medias_optimiser_base_disparus', $val);
 return $val;
 }
 // Pipeline page_indisponible 
@@ -856,10 +868,16 @@ function execute_pipeline_pre_edition(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/newsletters_pipelines.php');
 include_once_check(_ROOT_PLUGINS.'auto/champs_extras3/cextras_pipelines.php');
 $inc=true;
 }
 $val = minipipe('revisions_pre_edition', $val);
+$val = minipipe('mailsubscribers_pre_edition', $val);
+$val = minipipe('mailshot_pre_edition', $val);
+$val = minipipe('newsletters_pre_edition', $val);
 $val = minipipe('cextras_pre_edition', $val);
 return $val;
 }
@@ -877,18 +895,18 @@ return $val;
 function execute_pipeline_post_edition(&$val){
 static $inc=null;
 if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/mots_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/organiseur_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
-$val = minipipe('medias_post_edition', $val);
 $val = minipipe('mots_post_edition', $val);
 $val = minipipe('organiseur_post_edition', $val);
 $val = minipipe('revisions_post_edition', $val);
-$val = minipipe('agenda_post_edition', $val);
+$val = minipipe('mailshot_post_edition', $val);
+$val = minipipe('medias_post_edition', $val);
 return $val;
 }
 // Pipeline post_edition_lien 
@@ -896,11 +914,9 @@ function execute_pipeline_post_edition_lien(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
 $inc=true;
 }
 $val = minipipe('revisions_post_edition_lien', $val);
-$val = minipipe('agenda_post_edition_lien', $val);
 return $val;
 }
 // Pipeline pre_insertion 
@@ -908,21 +924,23 @@ function execute_pipeline_pre_insertion(&$val){
 static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/mailsubscribers_pipelines.php');
 $inc=true;
 }
 $val = minipipe('forum_pre_insertion', $val);
+$val = minipipe('mailsubscribers_pre_insertion', $val);
 return $val;
 }
 // Pipeline post_insertion 
 function execute_pipeline_post_insertion(&$val){
 static $inc=null;
 if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
 $inc=true;
 }
-$val = minipipe('medias_post_insertion', $val);
 $val = minipipe('revisions_post_insertion', $val);
+$val = minipipe('medias_post_insertion', $val);
 return $val;
 }
 // Pipeline pre_indexation 
@@ -965,12 +983,16 @@ include_once_check(_ROOT_PLUGINS_DIST.'revisions/inc/revisions_pipeline.php');
 include_once_check(_ROOT_PLUGINS_DIST.'sites/sites_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'statistiques/stats_pipelines.php');
 include_once_check(_ROOT_PLUGINS_DIST.'svp/genie/svp_taches_generales_cron.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/mailshot_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/newsletters_pipelines.php');
 $inc=true;
 }
 $val = minipipe('revisions_taches_generales_cron', $val);
 $val = minipipe('sites_taches_generales_cron', $val);
 $val = minipipe('stats_taches_generales_cron', $val);
 $val = minipipe('svp_taches_generales_cron', $val);
+$val = minipipe('mailshot_taches_generales_cron', $val);
+$val = minipipe('newsletters_taches_generales_cron', $val);
 return $val;
 }
 // Pipeline rechercher_liste_des_champs 
@@ -1081,7 +1103,6 @@ static $inc=null;
 if (!$inc){
 include_once_check(_ROOT_PLUGINS_DIST.'forum/forum_ieconfig.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mediabox/mediabox_ieconfig.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_ieconfig.php');
 include_once_check(_ROOT_PLUGINS_DIST.'mots/mots_ieconfig.php');
 include_once_check(_ROOT_PLUGINS_DIST.'msie_compat/msie_compat_ieconfig.php');
 include_once_check(_ROOT_PLUGINS_DIST.'organiseur/organiseur_ieconfig.php');
@@ -1094,11 +1115,11 @@ include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/urls_ieconfig.php');
 include_once_check(_ROOT_PLUGINS.'auto/facteur/facteur_ieconfig_metas.php');
 include_once_check(_ROOT_PLUGINS_DIST.'breves/breves_ieconfig.php');
 include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_ieconfig.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_ieconfig.php');
 $inc=true;
 }
 $val = minipipe('forum_ieconfig_metas', $val);
 $val = minipipe('mediabox_ieconfig_metas', $val);
-$val = minipipe('medias_ieconfig_metas', $val);
 $val = minipipe('mots_ieconfig_metas', $val);
 $val = minipipe('msie_compat_ieconfig_metas', $val);
 $val = minipipe('organiseur_ieconfig_metas', $val);
@@ -1111,48 +1132,11 @@ $val = minipipe('urls_ieconfig_metas', $val);
 $val = minipipe('facteur_ieconfig_metas', $val);
 $val = minipipe('breves_ieconfig_metas', $val);
 $val = minipipe('compresseur_ieconfig_metas', $val);
+$val = minipipe('medias_ieconfig_metas', $val);
 return $val;
 }
 // Pipeline jqueryui_plugins 
 function execute_pipeline_jqueryui_plugins(&$val){
-return $val;
-}
-// Pipeline document_desc_actions 
-function execute_pipeline_document_desc_actions(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
-$inc=true;
-}
-$val = minipipe('medias_document_desc_actions', $val);
-return $val;
-}
-// Pipeline editer_document_actions 
-function execute_pipeline_editer_document_actions(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
-$inc=true;
-}
-$val = minipipe('medias_editer_document_actions', $val);
-return $val;
-}
-// Pipeline renseigner_document_distant 
-function execute_pipeline_renseigner_document_distant(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
-$inc=true;
-}
-$val = minipipe('medias_renseigner_document_distant', $val);
-return $val;
-}
-// Pipeline afficher_metas_document 
-function execute_pipeline_afficher_metas_document(&$val){
-return $val;
-}
-// Pipeline medias_documents_visibles 
-function execute_pipeline_medias_documents_visibles(&$val){
 return $val;
 }
 // Pipeline mots_indexation 
@@ -1161,12 +1145,6 @@ return $val;
 }
 // Pipeline quete_calendrier_prive 
 function execute_pipeline_quete_calendrier_prive(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
-$inc=true;
-}
-$val = minipipe('agenda_quete_calendrier_prive', $val);
 return $val;
 }
 // Pipeline messagerie_statuts_destinataires_possibles 
@@ -1205,14 +1183,8 @@ return $val;
 function execute_pipeline_verifier(&$val){
 return $val;
 }
-// Pipeline compositions_declarer_heritage 
-function execute_pipeline_compositions_declarer_heritage(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS.'auto/agenda_3_5/agenda_pipelines.php');
-$inc=true;
-}
-$val = minipipe('agenda_compositions_declarer_heritage', $val);
+// Pipeline facteur_pre_envoi 
+function execute_pipeline_facteur_pre_envoi(&$val){
 return $val;
 }
 // Pipeline saisies_autonomes 
@@ -1245,8 +1217,42 @@ $inc=true;
 $val = minipipe('iextras_declarer_champs_extras', $val);
 return $val;
 }
-// Pipeline facteur_pre_envoi 
-function execute_pipeline_facteur_pre_envoi(&$val){
+// Pipeline document_desc_actions 
+function execute_pipeline_document_desc_actions(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
+$inc=true;
+}
+$val = minipipe('medias_document_desc_actions', $val);
+return $val;
+}
+// Pipeline editer_document_actions 
+function execute_pipeline_editer_document_actions(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
+$inc=true;
+}
+$val = minipipe('medias_editer_document_actions', $val);
+return $val;
+}
+// Pipeline renseigner_document_distant 
+function execute_pipeline_renseigner_document_distant(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_pipelines.php');
+$inc=true;
+}
+$val = minipipe('medias_renseigner_document_distant', $val);
+return $val;
+}
+// Pipeline afficher_metas_document 
+function execute_pipeline_afficher_metas_document(&$val){
+return $val;
+}
+// Pipeline medias_documents_visibles 
+function execute_pipeline_medias_documents_visibles(&$val){
 return $val;
 }
 }

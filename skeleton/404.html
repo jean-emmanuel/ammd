@@ -1,0 +1,28 @@
+#HTTP_HEADER{HTTP/1.0  #ENV{code,'404 Not Found'}}
+#HTTP_HEADER{"Cache-Control: no-store, no-cache, must-revalidate"}
+#HTTP_HEADER{Pragma: no-cache}
+<BOUCLE_contexte_sommaire(RUBRIQUES){id_rubrique=1}{tout}>
+#SET{meta_description,#DESCRIPTIF|sinon{#DESCRIPTIF_SITE_SPIP}|textebrut}
+#SET{meta_title,#NOM_SITE_SPIP|textebrut|concat{" - "}|concat{#SLOGAN_SITE_SPIP|textebrut}}
+#SET{meta_logo,#LOGO_RUBRIQUE|sinon{#LOGO_SITE_SPIP}|extraire_attribut{src}|url_absolue}
+
+<INCLURE{fond=inc/head, env, meta_description=#GET{meta_description}, meta_title=#GET{meta_title}, meta_logo=#GET{meta_logo}}/>
+
+<div class="ariane">
+	<a href="#URL_SITE_SPIP" class="on"><i class="fa fa-home"></i></a>
+</div>
+
+<div class="left-section">
+
+
+<h1 class="nomargin">Erreur 404 !</h1>
+
+<p>La page que vous demandez n'est pas accessible.</p>
+
+
+</div>
+
+
+
+<INCLURE{fond=inc/foot, env} />
+</BOUCLE_contexte_sommaire>

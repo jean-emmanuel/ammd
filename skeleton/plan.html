@@ -1,0 +1,89 @@
+<BOUCLE_contexte_sommaire(RUBRIQUES){id_rubrique=1}{tout}>
+#SET{meta_description,#DESCRIPTIF|sinon{#DESCRIPTIF_SITE_SPIP}|textebrut}
+#SET{meta_title,"Plan du Site - AMMD"}
+#SET{meta_logo,#LOGO_RUBRIQUE|sinon{#LOGO_SITE_SPIP}|extraire_attribut{src}|url_absolue}
+
+<INCLURE{fond=inc/head, env, meta_description=#GET{meta_description}, meta_title=#GET{meta_title}, meta_logo=#GET{meta_logo}}/>
+
+<div class="ariane">
+	<a href="#URL_SITE_SPIP" class="on"><i class="fa fa-home"></i></a>
+</div>
+
+<div class="left-section">
+
+<h1 class="nomargin">Plan du Site</h1>
+
+<blockquote>T'es futé, toi !</blockquote>
+
+<BOUCLE_secteurs(RUBRIQUES) {racine} {par num titre}{!par date}>
+
+<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"><h2>#TITRE</h2></a>
+
+[(#REM) Articles et sous-rubriques ]
+<B_articles_racine>
+<h3>[(#TOTAL_BOUCLE|singulier_ou_pluriel{public:article, public:articles})]</h3>
+<ul class="spip">
+	<BOUCLE_articles_racine(ARTICLES) {id_rubrique} {par num titre}{!par date}>
+	<li><a href="#URL_ARTICLE">#TITRE</a></li>
+	</BOUCLE_articles_racine>
+</ul>
+</B_articles_racine>
+
+<B_rubriques>
+<ul class="spip">
+	<BOUCLE_rubriques(RUBRIQUES) {id_parent} {par num titre}{!par date}{tout}>
+	<li>
+		<strong><a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">#TITRE</a></strong>
+		
+		<B_articles>
+		<ul class="spip">
+			<BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}{!par date}>
+			<li><a href="#URL_ARTICLE">#TITRE</a></li>
+			</BOUCLE_articles>
+		</ul>
+		</B_articles>
+		
+		<BOUCLE_sous_rubriques(BOUCLE_rubriques)></BOUCLE_sous_rubriques>
+	</li>
+	</BOUCLE_rubriques>
+</ul>
+</B_rubriques>
+
+[(#REM) Breves ]
+<B_breves>
+<h3><:breves:breves:></h3>
+<ul class="spip">
+	<BOUCLE_breves(BREVES) {id_rubrique} {!par date}>
+	<li><a href="#URL_BREVE">#TITRE</a></li>
+	</BOUCLE_breves>
+</ul>
+</B_breves>
+
+[(#REM) Sur le Web ]
+<B_sites>
+<h3><:sites_web:></h3>
+<ul class="spip">
+	<BOUCLE_sites(SITES) {id_secteur} {par nom_site}>
+	<li><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></li>
+	</BOUCLE_sites>
+</ul>
+</B_sites>
+
+<B_newsletters>
+<h3>Newsletters</h3>
+<ul class="spip">
+	<BOUCLE_newsletters(NEWSLETTERS){par date}>
+	<li><a href="#URL_NEWSLETTER">[(#DATE|affdate)] : #TITRE</a></li>
+	</BOUCLE_newsletters>
+</ul>
+</B_newsletters>
+
+
+</BOUCLE_secteurs>
+
+</div>
+
+
+
+<INCLURE{fond=inc/foot, env} />
+</BOUCLE_contexte_sommaire>

@@ -1,0 +1,16 @@
+<div class='formulaire_spip formulaire_newsletter formulaire_[(#FORM)] ajax'>
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	[(#ENV{editable})
+	<form method='post' action='#ENV{action}'><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+
+			#SET{name,session_email}#SET{obli,'obligatoire'}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+				<p/><label for="#GET{name}"><:newsletter:label_email_subscribe:></label>&nbsp;[
+				<span class='erreur_message'>(#GET{erreurs})</span>
+				]<input type="email" name="#GET{name}" class="email text" value="#ENV*{#GET{name}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
+				&nbsp;<input type='submit' class='submit' value='<:newsletter:bouton_subscribe|attribut_html:>' /></p>
+	</div></form>
+	]
+</div>

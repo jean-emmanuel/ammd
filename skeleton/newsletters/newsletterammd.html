@@ -1,0 +1,367 @@
+<BOUCLE_rem(CONDITION){si #REM}>
+<!-- titre=Newsletter AMMD v2 -->
+</BOUCLE_rem>
+<BOUCLE_newsletter(NEWSLETTERS){id_newsletter}{statut?}>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>[(#TITRE|textebrut)]</title>
+        <style type="text/css">
+			/* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
+			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+			body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+			table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+			img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+			/* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+			body{margin:0; padding:0;}
+			img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;display:block}
+			table{border-collapse:collapse !important;}
+			body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+			/* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+
+			#bodyCell{padding:20px!important;}
+			#templateContainer{width:600px;}
+
+			/* ========== Page Styles ========== */
+
+			body, #bodyTable{
+				background-color:#DEE0E2;
+			}
+
+			#bodyCell{
+				border-top:4px solid #BBBBBB;
+			}
+
+			#templateContainer{
+				border:1px solid #BBBBBB;
+			}
+
+			h1{
+				color:#444 !important;
+				display:block;
+				font-family:Helvetica;
+				font-size:22px;
+				font-style:normal;
+				font-weight:bold;
+				line-height:100%;
+				letter-spacing:normal;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+
+			h2{
+				color:#404040 !important;
+				display:block;
+				font-family:Helvetica;
+				font-size:20px;
+				font-style:normal;
+				font-weight:bold;
+				line-height:100%;
+				letter-spacing:normal;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+			h3{
+				color:#606060 !important;
+				display:block;
+				font-family:Helvetica;
+				font-size:16px;
+				font-style:italic;
+				font-weight:normal;
+				line-height:100%;
+				letter-spacing:normal;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+				font-variant:small-caps;
+			}
+
+
+			h4{
+				color:#808080 !important;
+				display:block;
+				font-family:Helvetica;
+				font-size:14px;
+				font-style:italic;
+				font-weight:normal;
+				line-height:100%;
+				letter-spacing:normal;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				text-align:left;
+			}
+
+			/* ========== Header Styles ========== */
+
+			#templatePreheader{
+				background-color:#F4F4F4;
+				border-bottom:1px solid #CCCCCC;
+			}
+
+			.preheaderContent{
+				color:#808080;
+				font-family:Helvetica;
+				font-size:10px;
+				line-height:125%;
+				text-align:left;
+			}
+
+			.preheaderContent a:link, .preheaderContent a:visited, /* Yahoo! Mail Override */ .preheaderContent a .yshortcuts /* Yahoo! Mail Override */{
+				color:#606060;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+
+			#templateHeader{
+				background-color:#9b4d4d;
+				border-bottom:1px solid #CCCCCC;
+			}
+
+			.headerContent{
+				color:#505050;
+				font-family:Helvetica;
+				font-size:20px;
+				font-weight:bold;
+				line-height:100%;
+				padding-top:0;
+				padding-right:0;
+				padding-bottom:0;
+				padding-left:0;
+				text-align:left;
+				vertical-align:middle;
+			}
+
+			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+				color:#FFFFFF;
+				font-weight:normal;
+				text-decoration:none;
+			}
+
+			#headerImage{
+				height:auto;
+				max-width:600px;
+			}
+
+			/* ========== Body Styles ========== */
+
+			#templateBody{
+				background-color:#F4F4F4;
+				border-top:1px solid #FFFFFF;
+				border-bottom:1px solid #CCCCCC;
+			}
+
+			.bodyContent{
+				color:#505050;
+				font-family:Helvetica;
+				font-size:13px;
+				line-height:150%;
+				padding-top:20px;
+				padding-right:20px;
+				padding-bottom:20px;
+				padding-left:20px;
+				text-align:left;
+			}
+
+			.bodyContent a:link, .bodyContent a:visited, /* Yahoo! Mail Override */ .bodyContent a .yshortcuts /* Yahoo! Mail Override */{
+				color:#9b4d4d;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+			.bodyContent img{
+				display:inline;
+				height:auto;
+				max-width:560px;
+			}
+
+			.spip_note_ref {
+				font-size:11px;
+				top:-4px;
+				position: relative;
+			}
+			.spip_note {
+				vertical-align:middle;
+				text-decoration:none!important;
+			}
+			/* ========== Footer Styles ========== */
+
+			#templateFooter{
+				background-color:#F4F4F4;
+				border-top:1px solid #FFFFFF;
+			}
+
+			.footerContent{
+				color:#808080;
+				font-family:Helvetica;
+				font-size:10px;
+				line-height:150%;
+				padding-top:20px;
+				padding-right:20px;
+				padding-bottom:20px;
+				padding-left:20px;
+				text-align:left;
+			}
+
+			.footerContent a:link, .footerContent a:visited, /* Yahoo! Mail Override */ .footerContent a .yshortcuts, .footerContent a span /* Yahoo! Mail Override */{
+				color:#606060;
+				font-weight:normal;
+				text-decoration:underline;
+			}
+
+		</style>
+		<noscript type="text/css">
+            @media only screen and (max-width: 640px){
+				/* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+				body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
+                body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
+
+				/* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+				#bodyCell{padding:10px !important;}
+
+				/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+
+				/* ======== Page Styles ======== */
+				#templateHeader {
+					height:80px;				
+				}
+				#templateContainer{
+					max-width:600px !important;
+					width:100% !important;
+				}
+
+
+				#headerImage{
+					display:none!important;
+				}
+
+
+				/* ======== Body Styles ======== */
+
+				#bodyImage{
+					height:auto !important;
+					max-width:560px !important;
+					width:100% !important;
+				}
+
+			}
+		</noscript>
+    </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    	<center>
+        	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            	<tr>
+                	<td align="center" valign="top" id="bodyCell">
+                    	<!-- BEGIN TEMPLATE // -->
+                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                        	<tr>
+                            	<td align="center" valign="top">
+                                	<!-- BEGIN PREHEADER // -->
+                                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
+                                        <tr>
+                                            <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;">
+                                                Newsletter du [(#DATE|affdate)]
+                                            </td>
+                                            [(#ENV{online}|non)<td valign="top" width="180" class="preheaderContent" style="text-align:right!important;padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;">
+                                                <a href="[(#URL_NEWSLETTER)]" target="_blank">Voir la version en ligne</a>.
+                                            </td>]
+                                        </tr>
+                                    </table>
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                	<!-- BEGIN HEADER // -->
+                                    <table background="#CHEMIN{newsletters/newsletterammd.png}" border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+                                        <tr>
+                                            <td valign="top" class="headerContent">
+                                            	<a href="#URL_SITE_SPIP"><img src="#CHEMIN{newsletters/newsletterammd.png}" alt="[(#NOM_SITE_SPIP)][ - (#SLOGAN_SITE_SPIP|textebrut)]"style="max-width:600px;text-indent:20px" id="headerImage" /></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                	<!-- BEGIN BODY // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+                                        <tr>
+                                            <td valign="top" class="bodyContent">
+                                                <h1>#TITRE</h1>
+                                                [<h4>(#CHAPO|textebrut)</h4>]
+												[(#TEXTE|liens_ouvrants)]
+                                            </td>
+                                        </tr>
+                                        [<tr style="border-top:1px solid #ccc;border-bottom:1px solid #ccc;">
+                                            <td valign="top" class="bodyContent">
+                                                <h3>Notes</h3>
+												(#NOTES|replace{<p>,""}|replace{</p>,""})
+                                            </td>
+                                        </tr>]
+                                        <B_agendaG>
+										<tr style="border-top:1px solid #fff;">
+											<td valign="top" class="bodyContent">
+												<h3>L'ammd en [(#DATE|nom_mois)]</h3>
+										<BOUCLE_agendaG(ARTICLES){id_rubrique=8}{mois=#DATE|mois}{annee=#DATE|annee}{par date}>	
+												<div style="margin-bottom:10px;padding-left:10px;border-left:4px solid #ccc;">
+													<a href="[(#URL_ARTICLE|url_absolue)]" target="_blank">#TITRE</a>
+													<p class="article_date nomargin">[(#DATE|nom_jour|ucfirst) ][(#DATE|heures|=={0}|?{[(#DATE|affdate)],[(#DATE|affdate_heure)]})]</p>
+													[<p class="nomargin"><em>(#LIEU|textebrut)</em></p>]
+												</div>	
+										</BOUCLE_agendaG>
+											</td>
+										</tr>
+										</B_agendaG>
+                                    </table>
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                	<!-- BEGIN FOOTER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+                                        <tr>
+                                            <td valign="top" class="footerContent" style="padding-bottom:5px!important;">
+                                                <em>Copyleft AMMD [(#ENV{date}|annee)] // <a href="http://artlibre.org/" target="_blank">Licence Art Libre</a>.</em>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="footerContent" style="padding-top:0!important;">
+                                            	[(#ENV{online}|non)<a href="@url_unsubscribe@">Se désinscrire</a>&nbsp;&nbsp;&nbsp;]<a href="[(#URL_RUBRIQUE{32}|url_absolue)]">Contacter un humain</a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/AMMDCoorp">Suivre sur Twitter</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
+</BOUCLE_newsletter>
+
+#FILTRE{newsletters_liens_absolus}
+#FILTRE{inline}

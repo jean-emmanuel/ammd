@@ -16,6 +16,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'bouton_checkbox_indiquer_site' => 'معرفي الزامي يك وب سايت',
 	'bouton_checkbox_signature_unique_email' => 'فقط يك امضا براي نشاني ايميل ',
 	'bouton_checkbox_signature_unique_site' => 'فقط يك امضا براي يك وب سايت',
+	'bouton_radio_activer_petition' => 'درخواست را فعال كنيد',
+	'bouton_radio_pas_petition' => 'بدون درخواست',
+	'bouton_radio_petition_activee' => 'درخواست، فعال شده',
+	'bouton_radio_supprimer_petition' => 'حذف درخواست',
 
 	// F
 	'filtre' => 'فيتلر:',
@@ -80,7 +84,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'signatures_prop' => 'در انتظار',
 	'signatures_publie' => 'تأييد شده‌ها',
 	'signatures_recherche_label' => 'جستجوي امضاها:',
-	'signatures_selection' => 'Sélectionner les signatures :', # NEW
 	'signatures_toutes' => 'همه',
 	'statut_poubelle' => 'به سبدباطله',
 	'statut_prop' => 'در انتظار تأييد',

@@ -245,10 +245,29 @@ function saisies_verifier($formulaire, $saisies_masquees_nulles=true){
 	return $erreurs;
 }
 
+/*
+ * Applatie une description tabulaire
+ * @param string $tab, le tableau à aplatir
+ * @return $nouveau_tab
+ */
+function saisies_aplatir_tableau($tab){
+    $nouveau_tab = array();
+    foreach($tab as $entree=>$contenu){
+        if (is_array($contenu)){
+            foreach ($contenu as $cle => $valeur){
+                $nouveau_tab[$cle] = $valeur;
+                }
+            }
+        else{
+            $nouveau_tab[$entree] = $contenu;
+            }
+        }
+    return $nouveau_tab;
+}
 
 /*
- * Applati une description chaînée, en supprimant les sous-groupes.
- * @param string $string, la chaîne à aplatir
+ * Applatie une description chaînée, en supprimant les sous-groupes.
+ * @param string $chaine, la chaîne à aplatir
  * @return $chaine
  */
 function saisies_aplatir_chaine($chaine){
@@ -451,4 +470,20 @@ function saisies_afficher_si($saisies) {
 	return false;
 }
 
+
+/*
+ * Le tableau de saisies a-t-il une option afficher_si_remplissage ?
+ *
+ * @param array $saisies Un tableau de saisies
+ * @return boolean
+ */
+function saisies_afficher_si_remplissage($saisies) {
+	$saisies = saisies_lister_par_nom($saisies,true);
+	// Dès qu'il y a au moins une option afficher_si_remplissage, on l'active
+	foreach ($saisies as $saisie) {
+		if (isset($saisie['options']['afficher_si_remplissage']))
+			return true;
+	}
+	return false;
+}
 ?>

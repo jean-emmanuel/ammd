@@ -1,0 +1,22 @@
+<BOUCLE_sous_rubrique_incluse(RUBRIQUES){id_rubrique=#ENV{id}}{tout}>
+<div class="blocklink">
+	[<div class="logo small float-left">(#LOGO_RUBRIQUE|match{rubon#ID_RUBRIQUE\.}|oui)[(#LOGO_RUBRIQUE|image_reduire{80})]</div>]
+	<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"><h2 class="nomargin folder">[(#TITRE|textebrut)]</h2></a>
+	[<p class="nomargin">(#DESCRIPTIF|textebrut)</p>]
+	<div class="clear"></div>
+	
+	#TEXTE
+	
+	<BOUCLE_articles_laterals(ARTICLES){id_rubrique}{par num titre, titre}>
+	<div class="blocklink">
+		[<div class="logo small float-left">(#LOGO_ARTICLE|image_reduire{80})</div>]
+		<a href="#URL_ARTICLE"><h2 class="nomargin file">[(#TITRE|textebrut)]</h2></a>
+		#TEXTE
+		[<div class="blocklink"><i class="fa fa-map-marker"></i>&nbsp;(#LIEU)</div>]
+		[<div class="blocklink"><i class="fa fa-euro"></i>&nbsp;(#TARIF)</div>]
+		<div class="clear"></div>
+	</div>
+	</BOUCLE_articles_laterals>
+	
+</div>
+</BOUCLE_sous_rubrique_incluse>

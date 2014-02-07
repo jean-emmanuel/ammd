@@ -44,8 +44,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'barre_gestion_colonne' => 'Aantal kolommen ',
 	'barre_gestion_cr_casse' => 'Letterkast respecteren',
 	'barre_gestion_cr_changercasse' => 'Letterkast veranderen',
-	'barre_gestion_cr_changercassemajuscules' => 'Hoofdletter zetten',
-	'barre_gestion_cr_changercasseminuscules' => 'Onderkast zetten',
+	'barre_gestion_cr_changercassemajuscules' => 'In hoofdletters zetten',
+	'barre_gestion_cr_changercasseminuscules' => 'In onderkast zetten',
 	'barre_gestion_cr_chercher' => 'Zoeken',
 	'barre_gestion_cr_entier' => 'Volledige woord',
 	'barre_gestion_cr_remplacer' => 'Vervangen',
@@ -79,7 +79,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'barre_preview' => 'Preview-modus',
 	'barre_quote' => '<quote>Een boodschap citeren</quote>',
 	'barre_stats' => 'Statistieken van de tekst wijzen',
-	'barre_tableau' => 'Een table (vooraf te selecteren) aanmaken/verbeteren',
+	'barre_tableau' => 'Een tabel (vooraf te selecteren) aanmaken/verbeteren',
 
 	// C
 	'config_info_enregistree' => 'Configuratie opgeslagen',
@@ -90,7 +90,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	en maken het zo mogelijk om ze op de forumformuliers te gebriken,
 	de publieke potloden (plug-in) of nog andere plugins, of hun configuratie het zo voorziet.',
 	'explication_barre_outils_public_2' => 'Je mag kiezen deze scripts niet te laten laden
-	om de grootte van de publieke pagina\'s te verminderen.
+	om de grootte van de publieke pagina’s te verminderen.
 	In dit geval zal geen werkbalk in de publieke site beschikbaar 
         zijn, onafhankelijk van de configuraties van de fora, 
         potloden en andere plugins.',

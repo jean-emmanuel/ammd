@@ -1,3 +1,4 @@
 <?php
-    $GLOBALS['dossier_squelettes'] = 'theme-v1';
+    $GLOBALS['dossier_squelettes'] = 'skeleton';
+	//define('_NO_CACHE', -1); 
 ?>

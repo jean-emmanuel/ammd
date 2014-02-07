@@ -3,7 +3,7 @@
 /***************************************************************************\
  *  SPIP, Systeme de publication pour l'internet                           *
  *                                                                         *
- *  Copyright (c) 2001-2012                                                *
+ *  Copyright (c) 2001-2014                                                *
  *  Arnaud Martin, Antoine Pitrou, Philippe Riviere, Emmanuel Saint-James  *
  *                                                                         *
  *  Ce programme est un logiciel libre distribue sous licence GNU/GPL.     *
@@ -613,30 +613,38 @@ function inc_calcul_hierarchie_in_dist($id, $tout=true) {
 	// normaliser $id qui a pu arriver comme un array, comme un entier, ou comme une chaine NN,NN,NN
 	if (!is_array($id)) $id = explode(',',$id);
 	$id = join(',', array_map('intval', $id));
-	if (isset($b[$id]))
-		return $b[$id];
 
-	// Notre branche commence par la rubrique de depart si $tout=true
-	$hier = $tout?$id:"";
+	if (isset($b[$id])) {
+		// Notre branche commence par la rubrique de depart si $tout=true
+		return $tout ? (strlen($b[$id]) ? $b[$id] . ",$id" : $id) : $b[$id];
+	}
+
+	$hier = "";
 
 	// On ajoute une generation (les filles de la generation precedente)
 	// jusqu'a epuisement, en se protegeant des references circulaires
+	$ids_nouveaux_parents = $id;
 	$maxiter = 10000;
 	while ($maxiter-- AND $parents = sql_allfetsel(
 			'id_parent',
 			'spip_rubriques',
-			sql_in('id_rubrique', $id) ." AND ". sql_in('id_parent',$hier,'NOT')
+			sql_in('id_rubrique', $ids_nouveaux_parents) ." AND ". sql_in('id_parent',$hier,'NOT')
 		  )) {
-		$id = join(',', array_map('reset', $parents));
-		$hier = $id.(strlen($hier)?','.$hier:'');
+		$ids_nouveaux_parents = join(',', array_map('reset', $parents));
+		$hier = $ids_nouveaux_parents.(strlen($hier)?','.$hier:'');
 	}
 
 	# securite pour ne pas plomber la conso memoire sur les sites prolifiques
-	if (strlen($hier)<10000)
+	if (strlen($hier)<10000) {
 		$b[$id] = $hier;
+	}
+
+	// Notre branche commence par la rubrique de depart si $tout=true
+	$hier = $tout ? (strlen($hier) ? "$hier,$id" : $id) : $hier;
 
 	return $hier;
 }
+
 
 
 /**

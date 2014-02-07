@@ -37,8 +37,15 @@ options:
           datas:
             tous: '<:saisies:option_type_choix_tous:>'
             un: '<:saisies:option_type_choix_un:>'
+            un_radio: '<:saisies:option_type_choix_un_radio:>'
             plusieurs: '<:saisies:option_type_choix_plusieurs:>'
           defaut: 'tous'
+      -
+        saisie: 'input'
+        options:
+          nom: 'option_intro'
+          label: '<:saisies:option_option_destinataire_intro_label:>'
+          size: 50
   -
     saisie: 'fieldset'
     options:
@@ -51,6 +58,13 @@ options:
           nom: 'afficher_si'
           label: '<:saisies:option_afficher_si_label:>'
           explication: '<:saisies:option_afficher_si_explication:>'
+          rows: 5
+      -
+        saisie: 'textarea'
+        options:
+          nom: 'afficher_si_remplissage'
+          label: '<:saisies:option_afficher_si_remplissage_label:>'
+          explication: '<:saisies:option_afficher_si_remplissage_explication:>'
           rows: 5
       -
         saisie: 'input'

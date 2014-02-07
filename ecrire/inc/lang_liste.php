@@ -3,7 +3,7 @@
 /***************************************************************************\
  *  SPIP, Systeme de publication pour l'internet                           *
  *                                                                         *
- *  Copyright (c) 2001-2012                                                *
+ *  Copyright (c) 2001-2014                                                *
  *  Arnaud Martin, Antoine Pitrou, Philippe Riviere, Emmanuel Saint-James  *
  *                                                                         *
  *  Ce programme est un logiciel libre distribue sous licence GNU/GPL.     *
@@ -71,6 +71,7 @@ $GLOBALS['codes_langues'] = array(
 	'fo' => "f&#248;royskt",
 	'fon' => "fongb&egrave;",
 	'fr' => "fran&#231;ais",
+	'fr_fem' => "fran&#231;ais f&#233;minin",
 	'fr_sc' => "schtroumpf",
 	'fr_lpc' => "langue parl&#233;e compl&#233;t&#233;e",
 	'fr_lsf' => "langue des signes fran&#231;aise",

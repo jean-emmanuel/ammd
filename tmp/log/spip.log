@@ -1,0 +1,246 @@
+Feb 05 19:14:28 127.0.0.1 (pid 9183) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:31 127.0.0.1 (pid 9452) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:33 127.0.0.1 (pid 8902) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:34 127.0.0.1 (pid 5733) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:37 127.0.0.1 (pid 5656) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:39 127.0.0.1 (pid 8922) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:41 127.0.0.1 (pid 7359) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:43 127.0.0.1 (pid 5951) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:45 127.0.0.1 (pid 5960) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:47 127.0.0.1 (pid 3526) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:50 127.0.0.1 (pid 9183) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:52 127.0.0.1 (pid 9452) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:53 127.0.0.1 (pid 8902) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:55 127.0.0.1 (pid 5733) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:14:58 127.0.0.1 (pid 5656) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:00 127.0.0.1 (pid 8922) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:01 127.0.0.1 (pid 7359) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:03 127.0.0.1 (pid 5951) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:05 127.0.0.1 (pid 5960) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:06 127.0.0.1 (pid 3526) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:08 127.0.0.1 (pid 9183) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:11 127.0.0.1 (pid 9452) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:13 127.0.0.1 (pid 8902) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:14 127.0.0.1 (pid 5733) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:16 127.0.0.1 (pid 5656) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:18 127.0.0.1 (pid 8922) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:20 127.0.0.1 (pid 7359) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:22 127.0.0.1 (pid 5951) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:24 127.0.0.1 (pid 5960) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:15:26 127.0.0.1 (pid 3526) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: database is locked - 
+UPDATE ammd3_meta
+SET maj=datetime('now'),nom='derniere_modif',valeur='1391624350'
+WHERE nom='derniere_modif'
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: database is locked - query inconnue
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=293
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=307
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=311
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=312
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=313
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=314
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:23:47 127.0.0.1 (pid 9452) :Pub:!INFO: trouver_table: table inconnue '' 'EVENEMENTS'
+Feb 05 19:23:47 127.0.0.1 (pid 9452) :Pub:!INFO: spip_connect: fichier de connexion 'config/evenements.php' non trouve
+Feb 05 19:33:51 127.0.0.1 (pid 3526) :Pri:ERREUR: fonction execute_pipeline_newsletter_pre_envoi absente : pipeline desactive
+Feb 05 19:33:52 127.0.0.1 (pid 3526) :Pri:ERREUR: Erreur Envoi mail via Facteur : SMTP Error: Could not authenticate.
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: no such column: langue_choisie - query inconnue
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - 
+SELECT id_objet, type, date, url
+FROM ammd3_urls
+WHERE url='-Calendrier-'
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 11 20:29:46 127.0.0.1 (pid 3526) :Pub:!INFO: Entree 1/68/article supprimee dans la table spip_auteurs_liens
+Feb 05 20:33:11 127.0.0.1 (pid 5951) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 05 21:03:31 78.223.61.228 (pid 11056) :Pub:CRITIQUE: Erreur lecture imagecreatefrompng IMG/rubon13.png
+Feb 05 21:03:32 78.223.61.228 (pid 11112) :Pub:CRITIQUE: Erreur lecture imagecreatefromjpeg IMG/ruboff18.jpg
+Feb 05 21:03:41 78.223.61.228 (pid 11342) :Pub:CRITIQUE: Erreur lecture imagecreatefromjpeg IMG/ruboff15.jpg
+Feb 05 21:03:56 78.223.61.228 (pid 11717) :Pub:CRITIQUE: Erreur lecture imagecreatefrompng IMG/rubon13.png
+Feb 05 21:05:52 78.223.61.228 (pid 15146) :Pub:CRITIQUE: Erreur lecture imagecreatefromjpeg IMG/ruboff18.jpg
+Feb 05 21:05:52 78.223.61.228 (pid 15146) :Pub:CRITIQUE: Erreur lecture imagecreatefromjpeg IMG/ruboff18.jpg
+Feb 06 09:36:07 127.0.0.1 (pid 15355) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 10:10:40 127.0.0.1 (pid 18046) :Pri:ERREUR: Echec : Suppression document 6 interdite
+Feb 06 11:24:23 127.0.0.1 (pid 19228) :Pri:!INFO: Modele adherer introuvable
+Feb 06 11:24:34 127.0.0.1 (pid 18624) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:24:34 127.0.0.1 (pid 18624) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:34 127.0.0.1 (pid 19228) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:35 127.0.0.1 (pid 19259) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:37 127.0.0.1 (pid 19259) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:38 127.0.0.1 (pid 19228) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:51 127.0.0.1 (pid 15318) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:52 127.0.0.1 (pid 19260) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:59 127.0.0.1 (pid 19272) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:25:59 127.0.0.1 (pid 19272) :Pub:!INFO: Modele adherer introuvable
+Feb 06 11:54:13 127.0.0.1 (pid 19356) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 06 12:05:05 127.0.0.1 (pid 19260) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 06 12:09:06 127.0.0.1 (pid 19417) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 06 17:40:32 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:33 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:34 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:35 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:36 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:37 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:38 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:40:39 127.0.0.1 (pid 25122) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:48:05 127.0.0.1 (pid 25369) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:48:06 127.0.0.1 (pid 25369) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:48:07 127.0.0.1 (pid 25369) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:48:08 127.0.0.1 (pid 25369) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 06 17:48:09 127.0.0.1 (pid 25369) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:31:03 127.0.0.1 (pid 26280) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:31:13 127.0.0.1 (pid 26280) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:31:21 127.0.0.1 (pid 31826) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:08 127.0.0.1 (pid 27290) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:11 127.0.0.1 (pid 27290) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:14 127.0.0.1 (pid 24977) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:15 127.0.0.1 (pid 27465) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:15 127.0.0.1 (pid 31674) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:16 127.0.0.1 (pid 27290) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:16 127.0.0.1 (pid 26280) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:16 127.0.0.1 (pid 27524) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:39 127.0.0.1 (pid 27343) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:43 127.0.0.1 (pid 27343) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 27343) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 31967) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 27465) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 27472) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 26280) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:32:49 127.0.0.1 (pid 24977) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:33:51 127.0.0.1 (pid 27524) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:12 127.0.0.1 (pid 31967) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:16 127.0.0.1 (pid 31967) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 31967) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 27472) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 26280) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 27465) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 24977) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 10:34:21 127.0.0.1 (pid 27343) :Pri:ERREUR: fonction execute_pipeline_renseigner_document absente : pipeline desactive
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom='version_installee'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom LIKE '%_base_version'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='dump_structure_temp'
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: Copier 1 tables de 'dump' vers ''
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: Vider 1 tables sur serveur '' : spip_auteurs
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: Conserver copieur  dans id_auteur= pour le serveur ''
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: Vider 1 tables sur serveur '' : spip_auteurs
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: creation 'spip_auteurs' sur serveur ''
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: recopie spip_auteurs 8
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:!INFO: Detruire copieur id_auteur&lt;0 pour le serveur ''

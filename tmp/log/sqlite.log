@@ -1,0 +1,208 @@
+Feb 04 22:04:36 127.0.0.1 (pid 22720) :Pub:ERREUR: Erreur sqlite 23000 / 19
+Feb 04 22:04:36 127.0.0.1 (pid 22720) :Pub:ERREUR: columns id_parent, url are not unique - INSERT INTO ammd3_urls (url,type,id_objet,id_parent,segments) VALUES ('Demo-mars-2013','article',16,0,1)
+Feb 04 22:04:36 127.0.0.1 (pid 22720) :Pub:ERREUR: columns id_parent, url are not unique - INSERT INTO spip_urls (url,type,id_objet,id_parent,segments) VALUES ('Demo-mars-2013','article',16,0,1)
+Feb 04 22:20:00 127.0.0.1 (pid 21198) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 04 22:20:00 127.0.0.1 (pid 21198) :Pri:ERREUR: database is locked - 
+UPDATE ammd3_meta
+SET maj=datetime('now'),nom='derniere_modif_article',valeur='1391548800'
+WHERE nom='derniere_modif_article'
+Feb 04 22:20:00 127.0.0.1 (pid 21198) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 04 22:20:00 127.0.0.1 (pid 21198) :Pri:ERREUR: database is locked - query inconnue
+Feb 05 10:41:43 127.0.0.1 (pid 24726) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 05 10:41:43 127.0.0.1 (pid 24726) :Pub:ERREUR: database schema has changed - SELECT name FROM sqlite_master WHERE type='table' AND tbl_name REGEXP '^ammd3_.*$'
+Feb 05 18:58:22 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 18:58:22 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=1
+Feb 05 18:58:22 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 18:58:22 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:01:35 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:01:35 127.0.0.1 (pid 5656) :Pri:ERREUR: database is locked - 
+UPDATE ammd3_meta
+SET maj=datetime('now'),nom='derniere_modif',valeur='1391623295'
+WHERE nom='derniere_modif'
+Feb 05 19:01:35 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:01:35 127.0.0.1 (pid 5656) :Pri:ERREUR: database is locked - query inconnue
+Feb 05 19:01:58 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:01:58 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=293
+Feb 05 19:01:58 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:01:58 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:02:07 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:07 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=307
+Feb 05 19:02:07 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:07 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:02:10 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:10 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=311
+Feb 05 19:02:10 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:10 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:02:11 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:11 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=312
+Feb 05 19:02:11 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:11 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=313
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=314
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:02:12 127.0.0.1 (pid 5656) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:16:43 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: database is locked - 
+UPDATE ammd3_meta
+SET maj=datetime('now'),nom='derniere_modif',valeur='1391624350'
+WHERE nom='derniere_modif'
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 5
+Feb 05 19:19:10 127.0.0.1 (pid 5960) :Pri:ERREUR: database is locked - query inconnue
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=293
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:15 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=307
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:24 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=311
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:26 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=312
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:27 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=313
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:29 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=314
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:20:30 127.0.0.1 (pid 5960) :Pri:ERREUR: no such column: langue_choisie - query inconnue
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: no such column: langue_choisie - 
+UPDATE ammd3_mailsubscribers
+SET maj=datetime('now'),lang='fr',langue_choisie='oui'
+WHERE id_mailsubscriber=1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: Erreur sqlite HY000 / 1
+Feb 05 19:51:26 127.0.0.1 (pid 8922) :Pub:ERREUR: no such column: langue_choisie - query inconnue
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - 
+SELECT id_objet, type, date, url
+FROM ammd3_urls
+WHERE url='-Calendrier-'
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 11 20:29:45 127.0.0.1 (pid 11663) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:27:55 127.0.0.1 (pid 30205) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:06 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:10 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom='version_installee'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom LIKE '%_base_version'
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:13 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='dump_structure_temp'
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue

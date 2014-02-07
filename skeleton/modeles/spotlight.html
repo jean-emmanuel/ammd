@@ -1,0 +1,10 @@
+<BOUCLE_randomR(RUBRIQUES) {id_parent=2}{id_rubrique!=35}{par hasard}{0,1}>
+<div class="blocklink">
+	<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"><h2 class="nomargin">#TITRE</h2></a>
+	<br/>
+	[<div class="logo medium"><a href="#URL_RUBRIQUE"><img src="(#LOGO_RUBRIQUE|image_reduire{256,0}|image_recadre{256,0,'center top','dddddd'}|extraire_attribut{src})" alt="logo_#ID_RUBRIQUE"/></a></div>] 
+	<p>[(#TEXTE|textebrut|couper{200,&nbsp;(...)})]</p>
+	<div class="clear"></div>
+</div>
+</BOUCLE_randomR>
+#CACHE{0}

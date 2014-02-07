@@ -3,7 +3,7 @@
 /***************************************************************************\
  *  SPIP, Systeme de publication pour l'internet                           *
  *                                                                         *
- *  Copyright (c) 2001-2012                                                *
+ *  Copyright (c) 2001-2014                                                *
  *  Arnaud Martin, Antoine Pitrou, Philippe Riviere, Emmanuel Saint-James  *
  *                                                                         *
  *  Ce programme est un logiciel libre distribue sous licence GNU/GPL.     *
@@ -401,9 +401,9 @@ function balise_INTRODUCTION_dist($p) {
 function balise_LANG_dist ($p) {
 	$_lang = champ_sql('lang', $p);
 	if (!$p->etoile)
-		$p->code = "htmlentities($_lang ? $_lang : \$GLOBALS['spip_lang'])";
+		$p->code = "spip_htmlentities($_lang ? $_lang : \$GLOBALS['spip_lang'])";
 	else
-		$p->code = "htmlentities($_lang)";
+		$p->code = "spip_htmlentities($_lang)";
 	$p->interdire_scripts = false;
 	return $p;
 }
@@ -1158,7 +1158,10 @@ function balise_SET_dist($p){
 	if (!$_nom OR !$_val) {
 		$err_b_s_a = array('zbug_balise_sans_argument', array('balise' => 'SET'));
 		erreur_squelette($err_b_s_a, $p);
-	} else 	$p->code = "vide(\$Pile['vars'][(string)$_nom] = $_val)";
+	}
+	// affectation $_zzz inutile, mais permet de contourner un bug OpCode cache sous PHP 5.5.4
+	// cf https://bugs.php.net/bug.php?id=65845
+	else  $p->code = "vide(\$Pile['vars'][\$_zzz=(string)$_nom] = $_val)";
 
 	$p->interdire_scripts = false; // la balise ne renvoie rien
 	return $p;
