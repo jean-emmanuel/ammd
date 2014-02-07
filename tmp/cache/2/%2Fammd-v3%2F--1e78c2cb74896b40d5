@@ -1,0 +1,227 @@
+a:11:{s:9:"squelette";s:37:"html_c3c78765638f90d89b480c83bd0455ba";s:6:"source";s:22:"skeleton/sommaire.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"2/%2Fammd-v3%2F--1e78c2cb74896b40d5";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:9037:"
+<?php echo recuperer_fond( 'inc/head', array_merge(array (
+  'date' => '2014-02-07 12:37:19',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:37:19',
+  'date_redac_default' => true,
+),array('id_rubrique' => '1',
+	'meta_description' => 'L’AMMD est une coopérative d’artistes libres produisant de l’Art Libre avec des matériels et des logiciels libres.',
+	'meta_title' => 'AMMD - Freak &amp; Free Arts Coo[r]p',
+	'meta_logo' => 'http://127.0.0.1/ammd-v3/IMG/siteon0.png?1391508897',
+	'lang' => 'fr')), array("compil"=>array('skeleton/sommaire.html','html_c3c78765638f90d89b480c83bd0455ba','',6,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<div class="ariane">
+	<a href="http://ammd.net" class="on"><i class="fa fa-home"></i></a>
+</div>
+
+<div class="left-section">
+
+<h1 class="nomargin">Accueil</h1>
+ 
+<div class="blocklink" id="carousel">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+
+			
+
+			<div class="swiper-slide" style="background-size:cover;background-image:url(local/cache-vignettes/L600xH516/arton20-e4ffb.png)">
+				<a href="Stone-From-The-Sky-Saelig-Oya">
+				<span class="swiper-caption"><h2 class="nomargin">Stone From The Sky &amp; Saelig Oya rejoignent l&#8217;AMMD</h2> Oh Joie ! Le trio de rock psychédélique Stone From The Sky et le quintet de post rock prog Saelig Oya (ex-Syndrôme du Pouick) rejoignent l'AMMD ! 
+
+Qu'on se le dise : les héritiers, sages ou pas&nbsp;(...)</span>
+				<span class="swiper-caption-date">9 décembre 2013</span>
+				</a>
+			</div>
+
+			
+
+			<div class="swiper-slide" style="background-size:cover;background-image:url()">
+				<a href="Bienvenue-sur-le-nouveau-Carrement">
+				<span class="swiper-caption"><h2 class="nomargin">Bienvenue sur le nouveau - Carrément exhausté&nbsp;!!!</h2> Grâce à Jean-Emmanuel, le site de l'AMMD a fait peau très neuve en un temps record. Le voici dans sa nouvelle mouture tellement plus simple et plus complète. 
+
+Au menu : 
+
+ une mise à jour de tous les&nbsp;(...)</span>
+				<span class="swiper-caption-date">5 novembre 2013</span>
+				</a>
+			</div>
+
+			
+
+			<div class="swiper-slide" style="background-size:cover;background-image:url(local/cache-vignettes/L220xH164/arton23-a11d5.jpg)">
+				<a href="groolot-et-Sandra-Guillen-2nd-des">
+				<span class="swiper-caption"><h2 class="nomargin">groolot et Sandra Guillen 2nd des Jeux de la Francophonie</h2> Plébiscite est sur le podium des Jeux de la Francophonie, 2e marche !!! 
+
+Félicitations à groolot et Sandra Guillen !!!</span>
+				<span class="swiper-caption-date">13 septembre 2013</span>
+				</a>
+			</div>
+
+			
+
+			<div class="swiper-slide" style="background-size:cover;background-image:url()">
+				<a href="a-15h00-groolot-Sandra-Guillen-en">
+				<span class="swiper-caption"><h2 class="nomargin">à 15h00&nbsp;::&nbsp;: groolot &amp; Sandra Guillen en finale des Jeux de La Francophonie&nbsp;!!!</h2> Mea culpa, la finale de la catégorie Création Numérique des Jeux de la Francophonie se tiendra de 15h00 à 18h00 à Nice, Akropolis, et non à 18h00 comme initialement annoncé. 
+
+groolot et Sandra Guillen&nbsp;(...)</span>
+				<span class="swiper-caption-date">13 septembre 2013</span>
+				</a>
+			</div>
+
+			
+
+			<div class="swiper-slide" style="background-size:cover;background-image:url(local/cache-vignettes/L350xH350/arton24-5c80e.jpg)">
+				<a href="Soft-Rains-rejoint-l-AMMD">
+				<span class="swiper-caption"><h2 class="nomargin">Soft Rains rejoint l&#8217;AMMD</h2> Le duo d'Ambient Drone improvisé en 3 actes rejoint l'AMMD pour la plus grande joie des deux parties, de leurs parents, et de leurs auditeurs à venir ! 
+
+http://www.softrains.tk&nbsp;(...)</span>
+				<span class="swiper-caption-date">12 septembre 2013</span>
+				</a>
+			</div>
+
+			
+
+		</div>
+		<div class="pagination"></div>
+	</div>
+	<a class="carousel-left" href="#" onclick="mySwiper.swipePrev();mySwiper.stopAutoplay();return false;"><i class="fa fa-chevron-circle-left fa-fw"></i></a>
+	<a class="carousel-right" href="#" onclick="mySwiper.swipeNext();mySwiper.stopAutoplay();return false;"><i class="fa fa-chevron-circle-right fa-fw"></i></a>
+</div>
+<script>$(document).ready(function(){mySwiper = new Swiper('.swiper-container',{mode:'horizontal',loop: true,pagination: '.pagination',autoplay:6000,paginationClickable:true});});</script>
+
+
+<p>L&#8217;<strong>AMMD</strong> est une coopérative d&#8217;<strong>artistes libres</strong> produisant de l&#8217;Art Libre avec des matériels et des logiciels libres.</p>
+
+<p>A l&#8217;origine structure de production musicale (albums puis tournées, spectacles, créations), en s&#8217;ouvrant aux autres disciplines, elle est devenue une sorte d&#8217;incubateur, de <strong>centres d&#8217;essais et de coopération d&#8217;artistes</strong> dans lequel tout est possible, avec une démarche sociale fortement ancrée du côté du "<i>monde du libre</i>" et de l&#8217;indépendance, ainsi qu&#8217;une sensibilité écologique assortie d&#8217;actions et non de subvention&nbsp;!</p>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+<a class="blocklink rubrique-7" href="-Actualite-">
+	
+	<i class="fa fa-folder float-right"></i><h2 class="nomargin">Actualité</h2>
+	
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink rubrique-8" href="-Calendrier-">
+	
+	<i class="fa fa-folder float-right"></i><h2 class="nomargin">Calendrier</h2>
+	
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink rubrique-9" href="-Equipe-">
+	
+	<i class="fa fa-folder float-right"></i><h2 class="nomargin">Équipe</h2>
+	
+	<div class="clear"></div>
+</a>
+
+
+
+
+</div>
+
+
+
+<div class="right-section">
+
+<div class="blocklink rubrique-38">
+	
+	<a href="#"><h2 class="nomargin">Un artiste au hasard</h2></a>
+	
+	<div class="clear"></div>
+	
+	<div class="blocklink">
+	<a href="-Jeanbleu-"><h2 class="nomargin">Jeanbleu</h2></a>
+	<br/>
+	<div class="logo medium"><a href="-Jeanbleu-"><img src="local/cache-gd2/050b4f5fa9cc31ad02feeb469f536160.jpg" alt="logo_14"/></a></div> 
+	<p>Avec le rock’n’roll comme ligne de mire, JeanBleu chevauche son Mammouth depuis l’an 2004. Issus d’un croisement mal goupillé entre l’énergie et la débilité, les quatre mousquetons filent droit sur la&nbsp;(...)</p>
+	<div class="clear"></div>
+</div>
+	
+	
+	
+</div>
+
+<div class="blocklink rubrique-37">
+	
+	<a href="http://127.0.0.1/ammd3/-Calendrier-"><h2 class="nomargin">Prochaines dates</h2></a>
+	
+	<div class="clear"></div>
+	
+	<span class="anchor"><a name='pagination_articles' id='pagination_articles'></a></span>
+
+<a class="blocklink" href="ITEMM-Sections-Son-54">
+	
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin">ITEMM - Sections Son</h2>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> Lundi 10 février 2014 à 08h00min</p>
+	<p class="nomargin"><em>ITEMM // Le Mans</em></p>
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink" href="ITEMM-Sections-Son-55">
+	
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin">ITEMM - Sections Son</h2>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> Lundi 24 février 2014 à 08h00min</p>
+	<p class="nomargin"><em>ITEMM // Le Mans</em></p>
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink" href="Barons-Freaks-Cinema-Le-Royal">
+	
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin">Barons Freaks @ Cinéma Le Royal</h2>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> Jeudi 27 février 2014 à 21h00min</p>
+	<p class="nomargin"><em>Cinéma Le Royal // Le Mans</em></p>
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink" href="Groolot-En-Vrai-EVE">
+	
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin">Groolot En Vrai @ EVE</h2>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> Vendredi 28 février 2014 à 20h30min</p>
+	<p class="nomargin"><em>Grand-Atelier, EVE // Le Mans</em></p>
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink" href="Barons-Freaks-Ouverture-Mamers-en">
+	
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin">Barons Freaks @ Ouverture Mamers en Mars</h2>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> Vendredi 21 mars 2014 à 19h30min</p>
+	<p class="nomargin"><em>Mamers (72) // Le Rex / Mamers (72)</em></p>
+	<div class="clear"></div>
+</a>
+
+<div class="article-pagination"><span
+	class="pages"><strong class='on'>1</strong><span
+		class='sep'> | </span
+		><a href='./?debut_articles=5#pagination_articles' class='lien_pagination' rel='nofollow'>2</a><span
+		class='sep'> | </span
+		><a href='./?debut_articles=10#pagination_articles' class='lien_pagination' rel='nofollow'>3</a></span></div>
+	
+	
+	
+</div>
+
+
+
+
+</div>
+
+
+<?php echo recuperer_fond( 'inc/foot', array_merge(array (
+  'date' => '2014-02-07 12:37:19',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:37:19',
+  'date_redac_default' => true,
+),array('lang' => 'fr')), array("compil"=>array('skeleton/sommaire.html','html_c3c78765638f90d89b480c83bd0455ba','',85,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+";s:5:"notes";s:0:"";s:8:"contexte";a:4:{s:4:"date";s:19:"2014-02-07 12:37:19";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2014-02-07 12:37:19";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1391773040;s:2:"gz";b:0;}

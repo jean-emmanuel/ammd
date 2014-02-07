@@ -1,0 +1,78 @@
+a:11:{s:9:"squelette";s:37:"html_90f6780c9e358bfdff08cac4298c59c9";s:6:"source";s:22:"skeleton/rubrique.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"7/%2Fammd-v3%2F-Groolot---d45871661";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:2317:"
+<?php echo recuperer_fond( 'inc/head', array_merge(array (
+  'id_rubrique' => '10',
+  'date' => '2014-02-07 12:41:40',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:41:40',
+  'date_redac_default' => true,
+),array('meta_description' => 'Électro et Vidéo',
+	'meta_title' => 'Groolot - AMMD',
+	'meta_logo' => 'http://127.0.0.1/ammd-v3/IMG/rubon10.jpg?1391514816',
+	'lang' => 'fr')), array("compil"=>array('skeleton/rubrique.html','html_90f6780c9e358bfdff08cac4298c59c9','',6,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<div class="ariane">
+	<a href="http://ammd.net"><i class="fa fa-home"></i></a>&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp;<a href="-Artistes-">Artistes</a>&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp;
+</div>
+
+
+
+<div class="left-section">
+
+<h1 class="nomargin">Groolot</h1>
+ <a class="blocklink logo big float-left" href="IMG/rubon10.jpg?1391514816" rel="simplebox" title="Groolot"><img src="local/cache-vignettes/L240xH161/rubon10-00b39.jpg" alt="logo_10"/></a>
+<p>groolot exprime son imaginaire par le biais de cette musique électronique contemplative qu’il déverse sur son établi ou bien qu’il capte de son laboratoire ambulant. Entre expériences sonores et visuelles, il propose une introspection rappelant désirs et angoisses.</p>
+<div class="clear"></div>
+
+
+
+	
+	
+
+
+
+
+
+<span class="anchor"><a name='pagination_articles' id='pagination_articles'></a></span>
+
+<a class="blocklink article-7" href="Groolot-7">
+	
+	<i class="fa fa-file float-right"></i><h2 class="nomargin">Groolot</h2>
+	
+	
+	
+	<div class="clear"></div>
+</a>
+
+<a class="blocklink article-87" href="Plebiscite">
+	<div class="logo small float-left"><img class='spip_logos' alt="" src="local/cache-vignettes/L80xH54/arton87-9445f.jpg" width='80' height='54' /></div>
+	<i class="fa fa-file float-right"></i><h2 class="nomargin">Plébiscite</h2>
+	
+	
+	
+	<div class="clear"></div>
+</a>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+		<?php echo recuperer_fond( 'inc/foot', array_merge(array (
+  'id_rubrique' => '10',
+  'date' => '2014-02-07 12:41:40',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:41:40',
+  'date_redac_default' => true,
+),array('lang' => 'fr')), array("compil"=>array('skeleton/rubrique.html','html_90f6780c9e358bfdff08cac4298c59c9','',98,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:11:"id_rubrique";s:2:"10";s:4:"date";s:19:"2014-02-07 12:41:40";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2014-02-07 12:41:40";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1391773300;s:2:"gz";b:0;}

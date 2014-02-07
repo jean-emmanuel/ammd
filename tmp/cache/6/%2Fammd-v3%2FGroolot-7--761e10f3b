@@ -1,0 +1,48 @@
+a:11:{s:9:"squelette";s:37:"html_4295fde71d35319d63dc5f5df845ad36";s:6:"source";s:21:"skeleton/article.html";s:11:"process_ins";s:3:"php";s:11:"invalideurs";a:1:{s:5:"cache";s:35:"6/%2Fammd-v3%2FGroolot-7--761e10f3b";}s:7:"entetes";a:1:{s:12:"X-Spip-Cache";i:86400;}s:5:"duree";i:0;s:5:"texte";s:2731:"
+<?php echo recuperer_fond( 'inc/head', array_merge(array (
+  'id_article' => '7',
+  'date' => '2014-02-07 12:38:33',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:38:33',
+  'date_redac_default' => true,
+),array('id_rubrique' => '10',
+	'meta_description' => 'L’AMMD est une coopérative d’artistes libres produisant de l’Art Libre avec des matériels et des logiciels libres.',
+	'meta_title' => 'Groolot - AMMD',
+	'meta_logo' => 'http://127.0.0.1/ammd-v3/IMG/rubon10.jpg?1391514816',
+	'lang' => 'fr')), array("compil"=>array('skeleton/article.html','html_4295fde71d35319d63dc5f5df845ad36','',6,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+<div class="ariane">
+	<a href="http://ammd.net"><i class="fa fa-home"></i></a>&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp;<a href="-Artistes-">Artistes</a>&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp;<a href="-Groolot-">Groolot</a>&nbsp;<i class="fa fa-angle-double-right"></i>&nbsp;
+</div>
+
+
+<div class="left-section">
+
+
+<h1 class="nomargin">Groolot</h1>
+
+
+
+
+
+
+<p>Dès 1998, Grégory DAVID commence à composer sur ordinateur à l&#8217;aide d&#8217;un "tracker", par lequel il se met en quête d&#8217;une sonorité, de son propre caractère sonore. Il entâme alors une recherche personnelle lui permettant de déterminer quelles sont ses sens et sensibilités. Cette recherche durera une dizaine d&#8217;années, pendant lesquelles il élargira son domaine de créativité à l&#8217;imagerie numérique, tant statique qu&#8217;animée. Il travaillera notamment dans la post-production cinématographique et sera à l&#8217;origine de nombreux spectacles multimedia (Népenthès, Paradoxe Immobile, Décadence, Cf. <a href="http://www.groolot.net/spectacle" class='spip_url spip_out auto' rel='nofollow external'>http://www.groolot.net/spectacle</a>).</p>
+
+<p>Aujourd&#8217;hui il est compositeur de musique électronique pour son projet personnel (<a href="http://www.groolot.net" class='spip_url spip_out auto' rel='nofollow external'>http://www.groolot.net</a>), mais aussi pour des spectacles ("Lazare" de l&#8217;association AMMD, "Petit Arbre" de la Compagnie Pièces et Main d&#8217;Œuvre) ou des installations artistiques (<a href="http://www.prypiat.fr" class='spip_url spip_out auto' rel='nofollow external'>http://www.prypiat.fr</a>).</p>
+
+</div>
+
+
+
+
+<?php echo recuperer_fond( 'inc/foot', array_merge(array (
+  'id_article' => '7',
+  'date' => '2014-02-07 12:38:33',
+  'date_default' => true,
+  'date_redac' => '2014-02-07 12:38:33',
+  'date_redac_default' => true,
+),array('lang' => 'fr')), array("compil"=>array('skeleton/article.html','html_4295fde71d35319d63dc5f5df845ad36','',30,$GLOBALS['spip_lang'])), _request("connect"));
+?>
+
+";s:5:"notes";s:0:"";s:8:"contexte";a:5:{s:10:"id_article";s:1:"7";s:4:"date";s:19:"2014-02-07 12:38:33";s:12:"date_default";b:1;s:10:"date_redac";s:19:"2014-02-07 12:38:33";s:18:"date_redac_default";b:1;}s:12:"lastmodified";i:1391773113;s:2:"gz";b:0;}
