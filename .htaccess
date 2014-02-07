@@ -24,7 +24,7 @@ RewriteEngine On
 # Chez la plupart des hebergeurs il faut indiquer "RewriteBase /"
 # sinon modifiez cette ligne
 
-RewriteBase /
+RewriteBase /ammd-v3
 
 
 # SPIP version 'php' - si vous avez d'anciennes adresses en '.php[3]',
