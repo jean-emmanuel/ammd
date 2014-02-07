@@ -206,3 +206,71 @@ Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
 Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
 Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: Erreur sqlite HY000 / 1
 Feb 07 11:28:14 127.0.0.1 (pid 24977) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:40 127.0.0.1 (pid 1008) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:47 127.0.0.1 (pid 516) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:56 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom='version_installee'
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+UPDATE spip_meta
+SET maj=datetime('now'),impt='oui'
+WHERE nom LIKE '%_base_version'
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:58 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='charset_sql_connexion'
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - 
+SELECT valeur
+FROM spip_meta
+WHERE nom='dump_structure_temp'
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: Erreur sqlite HY000 / 1
+Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:ERREUR: no such table: spip_meta - query inconnue
