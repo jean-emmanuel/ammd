@@ -1,6 +1,0 @@
-<Files *>
- <limit GET POST>
- order deny,allow
- deny from all
- </Limit>
-</Files>
