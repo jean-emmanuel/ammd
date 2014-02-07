@@ -17,6 +17,7 @@
 <h1 class="nomargin">#TITRE</h1>
 [(#TEXTE|oui)[<a class="blocklink logo big float-left" href="[(#LOGO_RUBRIQUE|extraire_attribut{src})]" rel="simplebox" title="#TITRE"><img src="(#LOGO_RUBRIQUE|image_reduire{240}|extraire_attribut{src})" alt="logo_#ID_RUBRIQUE"/></a>]
 #TEXTE
+[<hr/>(#NOTES)]
 <div class="clear"></div>]
 
 #SET{articles_tri,#ARRAY}
