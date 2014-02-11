@@ -45,8 +45,8 @@
 	[<div class="logo small float-left">(#LOGO_ARTICLE|image_reduire{80})</div>]
 	<i class="fa fa-file float-right"></i><h2 class="nomargin">[(#TITRE|textebrut)]</h2>
 	[(#DATE|annee|>={2000}|oui)
-	[(#COMPTEUR_BOUCLE|<={#GET{compteur_present}}|oui)<p class="article_date nomargin"><i class="fa fa-clock-o"></i> [(#DATE|nom_jour|ucfirst) ][(#DATE|heures|=={0}|?{[(#DATE|affdate)],[(#DATE|affdate_heure)]})]</p>]
-	[(#COMPTEUR_BOUCLE|<={#GET{compteur_present}}|non)<p class="article_date nomargin"><i class="fa fa-check"></i> [(#DATE|affdate)]</p>]
+	[(#DATE|>={#ENV{date}}|oui)<p class="article_date nomargin"><i class="fa fa-clock-o fa-fw"></i> [(#DATE|nom_jour|ucfirst) ][(#DATE|affdate_heure)]</p>]
+	[(#DATE|>={#ENV{date}}|non)<p class="article_date nomargin"><i class="fa fa-check fa-fw"></i> [(#DATE|affdate)]</p>]
 	]
 	<B_mots_cles><i class="fa fa-tags"></i>&nbsp;<BOUCLE_mots_cles(MOTS){id_article}{par titre}{' ,  '}>#TITRE</BOUCLE_mots_cles>
 	[<p class="nomargin">(#DESCRIPTIF|textebrut)</p>]
