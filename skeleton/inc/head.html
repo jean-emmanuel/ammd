@@ -54,23 +54,20 @@
 			</BOUCLE_nav>
 			</ul>
 			
+			<div class="mobile-navigation">
 			<B_mnav>
-			<select class="mobile-navigation" onchange="window.location.href=this[this.selectedIndex].value">
-			<option>Rubriques</option>
+			<select class="a dropdown" onchange="window.location.href=this[this.selectedIndex].value">
+			<option class="label">Navigation</option>
 			<BOUCLE_mnav(RUBRIQUES) {racine}{tout}{par num titre, titre}{rubrique_cachee!=on}>
 			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">#TITRE</option>
+				<BOUCLE_msnav(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{tout} {par num titre, titre}{rubrique_cachee!=on}>
+				<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">&nbsp;&nbsp;&nbsp;[(#TITRE|couper{35})]</option>
+				</BOUCLE_msnav>
 			</BOUCLE_mnav>
 			</select>
 			</B_mnav>
 			
-			<B_msnav>
-			<select class="mobile-subnavigation" onchange="window.location.href=this[this.selectedIndex].value">
-			<option>Sous rubriques</option>
-			<BOUCLE_msnav(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{tout} {par num titre, titre}{rubrique_cachee!=on}>
-			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">#TITRE</option>
-			</BOUCLE_msnav>
-			</select>
-			</B_msnav>
+			</div>
 			
 			<div class="nav-links float-right">
 				<a href="#URL_ARTICLE{85}" title="S'incrire à la Newsletter" class="[ (#ID_ARTICLE|=={85}|oui)on]"><i class="fa fa-bullhorn fa-fw fa-fh"></i></a>
