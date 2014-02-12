@@ -2,6 +2,7 @@
 <html lang="#ENV{lang,#LANG}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" >
 	
 	<meta name="designer" content="Jean-Emmanuel Doucet"/>
 	<meta name="dcterms.license" content="Copyleft - Free Art License"/>
@@ -59,7 +60,7 @@
 			<select class="a dropdown" onchange="window.location.href=this[this.selectedIndex].value">
 			<option class="label">Navigation</option>
 			<BOUCLE_mnav(RUBRIQUES) {racine}{tout}{par num titre, titre}{rubrique_cachee!=on}>
-			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">#TITRE</option>
+			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"[ (#EXPOSE|oui)selected=""]>#TITRE</option>
 				<BOUCLE_msnav(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{tout} {par num titre, titre}{rubrique_cachee!=on}>
 				<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">&nbsp;&nbsp;&nbsp;[(#TITRE|couper{35})]</option>
 				</BOUCLE_msnav>
