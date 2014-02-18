@@ -1,0 +1,20 @@
+#SET{articles_tri,#ARRAY}
+<BOUCLE_date_tri_futur(ARTICLES){id_rubrique=8}{par date}{age<0}{id_mot?=#ENV{id_mot}}>
+			[(#SET{articles_tri, #GET{articles_tri}|array_merge{#ARRAY{#COMPTEUR_BOUCLE,#ID_ARTICLE}}})]
+</BOUCLE_date_tri_futur>
+
+<B_articles>
+[<span class="anchor">(#ANCRE_PAGINATION)</span>]
+<BOUCLE_articles(ARTICLES){id_article IN #GET{articles_tri}}{pagination 5}>
+<a itemprop="event" itemscope itemtype="http://schema.org/Event" class="blocklink" href="#URL_ARTICLE">
+	[<div class="logo small float-left">(#LOGO_ARTICLE|image_reduire{80})</div>]
+	<i class="fa fa-calendar float-right"></i><h2 class="nomargin" itemprop="name">[(#TITRE|textebrut)]</h2>
+	<meta itemprop="url" content ="#URL_ARTICLE">
+	<meta itemprop="startDate" content="[(#DATE|affdate{'c'})]"/>
+	<p class="article_date nomargin"><i class="fa fa-clock-o"></i> [(#DATE|nom_jour|ucfirst) ][(#DATE|heures|=={0}|?{[(#DATE|affdate)],[(#DATE|affdate_heure)]})]</p>
+	[<p class="nomargin" itemprop="description"><em>(#LIEU|textebrut)</em></p>]
+	<div class="clear"></div>
+</a>
+</BOUCLE_articles>
+[<div class="article-pagination">(#PAGINATION{page})</div>]
+</B_articles>
