@@ -320,3 +320,27 @@ Feb 07 12:37:59 127.0.0.1 (pid 32720) :Pri:!INFO: creation 'spip_auteurs' sur se
 Feb 07 12:38:00 127.0.0.1 (pid 32720) :Pri:!INFO: recopie spip_auteurs 8
 Feb 07 12:38:00 127.0.0.1 (pid 32720) :Pri:!INFO: Detruire copieur id_auteur&lt;0 pour le serveur ''
 Feb 07 12:39:52 127.0.0.1 (pid 32490) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 14 09:11:54 127.0.0.1 (pid 9173) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 14 09:11:54 127.0.0.1 (pid 9173) :Pub:ERREUR: database schema has changed - SELECT sql, type FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE tbl_name LIKE 'ammd3_jobs' AND type!='meta' AND sql NOT NULL AND name NOT LIKE 'sqlite_%' ORDER BY substr(type,2,1), name
+Feb 14 09:11:56 127.0.0.1 (pid 2559) :Pub:!INFO: Entree 1/82/article supprimee dans la table spip_auteurs_liens
+Feb 14 09:11:57 127.0.0.1 (pid 2559) :Pub:!INFO: Entree 4/82/article supprimee dans la table spip_mots_liens
+Feb 15 14:22:44 127.0.0.1 (pid 9172) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 15 14:22:44 127.0.0.1 (pid 9172) :Pub:ERREUR: database schema has changed - SELECT sql, type FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE tbl_name LIKE 'ammd3_jobs' AND type!='meta' AND sql NOT NULL AND name NOT LIKE 'sqlite_%' ORDER BY substr(type,2,1), name
+Feb 15 14:24:48 127.0.0.1 (pid 20132) :Pri:ERREUR: fonction execute_pipeline_notifications_destinataires absente : pipeline desactive
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: database schema has changed - 
+SELECT id_objet, type, date, url
+FROM ammd3_urls
+WHERE url='-Calendrier-'
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:58 127.0.0.1 (pid 2796) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: database schema has changed - 
+SELECT id_depot
+FROM ammd3_depots
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: database schema has changed - query inconnue
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: Erreur sqlite HY000 / 17
+Feb 18 09:31:59 127.0.0.1 (pid 5140) :Pub:ERREUR: database schema has changed - query inconnue

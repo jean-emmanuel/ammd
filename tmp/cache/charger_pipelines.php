@@ -1,6 +1,94 @@
 <?php
 
 if (defined('_ECRIRE_INC_VERSION')) {
+// Pipeline styliser 
+function execute_pipeline_styliser(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_RESTREINT.'/inc/cvt_multietapes.php');
+include_once_check(_ROOT_PLUGINS_DIST.'vertebres/vertebres_pipelines.php');
+include_once_check(_ROOT_PLUGINS.'auto/saisies/saisies_pipelines.php');
+$inc=true;
+}
+$val = minipipe('cvtmulti_styliser', $val);
+$val = minipipe('vertebres_styliser', $val);
+$val = minipipe('saisies_styliser', $val);
+$val = minipipe('squelettes_par_rubrique_styliser_par_rubrique', $val);
+$val = minipipe('squelettes_par_rubrique_styliser_par_langue', $val);
+return $val;
+}
+// Pipeline declarer_tables_objets_sql 
+function execute_pipeline_declarer_tables_objets_sql(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
+include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
+include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
+include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
+include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
+include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
+include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
+include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
+include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
+$inc=true;
+}
+$val = minipipe('forum_declarer_tables_objets_sql', $val);
+$val = minipipe('mots_declarer_tables_objets_sql', $val);
+$val = minipipe('organiseur_declarer_tables_objets_sql', $val);
+$val = minipipe('petitions_declarer_tables_objets_sql', $val);
+$val = minipipe('revisions_declarer_tables_objets_sql', $val);
+$val = minipipe('sites_declarer_tables_objets_sql', $val);
+$val = minipipe('svp_declarer_tables_objets_sql', $val);
+$val = minipipe('mailsubscribers_declarer_tables_objets_sql', $val);
+$val = minipipe('mailshot_declarer_tables_objets_sql', $val);
+$val = minipipe('newsletters_declarer_tables_objets_sql', $val);
+$val = minipipe('partageur_declarer_tables_objets_sql', $val);
+$val = minipipe('breves_declarer_tables_objets_sql', $val);
+$val = minipipe('medias_declarer_tables_objets_sql', $val);
+$val = minipipe('cextras_declarer_champs_apres_les_autres', $val);
+return $val;
+}
+// Pipeline declarer_tables_interfaces 
+function execute_pipeline_declarer_tables_interfaces(&$val){
+static $inc=null;
+if (!$inc){
+include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
+include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
+include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
+include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
+include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
+include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
+include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
+include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/base/urls.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
+include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
+include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
+include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
+include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
+include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
+$inc=true;
+}
+$val = minipipe('forum_declarer_tables_interfaces', $val);
+$val = minipipe('mots_declarer_tables_interfaces', $val);
+$val = minipipe('organiseur_declarer_tables_interfaces', $val);
+$val = minipipe('petitions_declarer_tables_interfaces', $val);
+$val = minipipe('revisions_declarer_tables_interfaces', $val);
+$val = minipipe('sites_declarer_tables_interfaces', $val);
+$val = minipipe('svp_declarer_tables_interfaces', $val);
+$val = minipipe('urls_declarer_tables_interfaces', $val);
+$val = minipipe('mailsubscribers_declarer_tables_interfaces', $val);
+$val = minipipe('mailshot_declarer_tables_interfaces', $val);
+$val = minipipe('newsletters_declarer_tables_interfaces', $val);
+$val = minipipe('partageur_declarer_tables_interfaces', $val);
+$val = minipipe('breves_declarer_tables_interfaces', $val);
+$val = minipipe('medias_declarer_tables_interfaces', $val);
+$val = minipipe('cextras_declarer_champs_interfaces_apres_les_autres', $val);
+return $val;
+}
 // Pipeline accueil_encours 
 function execute_pipeline_accueil_encours(&$val){
 static $inc=null;
@@ -394,78 +482,6 @@ include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_pipeline.php');
 $inc=true;
 }
 $val = minipipe('compresseur_declarer_filtres_squelettes', $val);
-return $val;
-}
-// Pipeline declarer_tables_interfaces 
-function execute_pipeline_declarer_tables_interfaces(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
-include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
-include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
-include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
-include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
-include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
-include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
-include_once_check(_ROOT_PLUGINS_DIST.'urls_etendues/base/urls.php');
-include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
-include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
-include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
-include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
-include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
-$inc=true;
-}
-$val = minipipe('forum_declarer_tables_interfaces', $val);
-$val = minipipe('mots_declarer_tables_interfaces', $val);
-$val = minipipe('organiseur_declarer_tables_interfaces', $val);
-$val = minipipe('petitions_declarer_tables_interfaces', $val);
-$val = minipipe('revisions_declarer_tables_interfaces', $val);
-$val = minipipe('sites_declarer_tables_interfaces', $val);
-$val = minipipe('svp_declarer_tables_interfaces', $val);
-$val = minipipe('urls_declarer_tables_interfaces', $val);
-$val = minipipe('mailsubscribers_declarer_tables_interfaces', $val);
-$val = minipipe('mailshot_declarer_tables_interfaces', $val);
-$val = minipipe('newsletters_declarer_tables_interfaces', $val);
-$val = minipipe('partageur_declarer_tables_interfaces', $val);
-$val = minipipe('breves_declarer_tables_interfaces', $val);
-$val = minipipe('medias_declarer_tables_interfaces', $val);
-$val = minipipe('cextras_declarer_champs_interfaces_apres_les_autres', $val);
-return $val;
-}
-// Pipeline declarer_tables_objets_sql 
-function execute_pipeline_declarer_tables_objets_sql(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_PLUGINS_DIST.'forum/base/forum.php');
-include_once_check(_ROOT_PLUGINS_DIST.'mots/base/mots.php');
-include_once_check(_ROOT_PLUGINS_DIST.'organiseur/base/organiseur.php');
-include_once_check(_ROOT_PLUGINS_DIST.'petitions/base/petitions.php');
-include_once_check(_ROOT_PLUGINS_DIST.'revisions/base/revisions.php');
-include_once_check(_ROOT_PLUGINS_DIST.'sites/base/sites.php');
-include_once_check(_ROOT_PLUGINS_DIST.'svp/base/svp_declarer.php');
-include_once_check(_ROOT_PLUGINS.'auto/mailsubscribers-v1/base/mailsubscribers.php');
-include_once_check(_ROOT_PLUGINS.'auto/mailshot-v1/base/mailshot.php');
-include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/base/newsletters.php');
-include_once_check(_ROOT_PLUGINS.'auto/partageur_3/base/partageur.php');
-include_once_check(_ROOT_PLUGINS_DIST.'breves/base/breves.php');
-include_once_check(_ROOT_PLUGINS_DIST.'medias/base/medias.php');
-$inc=true;
-}
-$val = minipipe('forum_declarer_tables_objets_sql', $val);
-$val = minipipe('mots_declarer_tables_objets_sql', $val);
-$val = minipipe('organiseur_declarer_tables_objets_sql', $val);
-$val = minipipe('petitions_declarer_tables_objets_sql', $val);
-$val = minipipe('revisions_declarer_tables_objets_sql', $val);
-$val = minipipe('sites_declarer_tables_objets_sql', $val);
-$val = minipipe('svp_declarer_tables_objets_sql', $val);
-$val = minipipe('mailsubscribers_declarer_tables_objets_sql', $val);
-$val = minipipe('mailshot_declarer_tables_objets_sql', $val);
-$val = minipipe('newsletters_declarer_tables_objets_sql', $val);
-$val = minipipe('partageur_declarer_tables_objets_sql', $val);
-$val = minipipe('breves_declarer_tables_objets_sql', $val);
-$val = minipipe('medias_declarer_tables_objets_sql', $val);
-$val = minipipe('cextras_declarer_champs_apres_les_autres', $val);
 return $val;
 }
 // Pipeline declarer_tables_principales 
@@ -1013,22 +1029,6 @@ $inc=true;
 }
 $val = minipipe('f_recuperer_fond', $val);
 $val = minipipe('facteur_recuperer_fond', $val);
-return $val;
-}
-// Pipeline styliser 
-function execute_pipeline_styliser(&$val){
-static $inc=null;
-if (!$inc){
-include_once_check(_ROOT_RESTREINT.'/inc/cvt_multietapes.php');
-include_once_check(_ROOT_PLUGINS_DIST.'vertebres/vertebres_pipelines.php');
-include_once_check(_ROOT_PLUGINS.'auto/saisies/saisies_pipelines.php');
-$inc=true;
-}
-$val = minipipe('cvtmulti_styliser', $val);
-$val = minipipe('vertebres_styliser', $val);
-$val = minipipe('saisies_styliser', $val);
-$val = minipipe('squelettes_par_rubrique_styliser_par_rubrique', $val);
-$val = minipipe('squelettes_par_rubrique_styliser_par_langue', $val);
 return $val;
 }
 // Pipeline traduire 

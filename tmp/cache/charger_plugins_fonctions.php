@@ -17,6 +17,7 @@ include_once_check(_ROOT_PLUGINS.'auto/newsletters-v1/newsletters_fonctions.php'
 include_once_check(_ROOT_PLUGINS.'auto/spip-bonux-3/spip_bonux_fonctions.php');
 include_once_check(_ROOT_PLUGINS.'auto/saisies/saisies_fonctions.php');
 include_once_check(_ROOT_PLUGINS.'auto/champs_extras3/cextras_fonctions.php');
+include_once_check(_ROOT_PLUGINS.'auto/article_odt/article_odt_mes_fonctions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'compresseur/compresseur_fonctions.php');
 include_once_check(_ROOT_PLUGINS_DIST.'medias/medias_fonctions.php');
 if (!function_exists('boutons_plugins')) {
