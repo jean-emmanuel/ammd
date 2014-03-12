@@ -1,5 +1,5 @@
 #SET{articles_tri,#ARRAY}
-<BOUCLE_date_tri_futur(ARTICLES){id_rubrique=8}{par date}{age<0}{id_mot?=#ENV{id_mot}}>
+<BOUCLE_date_tri_futur(ARTICLES){id_rubrique=8}{par date}{age<=0}{id_mot?=#ENV{id_mot}}>
 			[(#SET{articles_tri, #GET{articles_tri}|array_merge{#ARRAY{#COMPTEUR_BOUCLE,#ID_ARTICLE}}})]
 </BOUCLE_date_tri_futur>
 
