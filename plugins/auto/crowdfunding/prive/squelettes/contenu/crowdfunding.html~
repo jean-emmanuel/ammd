@@ -1,0 +1,39 @@
+[(#AUTORISER{voir,crowdfunding,#ID_CROWDFUNDING}|sinon_interdire_acces)]
+<BOUCLE_crowdfunding(CROWDFUNDINGS){id_crowdfunding}{statut==.*}{si #ENV{exec}|=={crowdfunding}}>
+[(#LANG|changer_typo)]
+[(#BOITE_OUVRIR{[
+				
+	[(#AUTORISER{modifier,crowdfunding,#ID_CROWDFUNDING})
+				
+		[(#ID_CROWDFUNDING|afficher_qui_edite{crowdfunding}|non)
+			[(#URL_ECRIRE{crowdfunding_edit,id_crowdfunding=#ID_CROWDFUNDING}|icone_verticale{<:crowdfunding:icone_modifier_crowdfunding:>,crowdfunding,edit,right ajax preload})]
+		]
+		[(#ID_CROWDFUNDING|afficher_qui_edite{crowdfunding}|oui)
+			[(#URL_ECRIRE{crowdfunding_edit,id_crowdfunding=#ID_CROWDFUNDING}|icone_verticale{#ID_CROWDFUNDING|afficher_qui_edite{crowdfunding},warning-24,'',right edition_deja ajax preload})]
+		]
+	]
+	<h1>[(#RANG). ](#TITRE|sinon{<:info_sans_titre:>})[(#CHEMIN_IMAGE{crowdfunding-24.png}|balise_img{crowdfunding,cadre-icone})]</h1>
+],simple fiche_objet})]
+[(#REM|changer_typo)]
+
+<strong class="label"><:crowdfunding:label_date_debut:></strong><div class="value">[(#DATE_DEBUT|affdate)]</div>
+<strong class="label"><:crowdfunding:label_date_echeance:></strong><div class="value">[(#DATE_ECHEANCE|affdate)]</div>
+<strong class="label"><:crowdfunding:label_montant_demande:></strong><div class="value">[(#MONTANT_DEMANDE) €]</div>
+<strong class="label"><:crowdfunding:label_email:></strong><div class="value">[(#EMAIL)]</div>
+
+<hr/>
+
+<INCLURE{fond=modeles/crowdfunding,id=#ID_CROWDFUNDING, form=10}/>
+
+#BOITE_FERMER
+
+[(#URL_ECRIRE{crowdfunding_don_edit,new=oui&id_crowdfunding=#ID_CROWDFUNDING}|icone_verticale{<:crowdfunding:icone_creer_crowdfunding_don:>,crowdfunding_don,new,right clearright})]
+#INCLURE{fond=prive/objets/liste/crowdfundings_dons,id_crowdfunding,env}
+
+
+[(#EVAL{_AJAX}|oui)
+	<script type="text/javascript">/*<!\[CDATA\[*/reloadExecPage('#ENV{exec}','#navigation,#chemin,#extra');/*\]\]>*/</script>
+]
+</BOUCLE_crowdfunding>
+[(#ENV**{exec}|=={crowdfunding_edit}|?{#INCLURE{fond=prive/squelettes/contenu/crowdfunding_edit,redirect='',env,retourajax=oui},#REM|sinon_interdire_acces})]
+<//B_crowdfunding>

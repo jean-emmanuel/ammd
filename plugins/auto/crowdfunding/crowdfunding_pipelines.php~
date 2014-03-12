@@ -1,0 +1,22 @@
+<?php
+    function crowdfunding_affiche_enfants($flux) {
+    if ($e = trouver_objet_exec($flux['args']['exec'])
+    AND $e['type'] == 'crowdfunding'
+    AND $e['edition'] == false) {
+     
+    $id_crowdfunding = $flux['args']['id_crowdfunding'];
+     
+    $bouton = '';
+
+    $bouton .= icone_verticale(_T('crowdfunding:icone_creer_don'), generer_url_ecrire('crowdfunding_don_edit', "id_crowdfunding=$id_crowdfunding"), "", "new", 'right')
+    . "<br class='nettoyeur' />";
+
+     
+    $lister_objets = charger_fonction('lister_objets','inc');	
+    $flux['data'] .= $lister_objets('chats', array('titre'=>_T('chat:titre_chats_rubrique') , 'id_rubrique'=>$id_rubrique, 'par'=>'nom'));
+    $flux['data'] .= $bouton;
+     
+    }
+    return $flux;
+    }
+?>

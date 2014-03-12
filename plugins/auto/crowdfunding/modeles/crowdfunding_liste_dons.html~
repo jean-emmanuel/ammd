@@ -1,0 +1,9 @@
+<BOUCLE_crowdfunding(CROWDFUNDINGS){id_crowdfunding=#ENV{id}}>
+<BOUCLE_dons(CROWDFUNDINGS_DONS){id_crowdfunding}>
+<ul class="crowdfunding_liste_dons">
+
+	<li>[(#DATE_DON|affdate)] : [(#PRENOM|ucfirst)][ (#NOM|substr{0,1}|ucfirst).] (#MONTANT_DON €)</li>
+
+</ul>
+</BOUCLE_dons>
+</BOUCLE_crowdfunding>

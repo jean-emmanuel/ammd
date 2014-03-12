@@ -1,0 +1,36 @@
+<div class="nettoyeur"></div>
+    [(#SET{defaut_tri,#ARRAY{
+    nom,1,
+    date,#ENV{date_sens,-1},
+    id_crowdfunding_don,1
+    }})
+    ]<B_liste_dons>
+    #ANCRE_PAGINATION
+    <div class="liste-objets dons">
+    <table class='spip liste'>
+    [<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{crowdfunding:info_1_don,crowdfunding:info_nb_dons}})</strong></caption>]
+    <thead>
+    <tr class='first_row'>
+    <th class='nom' scope='col'>[(#TRI{nom,<:crowdfunding:label_don:>,ajax})]</th>
+    <th class='date' scope='col'>[(#TRI{date,<:date:>,ajax})]</th>
+    <th class='id' scope='col'>[(#TRI{id_crowdfunding_don,<:info_numero_abbreviation:>,ajax})]</th>
+    </tr>
+    </thead>
+    <tbody>
+    <BOUCLE_liste_dons(CROWDFUNDINGS_DONS){id_crowdfunding?}{where?}{statut?}{recherche?}{tri #ENV{par,num nom},#GET{defaut_tri}}{pagination #ENV{nb,10}}>
+    <tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+    <td class='nom principale'><a href="[(#ID_CROWDFUNDING_DON|generer_url_entite{crowdfunding_don})]" title="<:info_numero_abbreviation|attribut_html:> #ID_CROWDFUNDING_DON">#MONTANT_DON € |[ (#PRENOM)][ (#NOM)][ | (#EMAIL)]</a></td>
+    <td class='date secondaire'>[(#DATE_DON|affdate_jourcourt)]</td>
+    <td class='id'>[(#AUTORISER{modifier,crowdfunding_don,#ID_CROWDFUNDING_DON}|?{
+    <a href="[(#URL_ECRIRE{crowdfunding_don_edit,id_crowdfunding_don=#ID_CROWDFUNDING_DON})]">#ID_CROWDFUNDING_DON</a>,
+    #ID_CROWDFUNDING_DON
+    })]</td>
+    </tr>
+    </BOUCLE_liste_dons>
+    </tbody>
+    </table>
+    [<p class='pagination'>(#PAGINATION{prive})</p>]
+    </div>
+    </B_liste_dons>[
+    <div class="liste-objets dons caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
+    ]<//B_liste_dons>
