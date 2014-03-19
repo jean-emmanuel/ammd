@@ -23,6 +23,17 @@
 	<link href="#CHEMIN{css/simplebox.css}" rel="stylesheet" media="screen">
 	
 	<script src="#CHEMIN{js/scripts.js}" type="text/javascript"></script>
+	<script src="#CHEMIN{js/syntax/jquery.syntax.min.js}" type="text/javascript"></script> 
+	<script type="text/javascript">
+	jQuery(function($) {
+		var SyntaxRoot = "[(#CHEMIN{js/syntax/jquery.syntax.min.js}|dirname)]/";
+		if ($('.syntax').length) {
+			$.getScript(SyntaxRoot + "jquery.syntax.min.js", function () {
+			$.syntax({root: SyntaxRoot, inlineLayout: "list",theme: "grey"});
+			});
+		}
+	});
+	</script>
 </head>
 
 <body>
