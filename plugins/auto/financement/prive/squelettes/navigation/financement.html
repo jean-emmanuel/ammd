@@ -1,0 +1,10 @@
+[(#BOITE_OUVRIR{'','info'})]
+<div class="infos">
+<div class="numero"><:financement:titre_financement:> NUMÉRO&nbsp;:<p>#ENV{id_financement}</p></div>
+
+<BOUCLE_n(FINANCEMENTS_TRANSACTIONS){id_financement?}> </BOUCLE_n>
+<center><a href='[(#URL_ACTION_AUTEUR{supprimer_financement,#ID_FINANCEMENT,#URL_ECRIRE{financements}})]'><:financement:supprimer_financement:></a></center>
+<//B_n>
+</div>
+
+#BOITE_FERMER
