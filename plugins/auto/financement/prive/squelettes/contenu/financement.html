@@ -20,6 +20,8 @@
 <strong class="label"><:financement:label_date_echeance:></strong><div class="value">[(#DATE_ECHEANCE|affdate)]</div>
 <strong class="label"><:financement:label_montant_demande:></strong><div class="value">[(#MONTANT_DEMANDE) €]</div>
 <strong class="label"><:financement:label_email:></strong><div class="value">[(#EMAIL)]</div>
+<strong class="label"><:financement:label_type:></strong><div class="value">[(#TYPE|=={_xclick}|?{Souscription,Campagne de don})]</div>
+<strong class="label">[(#TYPE|=={_xclick}|?{<:financement:label_prix_exemplaire:>,<:financement:label_montant_minimum:>})]</strong><div class="value">[(#MONTANT_MINIMUM) €]</div>
 
 <hr/>
 

@@ -15,13 +15,20 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	'info_1_transaction' => "Une transaction",
 	'info_nb_transactions' => "@nb@ transactions",
-
+	
+	// F	
+	'financement_souscrire'  => "Souscrire !",
+	'financement_participer'  => "Soutenir ce projet",
+	
 	//L
 	'label_titre' => " Titre",
 	'label_date_debut' => " Date de début",
 	'label_date_echeance' => " Date d'échéance",
-	'label_montant_demande' => " Montant demandé (€)",
+	'label_montant_demande' => " Montant demandé",
+	'label_montant_minimum' => " Montant minimum",
 	'label_email' => " Email Paypal à créditer",
+	'label_type' => " Type de financement",
+	'label_prix_exemplaire' => " Prix par exemplaire",
 
 	'label_transaction' => "Transaction",
 	'label_transaction_nom' => "Nom",
@@ -41,8 +48,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// P
 	'paypal_message' => "Envoyer un message",
-	'paypal_submit'  => "Soutenir ce projet",
-	
 	// S
 	'supprimer_financement' => "Supprimer ce financement",
 	'supprimer_financement_transaction' => "Supprimer cette transaction",

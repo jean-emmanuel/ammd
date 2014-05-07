@@ -646,6 +646,9 @@ code {
 	padding:3px;
 }
 
+input:focus, select:focus {
+  outline:0px!important;
+}
 /*========== /TYPO & GENERATED CONTENT ==========*/
 
 

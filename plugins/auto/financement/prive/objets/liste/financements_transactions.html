@@ -20,11 +20,11 @@
     <tbody>
     <BOUCLE_liste_transactions(FINANCEMENTS_TRANSACTIONS){id_financement?}{where?}{statut?}{recherche?}{tri #ENV{par,num nom},#GET{defaut_tri}}{pagination #ENV{nb,10}}>
     <tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
-    <td class='nom principale'><a href="[(#ID_FINANCEMENT_TRANSACTION|generer_url_entite{financement_transaction})]" title="<:info_numero_abbreviation|attribut_html:> #ID_FINANCEMENT_TRANSACTION">#MONTANT € |[ (#PRENOM)][ (#NOM)][ | (#EMAIL)]</a></td>
+    <td class='nom principale'><a href="[(#ID_FINANCEMENT_TRANSACTION|generer_url_entite{financement_transaction}|parametre_url{id_financement,#ID_FINANCEMENT})]" title="<:info_numero_abbreviation|attribut_html:> #ID_FINANCEMENT_TRANSACTION">#MONTANT € |[ (#PRENOM)][ (#NOM)][ | (#EMAIL)]</a></td>
     <td class='date secondaire'>[(#DATE|affdate_jourcourt)]</td>
     <td class='id' secondaire>#ID_FINANCEMENT_TRANSACTION</td>
     <td class='edit' secondaire>	[(#AUTORISER{voir,financement_transaction,#ID_FINANCEMENT_TRANSACTION})
-<a href='[(#URL_ECRIRE{financement_transaction}|parametre_url{id_financement_transaction,#ID_FINANCEMENT_TRANSACTION})]'>Voir</a>
+<a href='[(#URL_ECRIRE{financement_transaction}|parametre_url{id_financement_transaction,#ID_FINANCEMENT_TRANSACTION}|parametre_url{id_financement,#ID_FINANCEMENT})]'>Voir</a>
 ]
 [(#AUTORISER{modifier,financement_transaction,#ID_FINANCEMENT_TRANSACTION})
 |

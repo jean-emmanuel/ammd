@@ -15,7 +15,7 @@
 [(#SAISIE{input, email, label=<:financement:label_email:>, type=email, obligatoire=oui})]
 <hr/>
 [(#SAISIE{radio, type, datas=#ARRAY{_donations,Don (crowdfunding),_xclick,Achat (souscription)}, defaut=_donations, label=<:financement:label_type:>, obligatoire=oui})]
-[(#SAISIE{input, montant_minimum, label=<:financement:label_montant_minimum:>, type=number, obligatoire=oui})]
+[(#SAISIE{input, montant_minimum, label=[(#TYPE|=={_xclick}|?{<:financement:label_prix_exemplaire:>,<:financement:label_montant_minimum:>})], type=number, defaut=0, obligatoire=non})]
 </ul>
 [(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
 <!--extra-->
