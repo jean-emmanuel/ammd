@@ -22,7 +22,6 @@ function financement_declarer_tables_objets_sql($tables) {
 		'principale' => "oui",
 		'field'=> array(
 			"id_financement"      => "bigint(21) NOT NULL",
-			"type"							 => "text NOT NULL DEFAULT ''",
 			"titre"              => "text NOT NULL DEFAULT ''",
 			"date_debut"         => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'",
 			"date_echeance"      => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'",
@@ -36,7 +35,7 @@ function financement_declarer_tables_objets_sql($tables) {
 		),
 		'titre' => "titre AS titre, '' AS lang",
 		'date' => "date_spip",
-		'champs_editables'  => array("type", 'titre', 'email', 'date_debut', 'date_echeance', 'montant_demande', 'montant_minimum'),
+		'champs_editables'  => array('titre', 'email', 'date_debut', 'date_echeance', 'montant_demande', 'montant_minimum'),
 		'champs_versionnes' => array(),
 		'rechercher_champs' => array(),
 		'tables_jointures'  => array()

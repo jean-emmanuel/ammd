@@ -20,7 +20,7 @@
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="financement_form"[ (#ENV{target}|=={_blank}|oui)target="_blank"]>
     <div>
 
-        <input type="hidden" name="cmd" value="[(#TYPE|=={_xclick}|?{_cart,_donations})]">
+        <input type="hidden" name="cmd" value="_xclick">
         [(#TYPE|=={_xclick}|oui)<input type="hidden" name="upload" value="1">]
         <input type="hidden" name="business" value="#EMAIL"/>
         <input type="hidden" name="notify_url" value="[(#CHEMIN{ipn/ipn.php}|url_absolue)?id_financement=#ID_FINANCEMENT]" /> 
@@ -29,45 +29,41 @@
         <input type="hidden" name="no_note" value="0" />
         <input type="hidden" name="cn" value="<:financement:paypal_message:>" />
         <input type="hidden" name="cbt" value="Retour au site (#NOM_SITE_SPIP)" />
-        <input type="hidden" name="no_shipping" value="[(#TYPE|=={_donations}|oui)0][(#TYPE|=={_xclick}|oui)2]" />
+        <input type="hidden" name="no_shipping" value="2" />
         <input type="hidden" name="shipping" value="0" />
         <input type="hidden" name="lc" value="FR" />
         <input type="hidden" name="currency_code" value="EUR" />
         
-        
-[(#TYPE|=={_xclick}|oui)
-        <input type="hidden" name="item_name_1" value="[(#NOM_SITE_SPIP|textebrut)] - [(#TITRE|textebrut)]" />
-        <input type="hidden" name="amount_1" value="[(#MONTANT_MINIMUM|sinon{0})]" />
-        <input type="hidden" name="item_name_2" value="Participation libre" />   
-        <div class="amount" style="display:table;width:100%;height:30px;padding:3px 3px 3px 3px;background:#fff; border:1px solid #aaa;position:relative">
-          <div style="display:table-cell;width:80px;">
-          <select name="quantity_1" style="background:none;padding:2px 5px;outline:0;white-space:nowrap;color:#666;border:0;">
-            <option value="1">1 exemplaire ( #MONTANT_MINIMUM €)</option>
-            <option value="2">2 exemplaires ( [(#MONTANT_MINIMUM|mult{2})] €)</option>
-            <option value="3">3 exemplaires ( [(#MONTANT_MINIMUM|mult{3})] €)</option>
-            <option value="4">4 exemplaires ( [(#MONTANT_MINIMUM|mult{4})] €)</option>
-            <option value="5">5 exemplaires ( [(#MONTANT_MINIMUM|mult{5})] €)</option>
-            <option value="6">6 exemplaires ( [(#MONTANT_MINIMUM|mult{6})] €)</option>
-            <option value="7">7 exemplaires ( [(#MONTANT_MINIMUM|mult{7})] €)</option>
-            <option value="8">8 exemplaires ( [(#MONTANT_MINIMUM|mult{8})] €)</option>
-            <option value="9">9 exemplaires ( [(#MONTANT_MINIMUM|mult{9})] €)</option>
-            <option value="10">10 exemplaires ( [(#MONTANT_MINIMUM|mult{10})] €)</option>
-          </select></div>
-          <label for="amount_2" style="z-index: -1;padding:2px;display:table-cell;white-space:nowrap;width:20px;color:#666"><b>&nbsp;+ don</b> : </label>
-          <input name="amount_2" id="amount" type="number" min="0" style="padding:2px;display:table-cell;width:100%;height:100%;font:inherit;background:transparent;border:0;box-shadow:0;"/>
-        </div>
-][(#TYPE|=={_xclick}|non)
+
         <input type="hidden" name="item_name" value="[(#NOM_SITE_SPIP|textebrut)] - [(#TITRE|textebrut)]" />
-        <div class="amount" style="display:table;width:100%;height:30px;padding:3px 3px 3px 3px;background:#fff; border:1px solid #aaa;position:relative">
-          <label for="amount" style="z-index: -1;padding:2px;display:table-cell;white-space:nowrap;width:80px;color:#666"><b>Participation</b>[ ((#MONTANT_MINIMUM)€ minimum)] : </label>
-          <input name="amount" id="amount" type="number" min="[(#MONTANT_MINIMUM|sinon{0})]" style="padding:2px;display:table-cell;width:100%;height:100%;font:inherit;background:transparent;border:0;box-shadow:0px;outline:0px;"/>
+        <input type="hidden" name="quantity" value="1" />
+
+        <div class="amount" style="font-size:15px;display:table;width:100%;height:30px;line-height:30px;padding:5px;background:#fff; border:1px solid #aaa;position:relative">
+          <label for="amount" style="z-index: -1;padding:2px;display:table-cell;white-space:nowrap;width:80px;color:#666"><b>Participation (€)&nbsp;&nbsp;:&nbsp;</b></label>
+          <input name="amount" id="amount" type="number" min="0" style="padding:2px;display:table-cell;width:100%;height:100%;font:inherit;background:transparent;border:0;box-shadow:0px;outline:0px;"/>
         </div>
-]
+
 
         <!-- You can change the image of the button: -->
-        <input class="paypal" style="margin-top:20px;" type="submit" name="submit" value="[(#TYPE|=={_xclick}|?{<:financement:financement_souscrire:>,<:financement:financement_participer:>})]" />
+        <input class="paypal" style="margin-top:20px;" type="submit" name="submit" value="<:financement:financement_participer:>" />
 
     </div>
 </form>
 </BOUCLE_financement>
+
+<script>
+$(document).ready(function(){
+    $('[data-price]').each(function(){
+    var price = $(this).data('price');
+    $(this).parent().find('a:first-child').click(function(e){e.preventDefault()});
+    $(this).find('a').attr({'style':'outline:0px!important'});
+    $(this).css({'cursor':'pointer'}).hover(function(){$(this).css({'background-color':'#eee'})},function(){$(this).css({'background-color':'rgba(0, 0, 0, 0.05)'})})
+    $(this).click(function(e){
+        e.preventDefault();$('input[name="amount"]').val(price)
+        $('body,html').animate({scrollTop:0});    
+    });
+    })
+});
+</script>
+
 #CACHE{0}

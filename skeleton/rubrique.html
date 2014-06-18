@@ -41,7 +41,7 @@
 <B_articles>
 [<span class="anchor">(#ANCRE_PAGINATION)</span>]
 <BOUCLE_articles(ARTICLES){id_article IN #GET{articles_tri}}{pagination 10}>
-<a class="blocklink article-#ID_ARTICLE" href="#URL_ARTICLES">
+<a class="blocklink article-#ID_ARTICLE" href="#URL_ARTICLES"[ data-price="(#TARIF)"]>
 	[<div class="logo small float-left">(#LOGO_ARTICLE|image_reduire{80})</div>]
 	<i class="fa fa-file float-right"></i><h2 class="nomargin">[(#TITRE|textebrut)]</h2>
 	[(#DATE|annee|>={2000}|oui)
