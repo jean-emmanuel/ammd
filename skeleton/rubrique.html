@@ -83,7 +83,7 @@
 	#TEXTE
 	
 	<BOUCLE_articles_laterals(ARTICLES){id_rubrique}{par num titre, titre}>
-	<div class="blocklink rubrique-#ID_ARTICLE">
+	<div class="blocklink rubrique-#ID_ARTICLE"[ data-price="(#TARIF)"]>
 		[<div class="logo small float-left">(#LOGO_ARTICLE|image_reduire{80})</div>]
 		<a href="#URL_ARTICLE"><h2 class="nomargin ">[(#TITRE|textebrut)]</h2></a>
 		#TEXTE
