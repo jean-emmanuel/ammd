@@ -23,8 +23,6 @@ function financement_declarer_tables_objets_sql($tables) {
 		'field'=> array(
 			"id_financement"      => "bigint(21) NOT NULL",
 			"titre"              => "text NOT NULL DEFAULT ''",
-			"date_debut"         => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'",
-			"date_echeance"      => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'",
 			"montant_demande"    => "DECIMAL(18,4) NOT NULL DEFAULT ''",
 			"montant_minimum"		 => "DECIMAL(18,4) NOT NULL DEFAULT ''",
 			"email"							 => "text NOT NULL DEFAULT ''",
