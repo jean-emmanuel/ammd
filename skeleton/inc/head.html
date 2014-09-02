@@ -52,12 +52,12 @@
 			<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}{rubrique_cachee!=on}{tout}>
 			<li[ class="(#EXPOSE)"]>
 		
-				<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item"><span>#TITRE</span></a>
+				<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]" class="item"><span>[(#TITRE_MENU|sinon{#TITRE})]</span></a>
 		
 				<B_subnav><ul class="submenu">
 						<span class="submenu-arrow"></span><span class="submenu-arrowb"></span>
 					<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}{rubrique_cachee!=on}{tout}><li[ class="(#EXPOSE)"]>
-						<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">#TITRE</a>
+						<a href="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">[(#TITRE_MENU|sinon{#TITRE})]</a>
 					</li></BOUCLE_subnav>
 				</ul></B_subnav>
 			
@@ -70,9 +70,9 @@
 			<select class="a dropdown" onchange="window.location.href=this[this.selectedIndex].value">
 			<option class="label">Navigation</option>
 			<BOUCLE_mnav(RUBRIQUES) {racine}{tout}{par num titre, titre}{rubrique_cachee!=on}>
-			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"[ (#EXPOSE|oui)selected=""]>#TITRE</option>
+			<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]"[ (#EXPOSE|oui)selected=""]>[(#TITRE_MENU|sinon{#TITRE})]</option>
 				<BOUCLE_msnav(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{tout} {par num titre, titre}{rubrique_cachee!=on}>
-				<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">&nbsp;&nbsp;&nbsp;[(#TITRE|couper{35})]</option>
+				<option value="[(#ALT_URL|sinon{#URL_RUBRIQUE})]">&nbsp;&nbsp;&nbsp;[(#TITRE_MENU|sinon{#TITRE}|couper{35})]</option>
 				</BOUCLE_msnav>
 			</BOUCLE_mnav>
 			</select>

@@ -131,8 +131,8 @@ body {
 	top:34px;
 	z-index:10;
 
-	width:200px;
-	margin-left:-100px!important;
+	width:180px;
+	margin-left:-90px!important;
 	left:50%;
 	background:#ddd;
 	transition:all 0.2s;
@@ -183,7 +183,7 @@ body {
 	border-bottom:7px solid #ddd;
 	display:block;
 	top:-7px;
-	left:93px;
+	left:83px;
 	z-index:5;
 }
 .submenu-arrowb {
@@ -195,7 +195,7 @@ body {
 	border-bottom:7px solid rgba(0, 0, 0, 0.1);
 	display:block;
 	top:-8px;
-	left:93px;
+	left:83px;
 	z-index:4;
 }
 

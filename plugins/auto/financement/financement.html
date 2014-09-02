@@ -14,7 +14,7 @@
 html{overflow:hidden;}
 body{
 	font-family: 'Open Sans', sans-serif;
-	background-color:[(#ENV{bgcolor}|=={transparent}|?{transparent,##ENV{bgcolor}})];
+	background-color:transparent;
 	color:#333;
 	font-size:13px;
 	line-height:20px;
@@ -65,7 +65,7 @@ p, form {
 <body>
 <h1 class="nomargin center">#TITRE</h1>
 
-<INCLURE{fond=modeles/financement,id=#ID_FINANCEMENT, target=#ENV{target}}/>
+<INCLURE{fond=modeles/financement,id=#ID_FINANCEMENT, target=_blank}/>
 
 </body>
 </html>

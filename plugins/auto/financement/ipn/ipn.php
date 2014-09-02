@@ -42,21 +42,28 @@ if ($p->validate_ipn()) {
 		$adresse = $p->ipn_data['address_name'] . "\n" . $p->ipn_data['address_street'] . "\n" . $p->ipn_data['address_zip'] . "\n" . $p->ipn_data['address_city'] . "\n" . $p->ipn_data['address_country'] . "\n" . $p->ipn_data['address_state'];
 		$id_financement = $_GET['id_financement'];
 		$date= date("Y-m-d H:i:s");
-		
+		$item_name = $p->ipn_data['item_name'];
 		
 		
 		// On popule !
 		
-		 sql_insertq('spip_financements_transactions', array(
-		 'id_financement' => $id_financement,
-		 'montant' => $amount,
-		 'id_paypal' => $id_paypal,
-		 'email' => $email,
-		 'prenom' => $prenom,
-		 'nom' => $nom,
-		 'adresse' => $adresse,
-		 'date' => $date,
-		 ), 'id_paypal=' . $id_paypal);
+		sql_insertq('spip_financements_transactions', array(
+		'id_financement' => $id_financement,
+		'montant' => $amount,
+		'id_paypal' => $id_paypal,
+		'email' => $email,
+		'prenom' => $prenom,
+		'nom' => $nom,
+		'adresse' => $adresse,
+		'date' => $date,
+		), 'id_paypal=' . $id_paypal);
+		
+		
+		//$envoyer_mail = charger_fonction('envoyer_mail','inc');
+		//$sujet = 'Participation confirmée - ' . $item_name;
+		//$from = 'info@ammd.net';
+		//$message = "Votre participation à bien été enregistrée par Paypal.\n\nMontant : " . $amount . "€\n\nAdresse :\n\n" . $adresse ;
+		//$envoyer_mail($email,$sujet,array('texte'=>$message, 'from'=>$from));
 	
 	}
 }
