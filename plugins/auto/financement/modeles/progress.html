@@ -1,0 +1,16 @@
+<BOUCLE_financement(FINANCEMENTS){id_financement=#ENV{id}}>
+
+#SET{collecte,0}
+<BOUCLE_transactions(FINANCEMENTS_TRANSACTIONS){id_financement}>
+#SET{collecte,#GET{collecte}|plus{#MONTANT}}
+</BOUCLE_transactions>
+#SET{pourcentage, #GET{collecte}|div{#MONTANT_DEMANDE}|mult{100}|round{2}}
+
+<div class="transaction_progress">
+  <div class="progress-bar" style="height:40px;border:1px solid #aaa;background:rgba(155,77,77,0.2);overflow:hidden;position:relative;[(#GET{pourcentage}|>{100}|oui)background:rgb(240,120,120)]">
+    <div class="progress" style="background:rgb(155,77,77);height:100%;width:100%;margin-left:[(#A|plus{100}|moins{#GET{pourcentage}}|mult{-1})]%"></div>
+    <div class="progress-text" style="font-size:15px;height:100%;text-align:center;font-weight:bold;width:100%;line-height:40px;z-index:2;position:absolute;top:0;left:0;">#GET{pourcentage}&nbsp;%</div>
+  </div>
+</div>
+
+</BOUCLE_financement>
