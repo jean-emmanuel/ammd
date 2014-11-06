@@ -1,0 +1,2 @@
+<BOUCLE_actu(ARTICLES){id_rubrique=7}{!par date}{0,1}>#SET{url,#URL_ARTICLE|url_absolue}</BOUCLE_actu>*
+#HTTP_HEADER{Location: #GET{url}}

@@ -1,0 +1,7 @@
+#HTTP_HEADER{Content-Type: image/jpg}
+<BOUCLE_actu(ARTICLES){id_rubrique=7}{!par date}{0,1}>*
+#SET{titre, #TITRE|textebrut|ucfirst|image_typo{police=sourcesans.ttf,taille=32,align=left,couleur=fcfcfc,padding=20}|image_recadre{600,100,'center left','transparent'}|extraire_attribut{src}|url_absolue}
+#SET{bg,#LOGO_ARTICLE|image_reduire{600,0}|image_recadre{600,100}|image_gamma{-20}|extraire_attribut{src}|url_absolue}
+#SET{src,#GET{bg}|image_masque{#GET{titre},mode=normal}|image_aplatir{'jpg'}|extraire_attribut{src}|url_absolue}
+</BOUCLE_actu>
+[(#GET{src}|readfile|ImageJPEG)]
